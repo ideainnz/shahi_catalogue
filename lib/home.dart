@@ -18,7 +18,6 @@ class HomeWidget extends StatefulWidget {
 }
 
 class _HomeWidgetState extends State<HomeWidget> {
-  final ScrollController _scrollBarController = ScrollController();
   Widget _buildListWidget(ProductCategory productCategory, bool largeScreen) {
     String currentCategory =
         Provider.of<ProductProvider>(context).getCategories()[currentIndex];
@@ -35,8 +34,6 @@ class _HomeWidgetState extends State<HomeWidget> {
               Expanded(
                 flex: 2,
                 child: GridView.builder(
-                  controller: _scrollBarController,
-                  physics: const AlwaysScrollableScrollPhysics(),
                   padding: const EdgeInsets.symmetric(
                       horizontal: Constants.kPadding),
                   itemCount: productCategory.productItems.length,
@@ -101,25 +98,28 @@ class _HomeWidgetState extends State<HomeWidget> {
 
     return Scaffold(
       backgroundColor: const Color.fromRGBO(58, 66, 86, 1.0),
-      body: LayoutBuilder(
-        builder: (BuildContext context, BoxConstraints constraints) {
-          if (constraints.maxWidth < Constants.iphoneLimit) {
-            return _buildListWidget(productCategory, false);
-          } else {
-            return Row(
-              children: [
-                Expanded(
-                  flex: _size.width < Constants.ipadLimit ? 5 : 4,
-                  child: _buildListWidget(productCategory, true),
-                ),
-                Expanded(
-                  flex: _size.width < Constants.ipadLimit ? 5 : 6,
-                  child: ProductDetailScreen(currentProductItem!),
-                ),
-              ],
-            );
-          }
-        },
+      body: Scrollbar(
+        controller: _scrollBarController,
+        child: LayoutBuilder(
+          builder: (BuildContext context, BoxConstraints constraints) {
+            if (constraints.maxWidth < Constants.iphoneLimit) {
+              return _buildListWidget(productCategory, false);
+            } else {
+              return Row(
+                children: [
+                  Expanded(
+                    flex: _size.width < Constants.ipadLimit ? 5 : 4,
+                    child: _buildListWidget(productCategory, true),
+                  ),
+                  Expanded(
+                    flex: _size.width < Constants.ipadLimit ? 5 : 6,
+                    child: ProductDetailScreen(currentProductItem!),
+                  ),
+                ],
+              );
+            }
+          },
+        ),
       ),
     );
   }
