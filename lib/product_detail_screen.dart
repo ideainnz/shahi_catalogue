@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shahi_catalogue/constants.dart';
 import 'package:shahi_catalogue/models/product_item.dart';
 import 'package:shahi_catalogue/widgets/product_detail_header.dart';
 import 'package:shahi_catalogue/widgets/product_detail_widget.dart';
@@ -27,6 +28,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
 
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Color(Constants.appColor),
         title: Text(
           widget.productItem.productName,
         ),
