@@ -21,7 +21,7 @@ class _HeaderWidgetState extends State<HeaderWidget> {
   Widget build(BuildContext context) {
 
     Size size = MediaQuery.of(context).size;
-    double sizeImage = size.width < 900 ? 100 : 200;
+    double sizeImage = size.width < 900 ? 130 : 200;
     double fontSize = size.width < 900 ? 14 : 17;
 
     List<String> productCategories =
