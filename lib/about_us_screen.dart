@@ -14,7 +14,7 @@ class AboutUsScreen extends StatelessWidget {
           children: [
             Text('About Us'),
             Image.asset('assets/shahi_app_logo_white.png',
-                height: 25, width: 80),
+                height: 25, width: 60),
           ],
         ),
         leading: IconButton(
@@ -35,11 +35,14 @@ class AboutUsScreen extends StatelessWidget {
     double fontSizeText = size.width < Constants.iphoneLimit ? 14 : 15;
 
     return Padding(
-      padding: const EdgeInsets.all(15.0),
+      padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 15.0),
       child: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            SizedBox(
+              height: 15,
+            ),
             Image.asset(
               "assets/images/about_us_header.jpg",
               fit: BoxFit.fitWidth,
@@ -147,6 +150,7 @@ class AboutUsScreen extends StatelessWidget {
               Constants.GLOBAL_FOOT_PRINT_TEXT,
               style: TextStyle(fontSize: fontSizeText),
             ),
+            SizedBox(height: 20.0,),
           ],
         ),
       ),

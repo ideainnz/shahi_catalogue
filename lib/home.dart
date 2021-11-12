@@ -43,14 +43,18 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
           child: Column(
             children: [
               // HeaderWidget(_changeCategory),
-              SizedBox(
-                height: 20,
-              ),
+              // SizedBox(
+              //   height: 20,
+              // ),
               Expanded(
                 flex: 2,
                 child: GridView.builder(
-                  padding: const EdgeInsets.symmetric(
-                      horizontal: Constants.kPadding),
+                  padding: const EdgeInsets.fromLTRB(
+                    Constants.kPadding,
+                    Constants.kPadding + 5,
+                    Constants.kPadding,
+                    Constants.kPadding + 70,
+                  ),
                   itemCount: productCategory.productItems.length,
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
@@ -207,14 +211,13 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
         appBar: AppBar(
           backgroundColor: Color(Constants.appColor),
           title: Padding(
-            padding: const EdgeInsets.only(top: 8.0, right: 8.0),
-            child:
-            Row(
+            padding: const EdgeInsets.only(top: 8.0),
+            child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text('Shahi Catalogue'),
                 Image.asset('assets/shahi_app_logo_white.png',
-                    height: 25, width: 80),
+                    height: 25, width: 60),
               ],
             ),
           ),
@@ -284,7 +287,8 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                 height: 30,
                                 width: 30,
                               ),
-                              label: Text("About Us", style: TextStyle(fontSize: 16.0)),
+                              label: Text("About Us",
+                                  style: TextStyle(fontSize: 16.0)),
                               onPressed: () {
                                 Navigator.of(context).push(MaterialPageRoute(
                                   builder: (context) => AboutUsScreen(),
@@ -292,15 +296,14 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                               }),
                         ),
                       ),
-                      if (isZoomProductVisible) ...[
+                      if (isZoomProductVisible) ...{
                         ZoomProductItemWidget(currentProductItem!),
-                      ]
+                      }
                     ],
                   );
                 },
               ),
             ),
-
           ],
         ),
       ),

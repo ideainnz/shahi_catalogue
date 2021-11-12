@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:shahi_catalogue/constants.dart';
 import 'package:shahi_catalogue/models/product_item.dart';
 import 'package:shahi_catalogue/widgets/product_detail_header.dart';
@@ -42,7 +43,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                 color: Colors.white,
               )
             : SizedBox.shrink(),
-        brightness: Brightness.dark,
+        systemOverlayStyle: SystemUiOverlayStyle.dark,
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
