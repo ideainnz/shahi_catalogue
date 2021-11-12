@@ -7,7 +7,7 @@ import 'package:shahi_catalogue/widgets/product_detail_widget.dart';
 class ProductDetailScreen extends StatefulWidget {
   static const routeName = '/product-detail';
 
-  ProductItem productItem;
+  final ProductItem productItem;
 
   ProductDetailScreen(this.productItem);
 
@@ -26,21 +26,22 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
     final headerContent = ProductDetailHeaderWidget(productItem);
     final productDetail = ProductDetailWidget(productItem);
 
+    Size _size = MediaQuery.of(context).size;
+
     return Scaffold(
       appBar: AppBar(
+        // automaticallyImplyLeading: false,
         backgroundColor: Color(Constants.appColor),
         title: Text(
           widget.productItem.productName,
         ),
-        leading: InkWell(
-          onTap: () {
-            Navigator.pop(context);
-          },
-          child: const Icon(
-            Icons.arrow_back_rounded,
-            color: Colors.white,
-          ),
-        ),
+        leading: _size.width < Constants.iphoneLimit
+            ? IconButton(
+                icon: Icon(Icons.arrow_back_rounded),
+                onPressed: () => Navigator.of(context).pop(),
+                color: Colors.white,
+              )
+            : SizedBox.shrink(),
         brightness: Brightness.dark,
       ),
       body: Column(

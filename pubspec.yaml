@@ -49,6 +49,8 @@ flutter:
   assets:
     - assets/
     - assets/images/
+    - assets/images/about_icons/
+    - assets/images/tab_icons/
     - assets/images/mouth_freshener/
     - assets/images/nimco/
     - assets/images/snacks/
