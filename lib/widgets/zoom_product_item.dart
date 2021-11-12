@@ -15,7 +15,6 @@ class ZoomProductItemWidget extends StatefulWidget {
 
 class _ZoomProductItemWidgetState extends State<ZoomProductItemWidget> {
   Widget showZoomedImage() {
-    print("PRESSED_2");
     return Stack(
       children: [
         BackdropFilter(

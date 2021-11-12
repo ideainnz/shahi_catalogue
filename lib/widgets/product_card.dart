@@ -8,6 +8,7 @@ import 'package:shahi_catalogue/widgets/zoom_product_item.dart';
 class ProductCard extends StatefulWidget {
   final String category;
   final ProductItem productItem;
+
   // final ValueChanged<String>? callback;
 
   const ProductCard({
@@ -48,12 +49,16 @@ class _ProductCardState extends State<ProductCard> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Expanded(
-              child: Hero(
-                tag: 'icon-${widget.productItem.productId}',
-                child: Image.asset(
-                  widget.productItem.productImagePath,
-                ),
-              ),
+              child: size.width < Constants.iphoneLimit
+                  ? Hero(
+                      tag: 'icon-${widget.productItem.productId}',
+                      child: Image.asset(
+                        widget.productItem.productImagePath,
+                      ),
+                    )
+                  : Image.asset(
+                      widget.productItem.productImagePath,
+                    ),
               // child: ProductImage(
               //   widget.category,
               //   widget.productItem,

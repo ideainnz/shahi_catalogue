@@ -50,14 +50,16 @@ class ProductDetailHeaderWidget extends StatelessWidget {
           decoration: BoxDecoration(
             color: Theme.of(context).primaryColor.withOpacity(0.1),
           ),
-          child: Hero(
-            tag: 'icon-${productItem!.productId}',
-            child: Image.asset(
-              productItem!.productImagePath,
-              // width: sizeImage,
-              // height: sizeImage,
-            ),
-          ),
+          child: size.width < Constants.iphoneLimit
+              ? Hero(
+                  tag: 'icon-${productItem!.productId}',
+                  child: Image.asset(
+                    productItem!.productImagePath,
+                  ),
+                )
+              : Image.asset(
+                  productItem!.productImagePath,
+                ),
           // Image.asset(productItem!.productImagePath, fit: BoxFit.contain),
         ),
         // if (size.width < Constants.ipadLimit) ...{

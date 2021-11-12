@@ -27,7 +27,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
 
   Widget _buildListWidget(int categoryIndex, bool largeScreen) {
     String currentCategory =
-        Provider.of<ProductProvider>(context).getCategories()[categoryIndex];
+    Provider.of<ProductProvider>(context).getCategories()[categoryIndex];
 
     ProductCategory productCategory = Provider.of<ProductProvider>(context)
         .getProductByCategory(categoryIndex);
@@ -37,7 +37,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
     return Scaffold(
       body: Container(
         padding:
-            const EdgeInsets.only(top: kIsWeb ? Constants.kPadding / 3 : 0),
+        const EdgeInsets.only(top: kIsWeb ? Constants.kPadding / 3 : 0),
         color: Theme.of(context).primaryColor,
         child: SafeArea(
           child: Column(
@@ -49,6 +49,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
               Expanded(
                 flex: 2,
                 child: GridView.builder(
+                  controller: ScrollController(),
                   padding: const EdgeInsets.fromLTRB(
                     Constants.kPadding,
                     Constants.kPadding + 5,
@@ -94,7 +95,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                           //     .productItems[index].productImagePath;
                           isZoomProductVisible = true;
                           currentProductItem =
-                              productCategory.productItems[index];
+                          productCategory.productItems[index];
                           // ZoomProductItemWidget(productCategory.productItems[index], isZoomProductVisible);
                         }),
                         // setState(() {
@@ -130,7 +131,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
 
   _changeCategory(int index) {
     ProductProvider productProvider =
-        Provider.of<ProductProvider>(context, listen: false);
+    Provider.of<ProductProvider>(context, listen: false);
     setState(() {
       currentIndex = index;
       currentProductItem =
@@ -140,7 +141,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
 
   _changeProductWidget(String productName) {
     ProductProvider productProvider =
-        Provider.of<ProductProvider>(context, listen: false);
+    Provider.of<ProductProvider>(context, listen: false);
     ProductItem productItem = productProvider
         .getProductByCategory(currentIndex)
         .productItems
@@ -185,128 +186,126 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
     // final ScrollController _scrollBarController = ScrollController();
     Size _size = MediaQuery.of(context).size;
     ProductProvider productProvider =
-        Provider.of<ProductProvider>(context, listen: false);
+    Provider.of<ProductProvider>(context, listen: false);
 
     List<String> productCategories = productProvider.getCategories();
     ProductCategory productCategory =
-        productProvider.getProductByCategory(currentIndex);
+    productProvider.getProductByCategory(currentIndex);
     currentProductItem ??= productCategory.productItems.first;
     // currentProductItem = productCategory.productItems.first;
     print("CURRENT PRODUCT ITEM: " + currentProductItem!.productName);
 
     List<Tab> tabs = List.generate(
         productCategories.length,
-        (index) => Tab(
-              // icon: Image.asset(
-              //   'assets/images/tab_icons/${productCategories[index].contains(' ') ? productCategories[index].toLowerCase().replaceFirst(' ', '_') : productCategories[index].toLowerCase()}_tab_icon.png',
-              //   height: 25,
-              // ),
-              text: productCategories[index],
-            ),
+            (index) => Tab(
+          // icon: Image.asset(
+          //   'assets/images/tab_icons/${productCategories[index].contains(' ') ? productCategories[index].toLowerCase().replaceFirst(' ', '_') : productCategories[index].toLowerCase()}_tab_icon.png',
+          //   height: 25,
+          // ),
+          text: productCategories[index],
+        ),
         growable: false);
 
-    return DefaultTabController(
-      length: productCategories.length,
-      child: Scaffold(
-        appBar: AppBar(
-          backgroundColor: Color(Constants.appColor),
-          title: Padding(
-            padding: const EdgeInsets.only(top: 8.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text('Shahi Catalogue'),
-                Image.asset('assets/shahi_app_logo_white.png',
-                    height: 25, width: 60),
-              ],
-            ),
-          ),
-          bottom: TabBar(
-            tabs: tabs,
-            isScrollable: true,
-            // controller: tabController,
-            // indicator: BoxDecoration(
-            //     borderRadius: BorderRadius.circular(25),
-            //     color: Color(Constants.bgColor),
-            // ),
-            indicatorWeight: 4.0,
-            indicatorColor: Color(Constants.bgColor),
-            indicatorSize: TabBarIndicatorSize.label,
-            onTap: (index) {
-              setState(() {
-                currentIndex = index;
-                currentProductItem = productProvider
-                    .getProductByCategory(currentIndex)
-                    .productItems
-                    .first;
-              });
-            },
-          ),
-        ),
-        body: Stack(
-          children: [
-            TabBarView(
-              // controller: tabController,
-              physics: const NeverScrollableScrollPhysics(),
-              children: List.generate(
-                productCategories.length,
-                (index) {
-                  return Stack(
-                    children: [
-                      LayoutBuilder(
-                        builder:
-                            (BuildContext context, BoxConstraints constraints) {
-                          if (constraints.maxWidth < Constants.iphoneLimit) {
-                            return _buildListWidget(index, false);
-                          } else {
-                            return Row(
-                              children: [
-                                Expanded(
-                                  flex:
-                                      _size.width < Constants.ipadLimit ? 5 : 4,
-                                  child: _buildListWidget(index, true),
-                                ),
-                                Expanded(
-                                  flex:
-                                      _size.width < Constants.ipadLimit ? 5 : 6,
-                                  child:
-                                      ProductDetailScreen(currentProductItem!),
-                                ),
-                              ],
-                            );
-                          }
-                        },
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(right: 20, bottom: 20),
-                        child: Align(
-                          alignment: Alignment.bottomRight,
-                          child: FloatingActionButton.extended(
-                              icon: Image.asset(
-                                "assets/images/about_us.png",
-                                height: 30,
-                                width: 30,
-                              ),
-                              label: Text("About Us",
-                                  style: TextStyle(fontSize: 16.0)),
-                              onPressed: () {
-                                Navigator.of(context).push(MaterialPageRoute(
-                                  builder: (context) => AboutUsScreen(),
-                                ));
-                              }),
-                        ),
-                      ),
-                      if (isZoomProductVisible) ...{
-                        ZoomProductItemWidget(currentProductItem!),
-                      }
-                    ],
-                  );
-                },
+    Widget initHomeScreen(bool largeScreen) {
+      return DefaultTabController(
+        length: productCategories.length,
+        child: Scaffold(
+          appBar: AppBar(
+            backgroundColor: Color(Constants.appColor),
+            title: Padding(
+              padding: const EdgeInsets.only(top: 8.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left: 8.0),
+                    child: Text('Shahi Catalogue'),
+                  ),
+                  Image.asset('assets/shahi_app_logo_white.png',
+                      height: 25, width: 60),
+                ],
               ),
             ),
-          ],
+            bottom: TabBar(
+              tabs: tabs,
+              isScrollable: true,
+              // controller: tabController,
+              // indicator: BoxDecoration(
+              //     borderRadius: BorderRadius.circular(25),
+              //     color: Color(Constants.bgColor),
+              // ),
+              indicatorWeight: 4.0,
+              indicatorColor: Color(Constants.bgColor),
+              indicatorSize: TabBarIndicatorSize.label,
+              onTap: (index) {
+                setState(() {
+                  currentIndex = index;
+                  currentProductItem = productProvider
+                      .getProductByCategory(currentIndex)
+                      .productItems
+                      .first;
+                });
+              },
+            ),
+          ),
+          body: TabBarView(
+            // controller: tabController,
+            physics: const NeverScrollableScrollPhysics(),
+            children: List.generate(
+              productCategories.length,
+                  (index) {
+                return _buildListWidget(index, largeScreen);
+              },
+            ),
+          ),
         ),
-      ),
+      );
+    }
+
+    return Stack(
+      children: [
+        LayoutBuilder(
+          builder: (context, constraints) {
+            if (constraints.maxWidth < Constants.iphoneLimit) {
+              return initHomeScreen(false);
+            } else {
+              return Row(
+                children: [
+                  Expanded(
+                    flex: _size.width < Constants.ipadLimit ? 5 : 4,
+                    child: initHomeScreen(true),
+                  ),
+                  Expanded(
+                    flex: _size.width < Constants.ipadLimit ? 5 : 6,
+                    child: ProductDetailScreen(currentProductItem!),
+                  ),
+                ],
+              );
+            }
+          },
+        ),
+        Padding(
+          padding: const EdgeInsets.only(right: 20, bottom: 20),
+          child: Align(
+            alignment: Alignment.bottomRight,
+            child: FloatingActionButton.extended(
+                icon: Image.asset(
+                  "assets/images/about_us.png",
+                  height: 30,
+                  width: 30,
+                ),
+                label: Text("About Us", style: TextStyle(fontSize: 16.0)),
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => AboutUsScreen(),
+                  ));
+                }),
+          ),
+        ),
+        if (isZoomProductVisible) ...{
+          ZoomProductItemWidget(currentProductItem!),
+        },
+      ],
     );
 
     // return Scaffold(

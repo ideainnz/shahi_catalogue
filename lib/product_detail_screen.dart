@@ -33,8 +33,11 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
       appBar: AppBar(
         // automaticallyImplyLeading: false,
         backgroundColor: Color(Constants.appColor),
-        title: Text(
-          widget.productItem.productName,
+        title: Align(
+          alignment: Alignment.topLeft,
+          child: Text(
+            widget.productItem.productName,
+          ),
         ),
         leading: _size.width < Constants.iphoneLimit
             ? IconButton(

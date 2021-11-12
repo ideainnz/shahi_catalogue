@@ -33,9 +33,10 @@ class AboutUsScreen extends StatelessWidget {
     double sizeImage = size.width < Constants.iphoneLimit ? 75.0 : 150;
     double fontSizeHeading = size.width < Constants.iphoneLimit ? 17 : 19;
     double fontSizeText = size.width < Constants.iphoneLimit ? 14 : 15;
+    double padding = size.width < Constants.iphoneLimit ? 15 : 25;
 
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 15.0),
+      padding: EdgeInsets.symmetric(vertical: 0, horizontal: padding),
       child: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -43,9 +44,11 @@ class AboutUsScreen extends StatelessWidget {
             SizedBox(
               height: 15,
             ),
-            Image.asset(
-              "assets/images/about_us_header.jpg",
-              fit: BoxFit.fitWidth,
+            Center(
+              child: Image.asset(
+                "assets/images/about_us_header.jpg",
+                fit: BoxFit.fitWidth,
+              ),
             ),
             SizedBox(
               height: 20,
