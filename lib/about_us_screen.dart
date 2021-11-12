@@ -8,6 +8,7 @@ class AboutUsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Color(Constants.appColor),
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [

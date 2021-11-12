@@ -205,6 +205,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
       length: productCategories.length,
       child: Scaffold(
         appBar: AppBar(
+          backgroundColor: Color(Constants.appColor),
           title: Padding(
             padding: const EdgeInsets.only(top: 8.0, right: 8.0),
             child:

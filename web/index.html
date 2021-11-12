@@ -1,39 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <!--
-    If you are serving your web app in a path other than the root, change the
-    href value below to reflect the base path you are serving from.
+    <!--
+      If you are serving your web app in a path other than the root, change the
+      href value below to reflect the base path you are serving from.
 
-    The path provided below has to start and end with a slash "/" in order for
-    it to work correctly.
+      The path provided below has to start and end with a slash "/" in order for
+      it to work correctly.
 
-    For more details:
-    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
-  -->
-  <base href="/shahi_catalogue/">
+      For more details:
+      * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
+    -->
+    <base href="/shahi_catalogue/">
 
-  <meta charset="UTF-8">
-  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="Shahi Products e-Catalogue">
+    <meta charset="UTF-8">
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+    <meta name="description" content="Shahi Products e-Catalogue">
 
-  <!-- iOS meta tags & icons -->
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="shahi_catalogue">
-  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+    <!-- iOS meta tags & icons -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="shahi_catalogue">
+    <link rel="apple-touch-icon" href="icons/Icon-192.png">
 
-  <title>shahi_catalogue</title>
-  <link rel="manifest" href="manifest.json">
+    <title>shahi_catalogue</title>
+    <link rel="manifest" href="manifest.json">
 
-  <style>
+    <style>
+
+<!--    body {-->
+<!--  background-color: #A30709;-->
+<!--}-->
+
     .loading {
       display: flex;
       justify-content: center;
       align-items: center;
       margin: 0;
       position: absolute;
-      top: 50%;
+      top: 80%;
       left: 50%;
       -ms-transform: translate(-50%, -50%);
       transform: translate(-50%, -50%);
@@ -42,12 +47,12 @@
     .loader {
       border: 16px solid #f3f3f3;
       border-radius: 50%;
-      border-top: 16px solid red;
-      border-right: 16px solid white;
-      border-bottom: 16px solid red;
-      border-left: 16px solid white;
-      width: 120px;
-      height: 120px;
+      border-top: 8px solid red;
+      border-right: 8px solid white;
+      border-bottom: 8px solid red;
+      border-left: 8px solid white;
+      width: 80px;
+      height: 80px;
       -webkit-animation: spin 2s linear infinite;
       animation: spin 2s linear infinite;
     }
@@ -69,22 +74,64 @@
         transform: rotate(360deg);
       }
     }
-  </style>
+
+<!--    #logo01{-->
+<!--    position:absolute;-->
+<!--    top:50%;-->
+<!--    left:50%;-->
+
+<!--    cursor:pointer;-->
+<!--    max-width:45%;-->
+<!--    max-height:45%;-->
+<!--    display:table;}-->
+
+#logo_container {
+    display:table;
+    height:100px;
+    width:100px;
+    margin:0 auto;
+    text-align:center;
+}
+
+#logo {
+    display:table-cell;
+    vertical-align:middle;
+
+}
+#logo img {
+    max-height:80%;
+    max-width:80%;
+}
+
+.center{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
 
+    </style>
 
 
+  <link rel="stylesheet" type="text/css" href="splash/style.css">
 </head>
-<body>
+<body style="position: fixed; inset: 0px; overflow: hidden; padding: 0px; margin: 0px; user-select: none; touch-action: none; font: 14px sans-serif; color: red;">
+<!--    <img src="assets/shahi_app_logo.png" id="logo01"/>-->
 
-<div class="loading">
-  <div class="loader"></div>
+<!--<div id='logo_container'>-->
+<!--    <div id='logo' class='center'><img src = 'assets/shahi_app_logo.png' alt = 'Logo'/></div>-->
+<!--</div>-->
+
+<!--<div class="loading">-->
+<!--  <div class="loader"></div>-->
+
 </div>
 
-  <!-- This script installs service_worker.js to provide PWA functionality to
-       application. For more information, see:
-       https://developers.google.com/web/fundamentals/primers/service-workers -->
-  <script>
+<!-- This script installs service_worker.js to provide PWA functionality to
+     application. For more information, see:
+     https://developers.google.com/web/fundamentals/primers/service-workers -->
+<script>
     var serviceWorkerVersion = null;
     var scriptLoaded = false;
     function loadMainDartJs() {
@@ -147,6 +194,13 @@
       // Service workers not supported. Just drop the <script> tag.
       loadMainDartJs();
     }
-  </script>
+
+
+</script>
+  <picture id="splash">
+    <source srcset="splash/img/light-1x.png 1x, splash/img/light-2x.png 2x, splash/img/light-3x.png 3x, splash/img/light-4x.png 4x" media="(prefers-color-scheme: light) or (prefers-color-scheme: no-preference)">
+    <source srcset="splash/img/dark-1x.png 1x, splash/img/dark-2x.png 2x, splash/img/dark-3x.png 3x, splash/img/dark-4x.png 4x" media="(prefers-color-scheme: dark)">
+    <img class="center" src="splash/img/light-1x.png" />
+  </picture>
 </body>
 </html>
