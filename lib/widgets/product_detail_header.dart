@@ -34,50 +34,23 @@ class ProductDetailHeaderWidget extends StatelessWidget {
     //   ],
     // );
 
-    return Stack(
-      children: <Widget>[
-        // Container(
-        //   padding: const EdgeInsets.only(left: 15),
-        //   decoration: BoxDecoration(
-        //     image: DecorationImage(
-        //         image: AssetImage(productItem!.productImagePath),
-        //         fit: BoxFit.cover),
-        //   ),
-        // ),
-        Container(
-          padding: EdgeInsets.all(padding),
-          width: size.width,
-          decoration: BoxDecoration(
-            color: Theme.of(context).primaryColor.withOpacity(0.1),
-          ),
-          child: size.width < Constants.iphoneLimit
-              ? Hero(
-                  tag: 'icon-${productItem!.productId}',
-                  child: Image.asset(
-                    productItem!.productImagePath,
-                  ),
-                )
-              : Image.asset(
-                  productItem!.productImagePath,
-                ),
-          // Image.asset(productItem!.productImagePath, fit: BoxFit.contain),
-        ),
-        // if (size.width < Constants.ipadLimit) ...{
-        //   Positioned(
-        //     left: 10.0,
-        //     top: 40.0,
-        //     child: InkWell(
-        //       onTap: () {
-        //         Navigator.pop(context);
-        //       },
-        //       child: const Icon(
-        //         Icons.arrow_back_rounded,
-        //         color: Colors.white,
-        //       ),
-        //     ),
-        //   ),
-        // }
-      ],
+    return Container(
+      padding: EdgeInsets.all(padding),
+      width: size.width,
+      decoration: BoxDecoration(
+        color: Theme.of(context).primaryColor.withOpacity(0.1),
+      ),
+      child: size.width < Constants.iphoneLimit
+          ? Hero(
+              tag: 'icon-${productItem!.productId}',
+              child: Image.asset(
+                productItem!.productImagePath,
+              ),
+            )
+          : Image.asset(
+              productItem!.productImagePath,
+            ),
+      // Image.asset(productItem!.productImagePath, fit: BoxFit.contain),
     );
   }
 }
