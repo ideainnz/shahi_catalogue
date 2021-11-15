@@ -24,20 +24,21 @@ class HomeWidget extends StatefulWidget {
 class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
   String productImagePath = '';
   bool isZoomProductVisible = false;
+  bool isAboutVisible = false;
+  bool isLargeScreen = false;
 
   Widget _buildListWidget(int categoryIndex, bool largeScreen) {
     String currentCategory =
-    Provider.of<ProductProvider>(context).getCategories()[categoryIndex];
+        Provider.of<ProductProvider>(context).getCategories()[categoryIndex];
 
     ProductCategory productCategory = Provider.of<ProductProvider>(context)
         .getProductByCategory(categoryIndex);
 
     ValueChanged<String>? callback;
-
     return Scaffold(
       body: Container(
         padding:
-        const EdgeInsets.only(top: kIsWeb ? Constants.kPadding / 3 : 0),
+            const EdgeInsets.only(top: kIsWeb ? Constants.kPadding / 3 : 0),
         color: Theme.of(context).primaryColor,
         child: SafeArea(
           child: Column(
@@ -95,7 +96,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                           //     .productItems[index].productImagePath;
                           isZoomProductVisible = true;
                           currentProductItem =
-                          productCategory.productItems[index];
+                              productCategory.productItems[index];
                           // ZoomProductItemWidget(productCategory.productItems[index], isZoomProductVisible);
                         }),
                         // setState(() {
@@ -131,7 +132,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
 
   _changeCategory(int index) {
     ProductProvider productProvider =
-    Provider.of<ProductProvider>(context, listen: false);
+        Provider.of<ProductProvider>(context, listen: false);
     setState(() {
       currentIndex = index;
       currentProductItem =
@@ -141,7 +142,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
 
   _changeProductWidget(String productName) {
     ProductProvider productProvider =
-    Provider.of<ProductProvider>(context, listen: false);
+        Provider.of<ProductProvider>(context, listen: false);
     ProductItem productItem = productProvider
         .getProductByCategory(currentIndex)
         .productItems
@@ -181,29 +182,52 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
   //   super.dispose();
   // }
 
+  _aboutPopup(BuildContext context, Size _size) {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          backgroundColor: Color(Constants.bgColor),
+          contentPadding: EdgeInsets.all(0),
+          // actions: [
+          //   TextButton(
+          //     onPressed: () => Navigator.of(context).pop(),
+          //     child: Text("Close"),
+          //   ),
+          // ],
+          content: Container(
+            width: 600,
+            height: 1000,
+            child: AboutUsScreen(),
+          ),
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     // final ScrollController _scrollBarController = ScrollController();
     Size _size = MediaQuery.of(context).size;
     ProductProvider productProvider =
-    Provider.of<ProductProvider>(context, listen: false);
+        Provider.of<ProductProvider>(context, listen: false);
 
     List<String> productCategories = productProvider.getCategories();
     ProductCategory productCategory =
-    productProvider.getProductByCategory(currentIndex);
+        productProvider.getProductByCategory(currentIndex);
     currentProductItem ??= productCategory.productItems.first;
     // currentProductItem = productCategory.productItems.first;
     print("CURRENT PRODUCT ITEM: " + currentProductItem!.productName);
 
     List<Tab> tabs = List.generate(
         productCategories.length,
-            (index) => Tab(
-          // icon: Image.asset(
-          //   'assets/images/tab_icons/${productCategories[index].contains(' ') ? productCategories[index].toLowerCase().replaceFirst(' ', '_') : productCategories[index].toLowerCase()}_tab_icon.png',
-          //   height: 25,
-          // ),
-          text: productCategories[index],
-        ),
+        (index) => Tab(
+              // icon: Image.asset(
+              //   'assets/images/tab_icons/${productCategories[index].contains(' ') ? productCategories[index].toLowerCase().replaceFirst(' ', '_') : productCategories[index].toLowerCase()}_tab_icon.png',
+              //   height: 25,
+              // ),
+              text: productCategories[index],
+            ),
         growable: false);
 
     Widget initHomeScreen(bool largeScreen) {
@@ -253,7 +277,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
             physics: const NeverScrollableScrollPhysics(),
             children: List.generate(
               productCategories.length,
-                  (index) {
+              (index) {
                 return _buildListWidget(index, largeScreen);
               },
             ),
@@ -267,8 +291,10 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
         LayoutBuilder(
           builder: (context, constraints) {
             if (constraints.maxWidth < Constants.iphoneLimit) {
+              isLargeScreen = false;
               return initHomeScreen(false);
             } else {
+              isLargeScreen = true;
               return Row(
                 children: [
                   Expanded(
@@ -296,15 +322,25 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                 ),
                 label: Text("About Us", style: TextStyle(fontSize: 16.0)),
                 onPressed: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => AboutUsScreen(),
-                  ));
+                  if (isLargeScreen) {
+                    _aboutPopup(context, _size);
+                    // setState(() {
+                    //   isAboutVisible = true;
+                    // });
+                  } else {
+                    Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => AboutUsScreen(),
+                    ));
+                  }
                 }),
           ),
         ),
-        if (isZoomProductVisible) ...{
+        if (isZoomProductVisible) ...[
           ZoomProductItemWidget(currentProductItem!),
-        },
+        ],
+        // if (isAboutVisible) ...[
+        //   _aboutPopup(),
+        // ],
       ],
     );
 
