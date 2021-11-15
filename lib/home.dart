@@ -218,7 +218,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Padding(
-                    padding: const EdgeInsets.only(left: 8.0),
+                    padding: const EdgeInsets.only(left: 12.0),
                     child: Text('Shahi Catalogue'),
                   ),
                   Image.asset('assets/shahi_app_logo_white.png',
