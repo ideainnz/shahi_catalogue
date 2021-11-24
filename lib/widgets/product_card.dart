@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:shahi_catalogue/constants.dart';
+import 'package:shahi_catalogue/constants/constants.dart';
 import 'package:shahi_catalogue/models/product_item.dart';
-import 'package:shahi_catalogue/product_detail_screen.dart';
+import 'package:shahi_catalogue/product_detail.dart';
 import 'package:shahi_catalogue/widgets/product_image.dart';
 import 'package:shahi_catalogue/widgets/zoom_product_item.dart';
 
@@ -33,13 +33,13 @@ class _ProductCardState extends State<ProductCard> {
 
     return Container(
       decoration: BoxDecoration(
-        color: Color(Constants.bgColor),
+        color: Colors.grey[100],
         borderRadius: BorderRadius.circular(15),
         boxShadow: [
           BoxShadow(
-            offset: const Offset(4, 4),
-            blurRadius: 5,
-            color: Colors.black.withOpacity(0.2),
+            spreadRadius: 3,
+            blurRadius: 7,
+            color: Colors.black.withOpacity(0.1),
           ),
         ],
       ),

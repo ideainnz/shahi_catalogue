@@ -4,24 +4,24 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
-import 'package:shahi_catalogue/about_us_screen.dart';
-import 'package:shahi_catalogue/constants.dart';
+import 'package:shahi_catalogue/about_us.dart';
+import 'package:shahi_catalogue/constants/constants.dart';
 import 'package:shahi_catalogue/models/product_category.dart';
 import 'package:shahi_catalogue/models/product_item.dart';
-import 'package:shahi_catalogue/product_detail_screen.dart';
-import 'package:shahi_catalogue/product_provider.dart';
-import 'package:shahi_catalogue/widgets/header.dart';
+import 'package:shahi_catalogue/product_detail.dart';
+import 'package:shahi_catalogue/providers/product_provider.dart';
 import 'package:shahi_catalogue/widgets/product_card.dart';
 import 'package:shahi_catalogue/widgets/zoom_product_item.dart';
 
-class HomeWidget extends StatefulWidget {
-  const HomeWidget({Key? key}) : super(key: key);
+class ProductsScreen extends StatefulWidget {
+  const ProductsScreen({Key? key}) : super(key: key);
 
   @override
-  State<HomeWidget> createState() => _HomeWidgetState();
+  State<ProductsScreen> createState() => _ProductsScreenState();
 }
 
-class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
+class _ProductsScreenState extends State<ProductsScreen>
+    with TickerProviderStateMixin {
   String productImagePath = '';
   bool isZoomProductVisible = false;
   bool isAboutVisible = false;
@@ -39,7 +39,8 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
       body: Container(
         padding:
             const EdgeInsets.only(top: kIsWeb ? Constants.kPadding / 3 : 0),
-        color: Theme.of(context).primaryColor,
+        // color: Theme.of(context).primaryColor,
+        color: Color(Constants.bgColor),
         child: SafeArea(
           child: Column(
             children: [
@@ -62,7 +63,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                     crossAxisCount: 2,
                     mainAxisSpacing: 20,
                     crossAxisSpacing: 20,
-                    childAspectRatio: 0.75,
+                    childAspectRatio: 0.85,
                   ),
                   itemBuilder: (context, index) => MouseRegion(
                     cursor: SystemMouseCursors.click,
@@ -198,7 +199,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
           content: Container(
             width: 600,
             height: 1000,
-            child: AboutUsScreen(),
+            child: AboutUsScreen(true),
           ),
         );
       },
@@ -236,19 +237,16 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
         child: Scaffold(
           appBar: AppBar(
             backgroundColor: Color(Constants.appColor),
-            title: Padding(
-              padding: const EdgeInsets.only(top: 8.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(left: 12.0),
-                    child: Text('Shahi Catalogue'),
-                  ),
-                  Image.asset('assets/shahi_app_logo_white.png',
-                      height: 25, width: 60),
-                ],
-              ),
+            title: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 12.0),
+                  child: Text('Products'),
+                ),
+                Image.asset('assets/shahi_app_logo_white.png',
+                    height: 25, width: 60),
+              ],
             ),
             bottom: TabBar(
               tabs: tabs,
@@ -286,62 +284,71 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
       );
     }
 
-    return Stack(
-      children: [
-        LayoutBuilder(
-          builder: (context, constraints) {
-            if (constraints.maxWidth < Constants.iphoneLimit) {
-              isLargeScreen = false;
-              return initHomeScreen(false);
-            } else {
-              isLargeScreen = true;
-              return Row(
-                children: [
-                  Expanded(
-                    flex: _size.width < Constants.ipadLimit ? 5 : 4,
-                    child: initHomeScreen(true),
-                  ),
-                  Expanded(
-                    flex: _size.width < Constants.ipadLimit ? 5 : 6,
-                    child: ProductDetailScreen(currentProductItem!),
-                  ),
-                ],
-              );
-            }
-          },
+    return Center(
+      child: Container(
+        constraints: BoxConstraints(
+          maxWidth: _size.width < Constants.iphoneLimit
+              ? Constants.iphoneLimit.toDouble()
+              : Constants.ipadLimit.toDouble(),
         ),
-        Padding(
-          padding: const EdgeInsets.only(right: 20, bottom: 20),
-          child: Align(
-            alignment: Alignment.bottomRight,
-            child: FloatingActionButton.extended(
-                icon: Image.asset(
-                  "assets/images/about_us.png",
-                  height: 30,
-                  width: 30,
-                ),
-                label: Text("About Us", style: TextStyle(fontSize: 16.0)),
-                onPressed: () {
-                  if (isLargeScreen) {
-                    _aboutPopup(context, _size);
-                    // setState(() {
-                    //   isAboutVisible = true;
-                    // });
-                  } else {
-                    Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => AboutUsScreen(),
-                    ));
-                  }
-                }),
-          ),
+        child: Stack(
+          children: [
+            LayoutBuilder(
+              builder: (context, constraints) {
+                if (constraints.maxWidth < Constants.iphoneLimit) {
+                  isLargeScreen = false;
+                  return initHomeScreen(false);
+                } else {
+                  isLargeScreen = true;
+                  return Row(
+                    children: [
+                      Expanded(
+                        flex: _size.width < Constants.ipadLimit ? 5 : 4,
+                        child: initHomeScreen(true),
+                      ),
+                      Expanded(
+                        flex: _size.width < Constants.ipadLimit ? 5 : 6,
+                        child: ProductDetailScreen(currentProductItem!),
+                      ),
+                    ],
+                  );
+                }
+              },
+            ),
+            // Padding(
+            //   padding: const EdgeInsets.only(right: 20, bottom: 20),
+            //   child: Align(
+            //     alignment: Alignment.bottomRight,
+            //     child: FloatingActionButton.extended(
+            //       backgroundColor: Color(Constants.appColor),
+            //       icon: Image.asset(
+            //         "assets/images/about_us.png",
+            //         height: 30,
+            //         width: 30,
+            //       ),
+            //       label: Text("About Us", style: TextStyle(fontSize: 16.0)),
+            //       onPressed: () {
+            //         if (isLargeScreen) {
+            //           _aboutPopup(context, _size);
+            //           // setState(() {
+            //           //   isAboutVisible = true;
+            //           // });
+            //         } else {
+            //           Navigator.of(context).pushNamed('/about');
+            //         }
+            //       },
+            //     ),
+            //   ),
+            // ),
+            if (isZoomProductVisible) ...[
+              ZoomProductItemWidget(currentProductItem!),
+            ],
+            // if (isAboutVisible) ...[
+            //   _aboutPopup(),
+            // ],
+          ],
         ),
-        if (isZoomProductVisible) ...[
-          ZoomProductItemWidget(currentProductItem!),
-        ],
-        // if (isAboutVisible) ...[
-        //   _aboutPopup(),
-        // ],
-      ],
+      ),
     );
 
     // return Scaffold(

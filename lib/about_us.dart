@@ -1,36 +1,49 @@
 import 'package:flutter/material.dart';
-import 'package:shahi_catalogue/constants.dart';
+import 'package:shahi_catalogue/constants/constants.dart';
 
 class AboutUsScreen extends StatelessWidget {
-  const AboutUsScreen({Key? key}) : super(key: key);
+  final bool isBackButtonVisible;
+
+  AboutUsScreen(this.isBackButtonVisible);
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Color(Constants.appColor),
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Text('About Us'),
-            Image.asset('assets/shahi_app_logo_white.png',
-                height: 25, width: 60),
-          ],
+    Size size = MediaQuery.of(context).size;
+    return Center(
+      child: Container(
+        constraints: BoxConstraints(
+          maxWidth: size.width < Constants.iphoneLimit
+              ? Constants.iphoneLimit.toDouble()
+              : Constants.ipadLimit.toDouble(),
         ),
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back_rounded),
-          onPressed: () {
-            Navigator.of(context).pop();
-          },
+        child: Scaffold(
+          appBar: AppBar(
+            backgroundColor: Color(Constants.appColor),
+            title: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text('About Us'),
+                Image.asset('assets/shahi_app_logo_white.png',
+                    height: 25, width: 60),
+              ],
+            ),
+            leading: isBackButtonVisible
+                ? IconButton(
+                    icon: Icon(Icons.arrow_back_rounded),
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                  )
+                : SizedBox.shrink(),
+          ),
+          body: initAboutUs(context, size),
         ),
       ),
-      body: initAboutUs(context),
     );
   }
 
-  Widget initAboutUs(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-    double sizeImage = size.width < Constants.iphoneLimit ? 75.0 : 150;
+  Widget initAboutUs(BuildContext context, Size size) {
+    // double sizeImage = size.width < Constants.iphoneLimit ? 75.0 : 150;
     double fontSizeHeading = size.width < Constants.iphoneLimit ? 17 : 19;
     double fontSizeText = size.width < Constants.iphoneLimit ? 14 : 15;
     double padding = size.width < Constants.iphoneLimit ? 15 : 25;
@@ -153,7 +166,9 @@ class AboutUsScreen extends StatelessWidget {
               Constants.GLOBAL_FOOT_PRINT_TEXT,
               style: TextStyle(fontSize: fontSizeText),
             ),
-            SizedBox(height: 20.0,),
+            SizedBox(
+              height: 20.0,
+            ),
           ],
         ),
       ),

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shahi_catalogue/models/product_category.dart';
 import 'package:shahi_catalogue/models/product_item.dart';
 
-import 'constants.dart';
+import '../constants/constants.dart';
 
 class ProductProvider with ChangeNotifier {
   final List<ProductCategory> _productCategories = [];

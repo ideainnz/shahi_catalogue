@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shahi_catalogue/constants.dart';
+import 'package:shahi_catalogue/constants/constants.dart';
 import 'package:shahi_catalogue/models/product_item.dart';
 
 class ProductDetailWidget extends StatelessWidget {

@@ -25,6 +25,9 @@ dependencies:
     sdk: flutter
 
   provider: ^5.0.0
+  url_launcher: ^6.0.13
+#  youtube_player_flutter: ^8.0.0
+  youtube_player_iframe: ^2.2.2
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -51,8 +54,16 @@ flutter:
   assets:
     - assets/
     - assets/images/
+    - assets/images/export_products/mouth_freshener/
+    - assets/images/export_products/nimco/
+    - assets/images/dashboard_icons/
+    - assets/images/csr/
+    - assets/images/csr/csr_icons/
+    - assets/images/csr/more/
+    - assets/images/csr/press_release/
     - assets/images/about_icons/
     - assets/images/tab_icons/
+    - assets/images/social_icons/
     - assets/images/mouth_freshener/
     - assets/images/nimco/
     - assets/images/snacks/

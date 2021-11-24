@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
-import 'package:shahi_catalogue/constants.dart';
+import 'package:shahi_catalogue/constants/constants.dart';
 import 'package:shahi_catalogue/models/product_item.dart';
-import 'package:shahi_catalogue/product_detail_screen.dart';
-import 'package:shahi_catalogue/product_provider.dart';
+import 'package:shahi_catalogue/product_detail.dart';
+import 'package:shahi_catalogue/providers/product_provider.dart';
 
 // class ProductImage extends StatefulWidget {
 //   final String category;
