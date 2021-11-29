@@ -275,50 +275,62 @@ class _DashboardScreenState extends State<DashboardScreen> {
     Size size = MediaQuery.of(context).size;
     // double fontSize = size.width < Constants.iphoneLimit ? 15 : 18;
     // double padding = size.width < Constants.iphoneLimit ? 15 : 25;
-    return Center(
-      child: Container(
-        constraints: BoxConstraints(
-          maxWidth: size.width < Constants.iphoneLimit
-              ? Constants.iphoneLimit.toDouble()
-              : Constants.ipadLimit.toDouble(),
+    return Container(
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          repeat: ImageRepeat.repeat,
+          image: AssetImage(
+            'assets/shahi_app_logo_watermark.png',
+          ),
         ),
-        child: Stack(
-          children: [
-            LayoutBuilder(
-              builder: (context, constraints) {
-                if (constraints.maxWidth < Constants.ipadLimit) {
-                  isLargeScreen = false;
-                  double maxHeight =
-                  constraints.maxHeight > 500 ? constraints.maxHeight : 500;
-                  var aspectRatio = (constraints.maxWidth / 2) /
-                      ((maxHeight / 3) - 45 - 15);
-                  return _initDashboardGrid(size, aspectRatio);
-                } else {
-                  isLargeScreen = true;
-                  // var aspectRatio = (constraints.maxWidth / 5) /
-                  //     ((constraints.maxHeight / 3) - 45 - 30);
-                  double maxHeight =
-                      constraints.maxHeight > 500 ? constraints.maxHeight : 500;
-                  var aspectRatio =
-                      (constraints.maxWidth / 5) / ((maxHeight / 3) - 45 - 30);
-                  return Row(
-                    children: [
-                      Expanded(
-                        // flex: size.width < Constants.ipadLimit ? 5 : 4,
-                        flex: 5,
-                        child: _initDashboardGrid(size, aspectRatio),
-                      ),
-                      Expanded(
-                        // flex: size.width < Constants.ipadLimit ? 5 : 6,
-                        flex: 6,
-                        child: AboutUsScreen(false),
-                      ),
-                    ],
-                  );
-                }
-              },
-            ),
-          ],
+      ),
+      child: Center(
+        child: Container(
+          constraints: BoxConstraints(
+            maxWidth: size.width < Constants.iphoneLimit
+                ? Constants.iphoneLimit.toDouble()
+                : Constants.ipadLimit.toDouble(),
+          ),
+          child: Stack(
+            children: [
+              LayoutBuilder(
+                builder: (context, constraints) {
+                  if (constraints.maxWidth < Constants.ipadLimit) {
+                    isLargeScreen = false;
+                    double maxHeight = constraints.maxHeight > 500
+                        ? constraints.maxHeight
+                        : 500;
+                    var aspectRatio =
+                        (constraints.maxWidth / 2) / ((maxHeight / 3) - 45 - 10);
+                    return _initDashboardGrid(size, aspectRatio);
+                  } else {
+                    isLargeScreen = true;
+                    // var aspectRatio = (constraints.maxWidth / 5) /
+                    //     ((constraints.maxHeight / 3) - 45 - 30);
+                    double maxHeight = constraints.maxHeight > 500
+                        ? constraints.maxHeight
+                        : 500;
+                    var aspectRatio = (constraints.maxWidth / 5) /
+                        ((maxHeight / 3) - 45 - 40);
+                    return Row(
+                      children: [
+                        Expanded(
+                          // flex: size.width < Constants.ipadLimit ? 5 : 4,
+                          flex: 5,
+                          child: _initDashboardGrid(size, aspectRatio),
+                        ),
+                        Expanded(
+                          // flex: size.width < Constants.ipadLimit ? 5 : 6,
+                          flex: 6,
+                          child: AboutUsScreen(false),
+                        ),
+                      ],
+                    );
+                  }
+                },
+              ),
+            ],
+          ),
         ),
       ),
     );

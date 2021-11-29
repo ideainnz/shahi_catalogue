@@ -1,9 +1,12 @@
+import 'dart:ui';
+
 import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:shahi_catalogue/about_us.dart';
 import 'package:shahi_catalogue/constants/constants.dart';
+import 'package:shahi_catalogue/widgets/youtube_player.dart';
 import 'package:youtube_player_iframe/youtube_player_iframe.dart';
 
 // class MediaScreen extends StatelessWidget {
@@ -98,20 +101,27 @@ class _MediaScreenState extends State<MediaScreen> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    _controller = _getYPC(_mediaList[0]);
+    selectedVideoId = _mediaList[0];
+    _getYPC(selectedVideoId);
+    player = YoutubePlayerIFrame(
+      controller: _controller,
+    );
   }
 
   _getYPC(String videoId) {
-    return YoutubePlayerController(
+    return _controller = YoutubePlayerController(
       initialVideoId: videoId,
       params: YoutubePlayerParams(
         playlist: _mediaList,
         // startAt: const Duration(minutes: 1, seconds: 36),
         showControls: true,
         showFullscreenButton: true,
-        desktopMode: false,
+        desktopMode: true,
         privacyEnhanced: true,
-        useHybridComposition: true,
+        // useHybridComposition: true,
+        loop: false,
+        mute: false,
+        autoPlay: false,
       ),
     )
       ..onEnterFullscreen = () {
@@ -126,223 +136,199 @@ class _MediaScreenState extends State<MediaScreen> {
       };
   }
 
+  var player;
+
   @override
   Widget build(BuildContext context) {
-    // const player = YoutubePlayerIFrame();
+    // YoutubePlayerIFrame player = YoutubePlayerIFrame(
+    //   controller: _controller,
+    // );
     Size _size = MediaQuery.of(context).size;
-    return YoutubePlayerControllerProvider(
-      controller: _controller,
-      child: Center(
-        child: Container(
-          constraints: BoxConstraints(
-            maxWidth: _size.width < Constants.iphoneLimit
-                ? Constants.iphoneLimit.toDouble()
-                : Constants.ipadLimit.toDouble(),
+    print("SELECTED VIDEO ID: " + player.controller!.initialVideoId);
+    // _controller = _getYPC(selectedVideoId);
+    // print("INITIAL_VIDE0" + _controller.initialVideoId);
+    return Container(
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          repeat: ImageRepeat.repeat,
+          image: AssetImage(
+            'assets/shahi_app_logo_watermark.png',
           ),
-          child: Scaffold(
-            appBar: AppBar(
-              backgroundColor: Color(Constants.appColor),
-              title: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text('Media'),
-                  Image.asset('assets/shahi_app_logo_white.png',
-                      height: 25, width: 60),
-                ],
-              ),
-              leading: IconButton(
-                icon: Icon(Icons.arrow_back_rounded),
-                onPressed: () {
-                  Navigator.of(context).pop();
-                },
-              ),
+        ),
+      ),
+      child: YoutubePlayerControllerProvider(
+        controller: _controller,
+        child: Center(
+          child: Container(
+            constraints: BoxConstraints(
+              maxWidth: _size.width < Constants.iphoneLimit
+                  ? Constants.iphoneLimit.toDouble()
+                  : Constants.iphoneLimit.toDouble(),
             ),
-            body: Padding(
-              padding: const EdgeInsets.only(right: 5.0, top: 5.0),
-              child: Container(
-                color: Color(Constants.bgColor),
-                child: RawScrollbar(
-                  thumbColor: Color(Constants.appColor),
-                  thickness: 10,
-                  isAlwaysShown: true,
-                  child: Padding(
-                    padding: const EdgeInsets.only(right: 15.0),
-                    child: SingleChildScrollView(
-                      physics: AlwaysScrollableScrollPhysics(),
-                      // child: Column(children: _mediaList.map((videoId) => Stack(
-                      //   children: [
-                      //     _getYPC(videoId),
-                      //   ],
-                      // )).toList()),
-
-                      // child: Column(
-                      //   children: _mediaList
-                      //       .map((videoId) => initMedia(player, videoId))
-                      //       .toList(),
-                      // ),
-
-                      child: Stack(
-                        children: [
-                          if (_mediaList.length > 0) ...{
-                            Padding(
-                              padding: const EdgeInsets.all(50),
-                              child: const Center(
-                                child: CircularProgressIndicator(
-                                  color: Color(Constants.appColor),
+            child: Scaffold(
+              appBar: AppBar(
+                backgroundColor: Color(Constants.appColor),
+                title: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text('Media'),
+                    Image.asset('assets/shahi_app_logo_white.png',
+                        height: 25, width: 60),
+                  ],
+                ),
+                leading: IconButton(
+                  icon: Icon(Icons.arrow_back_rounded),
+                  onPressed: () {
+                    setState(() {
+                      if (isFullscreenItemVisible)
+                        isFullscreenItemVisible = false;
+                      else
+                        Navigator.of(context).pop();
+                    });
+                  },
+                ),
+              ),
+              body: WillPopScope(
+                onWillPop: () async {
+                  if (isFullscreenItemVisible) {
+                    setState(
+                      () {
+                        isFullscreenItemVisible = false;
+                      },
+                    );
+                    return false;
+                  } else
+                    return true;
+                },
+                child: Stack(
+                  fit: StackFit.expand,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(top: 5.0),
+                      child: Container(
+                        color: Color(Constants.bgColor),
+                        child: Container(
+                          constraints: BoxConstraints(
+                              maxWidth: Constants.iphoneLimit.toDouble(),
+                              maxHeight: double.infinity),
+                          child: RawScrollbar(
+                            thumbColor: Color(Constants.appColor),
+                            thickness: 10,
+                            isAlwaysShown: true,
+                            child: Padding(
+                              padding: const EdgeInsets.only(
+                                right: 10.0,
+                              ),
+                              child: SingleChildScrollView(
+                                physics: AlwaysScrollableScrollPhysics(),
+                                child: Column(
+                                  crossAxisAlignment:
+                                      CrossAxisAlignment.stretch,
+                                  children: _mediaList
+                                      .map((videoId) => initMedia(videoId))
+                                      .toList(),
                                 ),
                               ),
                             ),
-                          },
-                          Column(
-                            children: _mediaList
-                                .map((videoId) => _initMedia(videoId))
-                                .toList(),
                           ),
-                        ],
+                        ),
                       ),
-
-                      // child: LayoutBuilder(
-                      //   builder: (context, constraints) {
-                      //     if (kIsWeb && constraints.maxWidth > 800) {
-                      //       return Row(
-                      //         crossAxisAlignment: CrossAxisAlignment.start,
-                      //         children: [
-                      //           const Expanded(child: player),
-                      //           const SizedBox(
-                      //             width: 500,
-                      //             child: SingleChildScrollView(
-                      //               child: AboutUsScreen(),
-                      //             ),
-                      //           ),
-                      //         ],
-                      //       );
-                      //     }
-                      //     return Stack(
-                      //       children: [
-                      //         if (_mediaList.length > 0) ...{
-                      //           Padding(
-                      //             padding: const EdgeInsets.all(50),
-                      //             child: const Center(
-                      //               child: CircularProgressIndicator(
-                      //                 color: Color(Constants.appColor),
-                      //               ),
-                      //             ),
-                      //           ),
-                      //         },
-                      //         Column(
-                      //           children: _mediaList
-                      //               .map((videoId) => _initMedia(videoId))
-                      //               .toList(),
-                      //         ),
-                      //       ],
-                      //     );
-                      //   },
-                      // ),
                     ),
-                  ),
+                    if (isFullscreenItemVisible) ...{
+                      YoutubePlayerWidget(selectedVideoId),
+                    },
+                  ],
                 ),
               ),
             ),
-
-            // Padding(
-            //   padding: const EdgeInsets.only(top: 5.0, right: 5.0),
-            //   child: RawScrollbar(
-            //     thumbColor: Color(Constants.appColor),
-            //     thickness: 10,
-            //     isAlwaysShown: true,
-            //     child: Center(
-            //       child: Container(
-            //         constraints: BoxConstraints(
-            //             maxWidth: _size.width < Constants.iphoneLimit
-            //                 ? Constants.iphoneLimit.toDouble()
-            //                 : Constants.ipadLimit.toDouble()),
-            //         child: Stack(
-            //           children: [
-            //             if (_mediaList.length > 0) ...{
-            //               Padding(
-            //                 padding: const EdgeInsets.all(50),
-            //                 child: const Center(
-            //                   child: CircularProgressIndicator(
-            //                     color: Color(Constants.appColor),
-            //                   ),
-            //                 ),
-            //               ),
-            //             },
-            //             Padding(
-            //               padding: const EdgeInsets.only(right: 10.0),
-            //               child: ListView.builder(
-            //                 itemCount: _mediaList.length,
-            //                 itemBuilder: (context, index) {
-            //                   return _initMedia(_mediaList[index]);
-            //                 },
-            //               ),
-            //             ),
-            //           ],
-            //         ),
-            //       ),
-            //     ),
-            //   ),
-            // ),
           ),
         ),
       ),
     );
   }
 
-  Widget _initMedia(String videoId) {
-    _controller = _getYPC(videoId);
-    return YoutubePlayerIFrame(
-      gestureRecognizers: <Factory<OneSequenceGestureRecognizer>>{},
-      // gestureRecognizers: {
-      //   Factory<VerticalDragGestureRecognizer>(
-      //       () => VerticalDragGestureRecognizer()),
-      // },
-      controller: _controller,
-    );
-  }
-
-  // Widget initMedia(String videoId) {
-  //   print("VIDEO_ID:" + videoId);
-  //   return Stack(
-  //     children: [
-  //       YoutubePlayerIFrame(
-  //         controller: _getYPC(videoId),
-  //       ),
-  //       Positioned.fill(
-  //         child: YoutubeValueBuilder(
-  //           // controller: _controller,
-  //           builder: (context, value) {
-  //             return AnimatedCrossFade(
-  //               firstChild: const SizedBox.shrink(),
-  //               secondChild: Material(
-  //                 child: DecoratedBox(
-  //                   decoration: BoxDecoration(
-  //                     image: DecorationImage(
-  //                       image: NetworkImage(
-  //                         YoutubePlayerController.getThumbnail(
-  //                           videoId: videoId,
-  //                           quality: ThumbnailQuality.medium,
-  //                         ),
-  //                       ),
-  //                       fit: BoxFit.fitWidth,
-  //                     ),
-  //                   ),
-  //                   child: const Center(
-  //                     child: CircularProgressIndicator(),
-  //                   ),
-  //                 ),
-  //               ),
-  //               crossFadeState: value.isReady
-  //                   ? CrossFadeState.showFirst
-  //                   : CrossFadeState.showSecond,
-  //               duration: const Duration(milliseconds: 300),
-  //             );
-  //           },
-  //         ),
-  //       )
-  //     ],
+  // Widget _initMedia(String videoId) {
+  //   _controller = _getYPC(videoId);
+  //   // isVisible = true;
+  //   return YoutubePlayerIFrame(
+  //     gestureRecognizers: <Factory<OneSequenceGestureRecognizer>>{},
+  //     // gestureRecognizers: {
+  //     //   Factory<VerticalDragGestureRecognizer>(
+  //     //       () => VerticalDragGestureRecognizer()),
+  //     // },
+  //     controller: _controller,
   //   );
   // }
+
+  bool isFullscreenItemVisible = false;
+  String selectedVideoId = '';
+
+  Widget initMedia(String videoId) {
+    // print("VIDEO_ID:" + videoId);
+    // _controller = _getYPC(videoId);
+    return MouseRegion(
+      cursor: SystemMouseCursors.click,
+      child: GestureDetector(
+        child: Stack(
+          alignment: Alignment.center,
+          children: [
+            Container(
+              width: MediaQuery.of(context).size.width,
+              child: Image.network(
+                YoutubePlayerController.getThumbnail(
+                  videoId: videoId,
+                  quality: ThumbnailQuality.medium,
+                  webp: true,
+                ),
+                fit: BoxFit.fitWidth,
+              ),
+            ),
+            Icon(
+              Icons.play_circle_fill_rounded,
+              color: Colors.white,
+              size: 60,
+            ),
+            // Material(
+            //   child: DecoratedBox(
+            //     decoration: BoxDecoration(
+            //       image: DecorationImage(
+            //         image: NetworkImage(
+            //           YoutubePlayerController.getThumbnail(
+            //             videoId: videoId,
+            //             quality: ThumbnailQuality.medium,
+            //           ),
+            //         ),
+            //         fit: BoxFit.fitWidth,
+            //       ),
+            //     ),
+            //     child: const Center(
+            //       child: CircularProgressIndicator(),
+            //     ),
+            //   ),
+            // ),
+            // _initMedia(videoId),
+          ],
+        ),
+        // Icon(
+        //   Icons.play_circle_fill_rounded,
+        //   color: Colors.white,
+        // ),
+        onTap: () {
+          // print("On Tap");
+          setState(() {
+            // isFullscreenItemVisible = !isFullscreenItemVisible;
+            selectedVideoId = videoId;
+            isFullscreenItemVisible = true;
+            // _getYPC(selectedVideoId);
+            // player = YoutubePlayerIFrame(
+            //   controller: _controller,
+            // );
+            // prevVideoId = selectedVideoId;
+          });
+        },
+      ),
+    );
+  }
 
   // List<Widget> _initMedia(var player) {
   //   var mediaItem = <Widget>[];

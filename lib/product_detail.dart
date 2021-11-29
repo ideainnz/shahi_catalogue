@@ -69,6 +69,19 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return _generateProductDetailWidget(context, widget.productItem);
+    return Container(
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          repeat: ImageRepeat.repeat,
+          image: AssetImage(
+            'assets/shahi_app_logo_watermark.png',
+          ),
+        ),
+      ),
+      child: _generateProductDetailWidget(
+        context,
+        widget.productItem,
+      ),
+    );
   }
 }

@@ -284,69 +284,79 @@ class _ProductsScreenState extends State<ProductsScreen>
       );
     }
 
-    return Center(
-      child: Container(
-        constraints: BoxConstraints(
-          maxWidth: _size.width < Constants.iphoneLimit
-              ? Constants.iphoneLimit.toDouble()
-              : Constants.ipadLimit.toDouble(),
+    return Container(
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          repeat: ImageRepeat.repeat,
+          image: AssetImage(
+            'assets/shahi_app_logo_watermark.png',
+          ),
         ),
-        child: Stack(
-          children: [
-            LayoutBuilder(
-              builder: (context, constraints) {
-                if (constraints.maxWidth < Constants.iphoneLimit) {
-                  isLargeScreen = false;
-                  return initHomeScreen(false);
-                } else {
-                  isLargeScreen = true;
-                  return Row(
-                    children: [
-                      Expanded(
-                        flex: _size.width < Constants.ipadLimit ? 5 : 4,
-                        child: initHomeScreen(true),
-                      ),
-                      Expanded(
-                        flex: _size.width < Constants.ipadLimit ? 5 : 6,
-                        child: ProductDetailScreen(currentProductItem!),
-                      ),
-                    ],
-                  );
-                }
-              },
-            ),
-            // Padding(
-            //   padding: const EdgeInsets.only(right: 20, bottom: 20),
-            //   child: Align(
-            //     alignment: Alignment.bottomRight,
-            //     child: FloatingActionButton.extended(
-            //       backgroundColor: Color(Constants.appColor),
-            //       icon: Image.asset(
-            //         "assets/images/about_us.png",
-            //         height: 30,
-            //         width: 30,
-            //       ),
-            //       label: Text("About Us", style: TextStyle(fontSize: 16.0)),
-            //       onPressed: () {
-            //         if (isLargeScreen) {
-            //           _aboutPopup(context, _size);
-            //           // setState(() {
-            //           //   isAboutVisible = true;
-            //           // });
-            //         } else {
-            //           Navigator.of(context).pushNamed('/about');
-            //         }
-            //       },
-            //     ),
-            //   ),
-            // ),
-            if (isZoomProductVisible) ...[
-              ZoomProductItemWidget(currentProductItem!),
+      ),
+      child: Center(
+        child: Container(
+          constraints: BoxConstraints(
+            maxWidth: _size.width < Constants.iphoneLimit
+                ? Constants.iphoneLimit.toDouble()
+                : Constants.ipadLimit.toDouble(),
+          ),
+          child: Stack(
+            children: [
+              LayoutBuilder(
+                builder: (context, constraints) {
+                  if (constraints.maxWidth < Constants.iphoneLimit) {
+                    isLargeScreen = false;
+                    return initHomeScreen(false);
+                  } else {
+                    isLargeScreen = true;
+                    return Row(
+                      children: [
+                        Expanded(
+                          flex: _size.width < Constants.ipadLimit ? 5 : 4,
+                          child: initHomeScreen(true),
+                        ),
+                        Expanded(
+                          flex: _size.width < Constants.ipadLimit ? 5 : 6,
+                          child: ProductDetailScreen(currentProductItem!),
+                        ),
+                      ],
+                    );
+                  }
+                },
+              ),
+              // Padding(
+              //   padding: const EdgeInsets.only(right: 20, bottom: 20),
+              //   child: Align(
+              //     alignment: Alignment.bottomRight,
+              //     child: FloatingActionButton.extended(
+              //       backgroundColor: Color(Constants.appColor),
+              //       icon: Image.asset(
+              //         "assets/images/about_us.png",
+              //         height: 30,
+              //         width: 30,
+              //       ),
+              //       label: Text("About Us", style: TextStyle(fontSize: 16.0)),
+              //       onPressed: () {
+              //         if (isLargeScreen) {
+              //           _aboutPopup(context, _size);
+              //           // setState(() {
+              //           //   isAboutVisible = true;
+              //           // });
+              //         } else {
+              //           Navigator.of(context).pushNamed('/about');
+              //         }
+              //       },
+              //     ),
+              //   ),
+              // ),
+              if (isZoomProductVisible) ...[
+                ZoomProductItemWidget(currentProductItem!),
+              ],
+              // if (isAboutVisible) ...[
+              //   _aboutPopup(),
+              // ],
             ],
-            // if (isAboutVisible) ...[
-            //   _aboutPopup(),
-            // ],
-          ],
+          ),
         ),
       ),
     );
