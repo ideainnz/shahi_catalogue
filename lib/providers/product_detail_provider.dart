@@ -12,13 +12,13 @@ class ProductDetailProvider {
         2,
         12,
         'Refreshing Metha Pan Masala. A blend of Fennel, Dry dates, Betel Nut, Cardamom, Menthol, N.N.Sweetener Natural and Artificial Flavours. The ingredients releases flavors that are refreshing to the mouth',
-        'Coconut, Funnel seed, Coriander seed, sesame seed, Sugar, Menthol, Betel Nut, Wheat Flour, Food Colours (E-171), (E-102), (E-110), (E-133), (E-127), Flavours (Natural & Artificial)',
+        'Coconut, Funnel Seed, Coriander seed, Sesame seed, Sugar, Menthol, Betel Nut, Wheat Flour, Food Colours (E-171) ,(E-102) ,(E-110) ,(E-133) ,(E-127), Flavours (Natural & Artificial)',
         'assets/images/nutrition_facts/aas_pas_mpm_nf.jpg'),
     ProductDetail(
         3,
         13,
         'A childhood classic, Sugar coated fennel seeds with a burst of color & sweetness.',
-        'Fennel, Sugar, Flavours, Wheat Flour, Colors: Titanium Dioxide(E-171), FD&C Yellow#5(E-102), FD&C Red 40(E-129), FD&C Blue 1(E-133)',
+        'Fennel, Sugar, Flavours, Wheat Flour, Colors: Titanium Dioxide (E-171) ,FD&C Yellow # 5 (E-102) ,FD&C Red 40 (E-129) ,FD&C Blue 1 (E-133)',
         'assets/images/nutrition_facts/aas_pas_ss_nf.jpg'),
     ProductDetail(
         4,
@@ -69,19 +69,19 @@ class ProductDetailProvider {
         1,
         21,
         'A classic combination of Rice Flakes, Raisins, Bondi, Curry Leaves',
-        'Rice flakes, gram flour, peanuts, raisins, fennel seed, turmeric, vegetable oil, salt, sugar, seasoning, citric acid, flavour enhancer (E621) and permitted food color (E-102, E-133)',
+        'Rice Flakes, Gram Flour, Peanuts, Raisins, Fennel Seed, Turmeric, Vegetable Oil, Salt, Sugar, Seasoning, Citric Acid, Flavour Enhancer (E-621), Permitted Food Color (E-102 and E-133)',
         'assets/images/nutrition_facts/ballay_ballay_chewra_nf.jpg'),
     ProductDetail(
         2,
         22,
         'Crispy crunchy, and perfectly spicy spicy chilli chips are sure to add flavor and excitement to your life.',
-        'Potatoes, Vegetable Oil, Citric Acid (E330), Natural Flavor, Salt, Spices',
+        'Potatoes, Vegetable Oil, Citric Acid (E-330), Natural Flavor, Salt, Spices',
         'assets/images/nutrition_facts/ballay_ballay_cc_nf.jpg'),
     ProductDetail(
         3,
         23,
         'Fried Chana Dal coated with a unique blend of spices and flavours.',
-        'Lentils, Salt, Citric Acid E330, Natural Flavours, Spices, Vegetable Oil, Flavour Enhancer E621',
+        'Lentils, Salt, Citric Acid (E-330), Natural Flavours, Spices, Vegetable Oil, Flavour Enhancer (E-621)',
         'assets/images/nutrition_facts/ballay_ballay_dc_nf.jpg'),
     ProductDetail(
         4,
@@ -93,19 +93,19 @@ class ProductDetailProvider {
         5,
         25,
         'A spicy and savory blend of Sev and Masoor Dal.',
-        'Gram Flour, Rice Flour, Lentils, Edible Vegetable Oil, Salt, Fumaric Acid, Citric Acid (E330), Mixed Spices, Flavour Enhancer (E621). May contains nuts',
+        'Gram Flour, Rice Flour, Lentils, Edible Vegetable Oil, Salt, Fumaric Acid, Citric Acid (E-330), Mixed Spices, Flavour Enhancer (E-621), May contains nuts',
         'assets/images/nutrition_facts/ballay_ballay_dal_moth_nf.jpg'),
     ProductDetail(
         6,
         26,
         'A savory combination of Sev, Matar, Papdi and Peanuts.',
-        'Gram flour, Pea flour, Rice flour, Wheat flour, Lentils, Rice flakes, Peanut, Vegetable oil, Salt, Citric acid, (E-330), Flavor enhancer (E-621), Spices',
+        'Gram flour, Pea flour, Rice flour, Wheat flour, Lentils, Rice flakes, Peanut, Vegetable Oil, Salt, Citric acid (E-330), Flavour enhancer (E-621), Spices',
         'assets/images/nutrition_facts/ballay_ballay_ks_nf.jpg'),
     ProductDetail(
         7,
         27,
         'A unique blend of Sev, Peanut, Masoor Dal, Chana and Potato sticks coated with a sweet and savory blend of flavours.',
-        'Potatoes, Gram Flour, Rice Flour, Chick Peas, Lentils, Peanuts, Edible Vegetable Oil, Salt, Citric Acid (E330), Mixed Spices, Flavour Enhancer (E621)',
+        'Potatoes, Gram Flour, Rice Flour, Chick Peas, Lentils, Peanuts, Edible Vegetable Oil, Salt, Citric Acid (E-330), Mixed Spices, Flavour Enhancer (E-621)',
         'assets/images/nutrition_facts/ballay_ballay_mm_nf.jpg'),
     ProductDetail(
         8,
@@ -117,7 +117,7 @@ class ProductDetailProvider {
         9,
         29,
         'A savory combination of Sev, Matar, Papdi and Peanuts.',
-        'Gram Flour, Rice Flour, Pea Flour, Lentils, Peanuts, Peas, Vegetable Oil, Salt, Seasoning, Citric Acid, MSG(E-621) and Permitted Food Colour (E-124, E-102, E-133)',
+        'Gram Flour, Rice Flour, Pea Flour, Lentils, Peanuts, Peas, Vegetable Oil, Salt, Seasoning, Citric Acid, MSG (E-621) and Permitted Food Colour (E-124, E-102, E-133)',
         'assets/images/nutrition_facts/ballay_ballay_savory_mix_nf.jpg'),
   ];
 
@@ -126,25 +126,25 @@ class ProductDetailProvider {
         1,
         31,
         'A fried potato pallet snack made from high quality potato based pellets. Fry-O is sure to satisfy your craving for something savory. Fry-O is available in Sweet n’ Sour and Veggi Dip.',
-        'Potato Powder, Potato Starch, Vegetable Oil, Salt, Sugar, Seasoning, Citric Acid(E330), Flavour Enhancer (E621)',
+        'Potato Powder, Potato Starch, Vegetable Oil, Salt, Sugar, Seasoning, Citric Acid (E-330), Flavour Enhancer (E-621)',
         'assets/images/nutrition_facts/fry_o_sns_nf.jpg'),
     ProductDetail(
         2,
         32,
         'A fried potato pallet snack made from high quality potato based pellets. Fry-O is sure to satisfy your craving for something savory. Fry-O is available in Sweet n’ Sour and Veggi Dip.',
-        'Potato Powder, Potato Starch, Vegetable Oil, Salt, Sugar, Seasoning, Citric Acid(E330), Flavour Enhancer (E621)',
+        'Potato Powder, Potato Starch, Vegetable Oil, Salt, Sugar, Seasoning, Citric Acid (E-330), Flavour Enhancer (E-621)',
         'assets/images/nutrition_facts/fry_o_vd_nf.jpg'),
     ProductDetail(
         3,
         33,
         'Crispy Corn Sticks covered with a copious amount of flavours. Available in Spicy Masala and Cheese. Kin Korn is sure to satisfy your hunger.',
-        'Corn Grits, Vegetable Oil, Natural Flavours, Salt, Food Colour (Sunset Yellow) E110',
+        'Corn Grits, Vegetable Oil, Natural Flavours, Salt, Food Colour Sunset Yellow (E-110)',
         'assets/images/nutrition_facts/kinkorn_cheese_nf.jpg'),
     ProductDetail(
         4,
         34,
         'Crispy Corn Sticks covered with a copious amount of flavours. Available in Spicy Masala and Cheese. Kin Korn is sure to satisfy your hunger.',
-        'Corn Grits, Vegetable Oil, Natural Flavours, Spices, Salt, Food Colour E129',
+        'Corn Grits, Vegetable Oil, Natural Flavours, Spices, Salt, Food Colour (E-129)',
         'assets/images/nutrition_facts/kinkorn_spicy_nf.jpg'),
     ProductDetail(
         5,
@@ -174,19 +174,19 @@ class ProductDetailProvider {
         9,
         39,
         'A 100% wheat snack with taste of real chicken. A delicious snack for an extra burst of energy and flavour.',
-        'Wheat Flour, Vegetable Oil, Salt, Spices, Citric Acid (E330), Flavour Enhancer (E621)',
+        'Wheat Flour, Vegetable Oil, Salt, Spices, Citric Acid (E-330), Flavour Enhancer (E-621)',
         'assets/images/nutrition_facts/wheat_o_chips_nf.jpg'),
     ProductDetail(
         10,
         40,
         'A 100% wheat snack with taste of real chicken. A delicious snack for an extra burst of energy and flavour.',
-        'Wheat Flour, Vegetable Oil, Salt, Spices, Citric Acid (E330), Flavour Enhancer (E621)',
+        'Wheat Flour, Vegetable Oil, Salt, Spices, Citric Acid (E-330), Flavour Enhancer (E-621)',
         'assets/images/nutrition_facts/wheat_o_karariyan_nf.jpg'),
     ProductDetail(
         11,
         41,
         'A 100% wheat snack with taste of real chicken. A delicious snack for an extra burst of energy and flavour.',
-        'Wheat Flour, Vegetable Oil, Salt, Seasoning, Citric Acid (E330), Flavour Enhancer (E621)',
+        'Wheat Flour, Vegetable Oil, Salt, Seasoning, Citric Acid (E-330), Flavour Enhancer (E-621)',
         'assets/images/nutrition_facts/wheat_o_original_nf.jpg'),
   ];
 

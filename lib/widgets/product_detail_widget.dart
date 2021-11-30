@@ -33,6 +33,7 @@ class ProductDetailWidget extends StatelessWidget {
           // ),
           Expanded(
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const SizedBox(height: Constants.kPadding / 2),
                 Expanded(

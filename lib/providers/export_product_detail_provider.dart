@@ -6,7 +6,7 @@ class ExportProductDetailProvider {
         1,
         11,
         'Refreshing Minty chocolate Pan Masala. A blend of chocolate covered Fennel, Coconut and Sesame Seeds. It’s also available in different countries.',
-        'Fennel, Coconut, Dry Dates, Sesame, CocoaPowder, Sugar, Artificial Flavours, Food Colors FD&C Yellow # 6 (E100), Blue # 1 (E133) & Yellow # 5 (E102)',
+        'Fennel, Coconut, Dry Dates, Sesame, CocoaPowder, Sugar, Artificial Flavours, Food Colors (FD&C Yellow # 6 (E-100) ,Blue # 1 (E-133) & Yellow # 5 (E-102))',
         'assets/images/export_products/nutrition_facts/aas_pas_nf.jpg'),
     ProductDetail(
         2,
@@ -24,7 +24,7 @@ class ExportProductDetailProvider {
         4,
         14,
         'Shahi Deluxe is a blend of Fennel Seeds, Dry Dates Cardamom Seeds, and Betel Nuts. Shahi Deluxe provides its users a safe and effective substitute to Pan and Cigarettes.',
-        'Fennel, Sugar, Coconut, Cardamom, Coriander, Misri (Pure Crystallized Sugar), acesulfame, aspartame, FD&C Colors Red (E 129), Yellow 5 (E 102) Blue 1 (E 133) Sunset Yellow (E 110) Titanium Powder (E 171)',
+        'Fennel, Sugar, Coconut, Cardamom, Coriander, Misri (Pure Crystallized Sugar), Acesulfame, Aspartame, FD&C Colors Red (E-129) ,Yellow # 5 (E-102) ,Blue # 1 (E-133) ,Sunset Yellow (E-110), Titanium Powder (E-171)',
         ''),
     ProductDetail(
         5,
@@ -54,7 +54,7 @@ class ExportProductDetailProvider {
         9,
         19,
         'Shahi Sweet Sonf is an herbal mouth freshener. A strong blend of Fennel, Sugar, Flavours, Wheat Flour, colors: Titanium dioxide.',
-        'Fennel, Sugar, Flavours, Wheat Flour, Colors: Titanium dioxide (E 171), FD&C Yellow # 5 (E-102) FD&C Red 40 (E 129) FD&C Blue 1 (E 133)',
+        'Fennel, Sugar, Flavours, Wheat Flour, Colors: Titanium dioxide (E-171) ,FD&C Yellow # 5 (E-102) ,FD&C Red # 40 (E-129) ,FD&C Blue # 1 (E-133)',
         ''),
   ];
 
@@ -69,13 +69,13 @@ class ExportProductDetailProvider {
         2,
         22,
         'A Classic Combination of Rice Flakes, Raisins, Boondi, Peanuts, Curry Leaves & Funnel Seeds.',
-        'Rice Flakes, Gram Flour, Peanuts, Raisins, Fennel Seed, Turmeric, Vegetable Oil, Salt, Sugar, Seasoning, Citric Acid, Permitted Food Color (E-102, E-133)',
+        'Rice Flakes, Gram Flour, Peanuts, Raisins, Fennel Seed, Turmeric, Vegetable Oil, Salt, Sugar, Seasoning, Citric Acid, Permitted Food Color (E-102 and E-133)',
         'assets/images/export_products/nutrition_facts/shahi_chewra_nf.jpg'),
     ProductDetail(
         3,
         23,
         'Crispy crunchy, and perfectly spicy spicy chilli chips are sure to add flavor and excitement to your life.',
-        'Potatoes, Vegetable Oil, Citric Acid (E330), Natural Flavor, Salt, Spices',
+        'Potatoes, Vegetable Oil, Citric Acid (E-330), Natural Flavor, Salt, Spices',
         'assets/images/export_products/nutrition_facts/shahi_cc_nf.jpg'),
     ProductDetail(
         4,
@@ -87,13 +87,13 @@ class ExportProductDetailProvider {
         5,
         25,
         'A savory combination of sev (Thin dough noodles) & Black Lentils.',
-        'Gram Flour, Rice Flour, Peas Flour, Lentils & Pulses, Refined Palmolein, Salt, Fumeric Acid Monosodium Glutamate and seasoning. May Contain Nuts',
+        'Gram Flour, Rice Flour, Peas Flour, Lentils & Pulses, Refined Palmolein, Salt, Fumaric Acid Monosodium Glutamate and seasoning, May Contain Nuts',
         'assets/images/export_products/nutrition_facts/shahi_dal_moth_nf.jpg'),
     ProductDetail(
         6,
         26,
         'Fried gram flour noodles.',
-        'Gram Flour, Vegetable Oil, Cumin, Asafoetida, Carom Seeds & Salt.',
+        'Gram Flour, Vegetable Oil, Cumin, Asafoetida, Carom Seeds, Salt',
         'assets/images/export_products/nutrition_facts/shahi_gathia_nf.jpg'),
     ProductDetail(
         7,
@@ -111,7 +111,7 @@ class ExportProductDetailProvider {
         9,
         29,
         'A spicy mixture of sev (thin dough noodles), Channa (chickpeas), Chana Dal, Gathia (thick dough noodles) & peanuts of the higher quality.',
-        'Gram Flour, Rice Flour, Pea Flour, Lentils, Vegetable Oil, Salt, Spices, Food Colors E 124, E 102, E 133, Seasoning, Citric Acid E330',
+        'Gram Flour, Rice Flour, Pea Flour, Lentils, Vegetable Oil, Salt, Spices, Food Colors (E-124) ,(E-102) ,(E-133), Seasoning, Citric Acid (E-330)',
         'assets/images/export_products/nutrition_facts/shahi_savory_mix_nf.jpg'),
     ProductDetail(
         10,
