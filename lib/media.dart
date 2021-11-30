@@ -278,7 +278,7 @@ class _MediaScreenState extends State<MediaScreen> {
                 YoutubePlayerController.getThumbnail(
                   videoId: videoId,
                   quality: ThumbnailQuality.medium,
-                  webp: true,
+                  // webp: true,
                 ),
                 fit: BoxFit.fitWidth,
               ),

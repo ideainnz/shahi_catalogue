@@ -287,7 +287,7 @@ class _CSRScreenState extends State<CSRScreen> {
               height: 10,
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 15),
+              padding: const EdgeInsets.only(left: 15, right: 15, bottom: 15),
               child: Text(
                 desc,
                 style: TextStyle(

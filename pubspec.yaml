@@ -54,8 +54,10 @@ flutter:
   assets:
     - assets/
     - assets/images/
+    - assets/images/nutrition_facts/
     - assets/images/export_products/mouth_freshener/
     - assets/images/export_products/nimco/
+    - assets/images/export_products/nutrition_facts/
     - assets/images/dashboard_icons/
     - assets/images/csr/
     - assets/images/csr/csr_icons/

@@ -11,7 +11,10 @@ class ProductDetailWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     double sizeImage = size.width < 900 ? 75.0 : 150;
-    double fontSize = size.width < 900 ? 14 : 16;
+    // double fontSizeHeading = size.width < 900 ? 16 : 18;
+    // double fontSizeContent = size.width < 900 ? 14 : 16;
+    double fontSizeHeading = 16;
+    double fontSizeContent = 14;
     return Container(
       color: Colors.white,
       child: Row(
@@ -36,21 +39,89 @@ class ProductDetailWidget extends StatelessWidget {
                   child: SingleChildScrollView(
                     scrollDirection: Axis.vertical,
                     child: Padding(
-                      padding: const EdgeInsets.fromLTRB(
-                        15.0,
-                        15.0,
-                        15.0,
-                        20.0,
-                      ),
-                      child: Text(
-                        productItem!.productDetail,
-                        style: TextStyle(
-                          fontSize: fontSize,
-                          color: Colors.black,
-                          fontWeight: FontWeight.w400,
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 20, vertical: 20),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Details',
+                              style: TextStyle(
+                                fontSize: fontSizeHeading,
+                                color: Colors.black,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                            SizedBox(
+                              height: 5,
+                            ),
+                            Text(
+                              productItem!.productDetail.productDescription,
+                              style: TextStyle(
+                                fontSize: fontSizeContent,
+                                color: Colors.black,
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
+                            SizedBox(
+                              height: 20,
+                            ),
+                            Text(
+                              'Ingredients',
+                              style: TextStyle(
+                                fontSize: fontSizeHeading,
+                                color: Colors.black,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                            SizedBox(
+                              height: 5,
+                            ),
+                            ...productItem!.productDetail.ingredients
+                                .split(', ')
+                                .toList()
+                                .map((item) {
+                              return Text(
+                                '\u2022 ' + item,
+                                style: TextStyle(
+                                  fontSize: fontSizeContent,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.w400,
+                                ),
+                              );
+                            }),
+                            if (productItem!
+                                    .productDetail.nutritionFactsImagePath !=
+                                '') ...{
+                              SizedBox(
+                                height: 20,
+                              ),
+                              Text(
+                                'Nutrition Facts',
+                                style: TextStyle(
+                                  fontSize: fontSizeHeading,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                              SizedBox(
+                                height: 5,
+                              ),
+                              Image.asset(productItem!
+                                  .productDetail.nutritionFactsImagePath),
+                            },
+                          ],
+                        )
+
+                        // child: Text(
+                        //   productItem!.productDetail,
+                        //   style: TextStyle(
+                        //     fontSize: fontSize,
+                        //     color: Colors.black,
+                        //     fontWeight: FontWeight.w400,
+                        //   ),
+                        // ),
                         ),
-                      ),
-                    ),
                   ),
                 ),
               ],
