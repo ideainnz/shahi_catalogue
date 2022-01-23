@@ -70,6 +70,12 @@ flutter:
     - assets/images/nimco/
     - assets/images/snacks/
     - assets/images/frozen_foods/
+    - assets/images/products/ballay_ballay/front/
+    - assets/images/products/ballay_ballay/back/
+    - assets/images/products/ballay_ballay/nutrition/
+    - assets/images/products/shahi_nimco/front/
+    - assets/images/products/shahi_nimco/back/
+    - assets/images/products/shahi_nimco/nutrition/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

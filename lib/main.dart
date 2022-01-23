@@ -10,6 +10,7 @@ import 'package:shahi_catalogue/media.dart';
 import 'package:shahi_catalogue/products.dart';
 import 'package:shahi_catalogue/providers/export_product_provider.dart';
 import 'package:shahi_catalogue/providers/product_provider.dart';
+import 'package:shahi_catalogue/providers/product_stats_provider.dart';
 
 void main() {
   runApp(MyApp());
@@ -26,6 +27,9 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider<ExportProductProvider>(
           create: (_) => ExportProductProvider(),
+        ),
+        ChangeNotifierProvider<ProductStatsProvider>(
+          create: (_) => ProductStatsProvider(),
         ),
       ],
       child: MaterialApp(

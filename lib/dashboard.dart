@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:shahi_catalogue/about_us.dart';
 import 'package:shahi_catalogue/constants/constants.dart';
 import 'package:shahi_catalogue/csr.dart';
@@ -20,7 +19,6 @@ class _DashboardScreenState extends State<DashboardScreen> {
 
   static const List<String> _optionNamesList = [
     "Products",
-    "Export Products",
     "Media",
     "CSR",
     "About Us",
@@ -33,7 +31,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
   }
 
   _initDashboardList() {
-    for (int i = 0; i < 6; i++) {
+    for (int i = 0; i < _optionNamesList.length; i++) {
       DashboardItem dbi = DashboardItem(i + 1, _optionNamesList[i],
           "assets/images/dashboard_icons/dashboard_icon_$i.png");
       _optionsList.add(dbi);
@@ -47,18 +45,15 @@ class _DashboardScreenState extends State<DashboardScreen> {
         screenName = '/products';
         break;
       case 2:
-        screenName = '/export_products';
-        break;
-      case 3:
         screenName = '/media';
         break;
-      case 4:
+      case 3:
         screenName = '/csr';
         break;
-      case 5:
+      case 4:
         screenName = '/about';
         break;
-      case 6:
+      case 5:
         screenName = '/contact';
         break;
       default:

@@ -2,6 +2,7 @@ class Constants {
   static const bgColor = 0xFFF6F6F6;
   static const appColor = 0xFFA30709;
   static const appAccentColor = 0xFFAF0F10;
+  static const redColor = 0xFFE72626;
 
   static const int iphoneLimit = 640;
 

@@ -1,8 +1,5 @@
-import 'dart:ui';
-
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
 import 'package:shahi_catalogue/about_us.dart';
 import 'package:shahi_catalogue/constants/constants.dart';
@@ -37,8 +34,7 @@ class _ProductsScreenState extends State<ProductsScreen>
     ValueChanged<String>? callback;
     return Scaffold(
       body: Container(
-        padding:
-            const EdgeInsets.only(top: kIsWeb ? Constants.kPadding / 3 : 0),
+        padding: EdgeInsets.only(top: kIsWeb ? Constants.kPadding / 3 : 0),
         // color: Theme.of(context).primaryColor,
         color: Color(Constants.bgColor),
         child: SafeArea(
@@ -216,6 +212,7 @@ class _ProductsScreenState extends State<ProductsScreen>
     List<String> productCategories = productProvider.getCategories();
     ProductCategory productCategory =
         productProvider.getProductByCategory(currentIndex);
+
     currentProductItem ??= productCategory.productItems.first;
     // currentProductItem = productCategory.productItems.first;
     print("CURRENT PRODUCT ITEM: " + currentProductItem!.productName);
