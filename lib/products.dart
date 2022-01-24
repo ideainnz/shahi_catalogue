@@ -7,6 +7,7 @@ import 'package:shahi_catalogue/models/product_category.dart';
 import 'package:shahi_catalogue/models/product_item.dart';
 import 'package:shahi_catalogue/product_detail.dart';
 import 'package:shahi_catalogue/providers/product_provider.dart';
+import 'package:shahi_catalogue/widgets/open_fullscreen_widget.dart';
 import 'package:shahi_catalogue/widgets/product_card.dart';
 import 'package:shahi_catalogue/widgets/zoom_product_item.dart';
 
@@ -24,6 +25,9 @@ class _ProductsScreenState extends State<ProductsScreen>
   bool isAboutVisible = false;
   bool isLargeScreen = false;
 
+  bool isFullscreenItemVisible = false;
+  String? visibleImagePath;
+
   Widget _buildListWidget(int categoryIndex, bool largeScreen) {
     String currentCategory =
         Provider.of<ProductProvider>(context).getCategories()[categoryIndex];
@@ -33,89 +37,103 @@ class _ProductsScreenState extends State<ProductsScreen>
 
     ValueChanged<String>? callback;
     return Scaffold(
-      body: Container(
-        padding: EdgeInsets.only(top: kIsWeb ? Constants.kPadding / 3 : 0),
-        // color: Theme.of(context).primaryColor,
-        color: Color(Constants.bgColor),
-        child: SafeArea(
-          child: Column(
-            children: [
-              // HeaderWidget(_changeCategory),
-              // SizedBox(
-              //   height: 20,
-              // ),
-              Expanded(
-                flex: 2,
-                child: GridView.builder(
-                  controller: ScrollController(),
-                  padding: const EdgeInsets.fromLTRB(
-                    Constants.kPadding,
-                    Constants.kPadding + 5,
-                    Constants.kPadding,
-                    Constants.kPadding + 70,
-                  ),
-                  itemCount: productCategory.productItems.length,
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
-                    mainAxisSpacing: 20,
-                    crossAxisSpacing: 20,
-                    childAspectRatio: 0.85,
-                  ),
-                  itemBuilder: (context, index) => MouseRegion(
-                    cursor: SystemMouseCursors.click,
-                    child: GestureDetector(
-                      child: ProductCard(
-                        category: currentCategory,
-                        productItem: productCategory.productItems[index],
-                        // callback: largeScreen ? _changeProductWidget : null,
+      body: WillPopScope(
+        onWillPop: () async {
+          if (isFullscreenItemVisible) {
+            setState(() {
+              isFullscreenItemVisible = false;
+            });
+            return false;
+          } else
+            return true;
+        },
+        child: Container(
+          padding: EdgeInsets.only(top: kIsWeb ? Constants.kPadding / 3 : 0),
+          // color: Theme.of(context).primaryColor,
+          color: Color(Constants.bgColor),
+          child: SafeArea(
+            child: Column(
+              children: [
+                // HeaderWidget(_changeCategory),
+                // SizedBox(
+                //   height: 20,
+                // ),
+                Expanded(
+                  flex: 2,
+                  child: GridView.builder(
+                    controller: ScrollController(),
+                    padding: const EdgeInsets.fromLTRB(
+                      Constants.kPadding,
+                      Constants.kPadding + 5,
+                      Constants.kPadding,
+                      Constants.kPadding + 70,
+                    ),
+                    itemCount: productCategory.productItems.length,
+                    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      mainAxisSpacing: 20,
+                      crossAxisSpacing: 20,
+                      childAspectRatio: 0.85,
+                    ),
+                    itemBuilder: (context, index) => MouseRegion(
+                      cursor: SystemMouseCursors.click,
+                      child: GestureDetector(
+                        child: ProductCard(
+                          category: currentCategory,
+                          productItem: productCategory.productItems[index],
+                          // callback: largeScreen ? _changeProductWidget : null,
+                        ),
+                        onTap: () => {
+                          isFullscreenItemVisible = false,
+                          callback = largeScreen ? _changeProductWidget : null,
+                          if (callback == null)
+                            {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => ProductDetailScreen(
+                                      productCategory.productItems[index],
+                                      callbackWide),
+                                ),
+                              )
+                            }
+                          else
+                            {
+                              // ProductDetailScreen.isFullscreenItemVisible = false,
+                              callback!(productCategory
+                                  .productItems[index].productName),
+                            }
+                        },
+                        onLongPress: () => {
+                          setState(() {
+                            // productImagePath = productCategory
+                            //     .productItems[index].productImagePath;
+                            isZoomProductVisible = true;
+                            currentProductItem =
+                                productCategory.productItems[index];
+                            // ZoomProductItemWidget(productCategory.productItems[index], isZoomProductVisible);
+                          }),
+                          // setState(() {
+                          //   isZoomProductVisible = true;
+                          //   ZoomProductItemWidget(productCategory.productItems[index], isZoomProductVisible);
+                          // }),
+                        },
+                        onLongPressEnd: (details) => {
+                          setState(() {
+                            isZoomProductVisible = false;
+                            // ZoomProductItemWidget(productCategory.productItems[index], isZoomProductVisible);
+                          }),
+                          // setState(() {
+                          //   isZoomProductVisible = false;
+                          //   ZoomProductItemWidget(productCategory.productItems[index], isZoomProductVisible);
+                          // }),
+                        },
                       ),
-                      onTap: () => {
-                        callback = largeScreen ? _changeProductWidget : null,
-                        if (callback == null)
-                          {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => ProductDetailScreen(
-                                    productCategory.productItems[index]),
-                              ),
-                            )
-                          }
-                        else
-                          {
-                            callback!(productCategory
-                                .productItems[index].productName),
-                          }
-                      },
-                      onLongPress: () => {
-                        setState(() {
-                          // productImagePath = productCategory
-                          //     .productItems[index].productImagePath;
-                          isZoomProductVisible = true;
-                          currentProductItem =
-                              productCategory.productItems[index];
-                          // ZoomProductItemWidget(productCategory.productItems[index], isZoomProductVisible);
-                        }),
-                        // setState(() {
-                        //   isZoomProductVisible = true;
-                        //   ZoomProductItemWidget(productCategory.productItems[index], isZoomProductVisible);
-                        // }),
-                      },
-                      onLongPressEnd: (details) => {
-                        setState(() {
-                          isZoomProductVisible = false;
-                          // ZoomProductItemWidget(productCategory.productItems[index], isZoomProductVisible);
-                        }),
-                        // setState(() {
-                        //   isZoomProductVisible = false;
-                        //   ZoomProductItemWidget(productCategory.productItems[index], isZoomProductVisible);
-                        // }),
-                      },
                     ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
@@ -200,6 +218,13 @@ class _ProductsScreenState extends State<ProductsScreen>
         );
       },
     );
+  }
+
+  void callbackWide(bool isFullscreenItemVisible, String visibleImagePath) {
+    setState(() {
+      this.isFullscreenItemVisible = isFullscreenItemVisible;
+      this.visibleImagePath = visibleImagePath;
+    });
   }
 
   @override
@@ -306,16 +331,24 @@ class _ProductsScreenState extends State<ProductsScreen>
                     return initHomeScreen(false);
                   } else {
                     isLargeScreen = true;
-                    return Row(
+                    return Stack(
                       children: [
-                        Expanded(
-                          flex: _size.width < Constants.ipadLimit ? 5 : 4,
-                          child: initHomeScreen(true),
+                        Row(
+                          children: [
+                            Expanded(
+                              flex: _size.width < Constants.ipadLimit ? 5 : 4,
+                              child: initHomeScreen(true),
+                            ),
+                            Expanded(
+                              flex: _size.width < Constants.ipadLimit ? 5 : 6,
+                              child: ProductDetailScreen(
+                                  currentProductItem!, callbackWide),
+                            ),
+                          ],
                         ),
-                        Expanded(
-                          flex: _size.width < Constants.ipadLimit ? 5 : 6,
-                          child: ProductDetailScreen(currentProductItem!),
-                        ),
+                        if (isFullscreenItemVisible) ...[
+                          OpenFullscreenImageWidget(visibleImagePath!)
+                        ],
                       ],
                     );
                   }

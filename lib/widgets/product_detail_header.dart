@@ -47,7 +47,7 @@ class ProductDetailHeaderWidget extends StatelessWidget {
           ),
           child: OverflowBox(
             maxHeight: 200,
-            minHeight: size.width < Constants.iphoneLimit ? 200 : 150,
+            minHeight: size.width < Constants.ipadLimit ? 200 : 150,
             alignment: Alignment.bottomCenter,
             child: size.width < Constants.iphoneLimit
                 ? Hero(

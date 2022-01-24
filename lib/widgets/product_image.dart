@@ -62,8 +62,9 @@ class ProductImage extends StatelessWidget {
   final String category;
   final ProductItem productItem;
   final ValueChanged<String>? callback;
+  Function callbackWide;
 
-  ProductImage(this.category, this.productItem, this.callback);
+  ProductImage(this.category, this.productItem, this.callback, this.callbackWide);
 
   @override
   Widget build(BuildContext context) {
@@ -77,7 +78,7 @@ class ProductImage extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => ProductDetailScreen(productItem),
+                  builder: (context) => ProductDetailScreen(productItem, callbackWide),
                 ),
               )
             }

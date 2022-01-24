@@ -10,6 +10,7 @@ import 'package:shahi_catalogue/models/product_category.dart';
 import 'package:shahi_catalogue/models/product_item.dart';
 import 'package:shahi_catalogue/product_detail.dart';
 import 'package:shahi_catalogue/providers/export_product_provider.dart';
+import 'package:shahi_catalogue/widgets/open_fullscreen_widget.dart';
 import 'package:shahi_catalogue/widgets/product_card.dart';
 import 'package:shahi_catalogue/widgets/zoom_product_item.dart';
 
@@ -26,6 +27,16 @@ class _ExportProductsScreenState extends State<ExportProductsScreen>
   bool isZoomProductVisible = false;
   bool isAboutVisible = false;
   bool isLargeScreen = false;
+
+  bool isFullscreenItemVisible = false;
+  String? visibleImagePath;
+
+  void callbackWide(bool isFullscreenItemVisible, String visibleImagePath) {
+    setState(() {
+      this.isFullscreenItemVisible = isFullscreenItemVisible;
+      this.visibleImagePath = visibleImagePath;
+    });
+  }
 
   Widget _buildListWidget(int categoryIndex, bool largeScreen) {
     String currentCategory = Provider.of<ExportProductProvider>(context)
@@ -74,6 +85,7 @@ class _ExportProductsScreenState extends State<ExportProductsScreen>
                         // callback: largeScreen ? _changeProductWidget : null,
                       ),
                       onTap: () => {
+                        isFullscreenItemVisible = false,
                         callback = largeScreen ? _changeProductWidget : null,
                         if (callback == null)
                           {
@@ -81,7 +93,7 @@ class _ExportProductsScreenState extends State<ExportProductsScreen>
                               context,
                               MaterialPageRoute(
                                 builder: (context) => ProductDetailScreen(
-                                    productCategory.productItems[index]),
+                                    productCategory.productItems[index], callbackWide),
                               ),
                             )
                           }
@@ -317,7 +329,7 @@ class _ExportProductsScreenState extends State<ExportProductsScreen>
                         ),
                         Expanded(
                           flex: _size.width < Constants.ipadLimit ? 5 : 6,
-                          child: ProductDetailScreen(currentProductItem!),
+                          child: ProductDetailScreen(currentProductItem!, callbackWide),
                         ),
                       ],
                     );
@@ -351,6 +363,9 @@ class _ExportProductsScreenState extends State<ExportProductsScreen>
               // ),
               if (isZoomProductVisible) ...[
                 ZoomProductItemWidget(currentProductItem!),
+              ],
+              if (isFullscreenItemVisible) ...[
+                OpenFullscreenImageWidget(visibleImagePath!)
               ],
               // if (isAboutVisible) ...[
               //   _aboutPopup(),

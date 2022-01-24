@@ -92,7 +92,7 @@ class ProductProvider with ChangeNotifier {
           'Available In Rs 20',
           'Ballay Ballay',
           'Nimco',
-          0xFFCEA942,
+          0xFF19BAE0,
           0xFFE72626,
           ProductDetailProvider.ballayBallayDetail
               .firstWhere((element) => element.productId == 16),
@@ -264,7 +264,7 @@ class ProductProvider with ChangeNotifier {
           'assets/images/products/shahi_nimco/front/front12.png',
           'assets/images/products/shahi_nimco/back/back12.png',
           'Available In Rs 5',
-          'null',
+          '',
           'Nimco',
           0xFFCEA942,
           0xFF211F20,
