@@ -144,9 +144,8 @@ class _CSRScreenState extends State<CSRScreen> {
               return MouseRegion(
                 cursor: SystemMouseCursors.click,
                 child: GestureDetector(
-                  child: FadeInImage.assetNetwork(
-                    placeholder: 'assets/shahi_app_logo_watermark.png',
-                    image: 'assets/images/csr/more/csr${index + 1}.jpg',
+                  child: Image.asset(
+                    'assets/images/csr/more/csr${index + 1}.jpg',
                   ),
                   onTap: () => {
                     setState(

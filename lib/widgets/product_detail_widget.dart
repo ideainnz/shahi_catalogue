@@ -242,11 +242,8 @@ class _ProductDetailWidgetState extends State<ProductDetailWidget> {
                       child: MouseRegion(
                         cursor: SystemMouseCursors.click,
                         child: GestureDetector(
-                          child: FadeInImage.assetNetwork(
-                            placeholder: 'assets/shahi_app_logo_watermark.png',
-                            image: widget.productItem!.productDetail
-                                .nutritionFactsImagePath,
-                          ),
+                          child: Image.asset(widget.productItem!.productDetail
+                              .nutritionFactsImagePath),
                           onTap: () => {
                             widget.callback!(
                                 true,
@@ -263,10 +260,8 @@ class _ProductDetailWidgetState extends State<ProductDetailWidget> {
                       child: MouseRegion(
                         cursor: SystemMouseCursors.click,
                         child: GestureDetector(
-                          child: FadeInImage.assetNetwork(
-                            placeholder: 'assets/shahi_app_logo_watermark.png',
-                            image: widget.productItem!.productBackImagePath,
-                          ),
+                          child: Image.asset(
+                              widget.productItem!.productBackImagePath),
                           onTap: () => {
                             widget.callback!(
                                 true, widget.productItem!.productBackImagePath),

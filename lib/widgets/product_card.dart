@@ -52,17 +52,15 @@ class _ProductCardState extends State<ProductCard> {
                     tag: 'icon-${widget.productItem.productId}',
                     child: Padding(
                       padding: EdgeInsets.all(padding),
-                      child: FadeInImage.assetNetwork(
-                        placeholder: 'assets/shahi_app_logo_watermark.png',
-                        image: widget.productItem.productImagePath,
+                      child: Image.asset(
+                        widget.productItem.productImagePath,
                       ),
                     ),
                   )
                 : Padding(
                     padding: EdgeInsets.all(padding),
-                    child: FadeInImage.assetNetwork(
-                      placeholder: 'assets/shahi_app_logo_watermark.png',
-                      image: widget.productItem.productImagePath,
+                    child: Image.asset(
+                      widget.productItem.productImagePath,
                     ),
                   ),
             // child: ProductImage(
