@@ -102,11 +102,21 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         SizedBox(
-                            height: constraints.maxHeight < Constants.iphoneLimit
-                                ? _size.height / 2.1
-                                : _size.height / 2.5,
+                            height:
+                                constraints.maxHeight < Constants.iphoneLimit
+                                    ? _size.height / 2.1
+                                    : _size.height / 2.5,
                             child: headerContent),
                         productDetail,
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 15),
+                          child: Container(
+                            constraints: BoxConstraints(minWidth: _size.width),
+                            margin: EdgeInsets.symmetric(vertical: 10),
+                            color: Color(Constants.redColor),
+                            height: 10,
+                          ),
+                        ),
                       ],
                     ),
                   );

@@ -16,6 +16,8 @@ class ProductDetailWidget extends StatefulWidget {
 }
 
 class _ProductDetailWidgetState extends State<ProductDetailWidget> {
+  ScrollController _scrollController = ScrollController();
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -65,37 +67,36 @@ class _ProductDetailWidgetState extends State<ProductDetailWidget> {
           alignment: Alignment.center,
           child: Text(item,
               softWrap: true,
-              textAlign: TextAlign.left,
+              textAlign: TextAlign.center,
               style: TextStyle(fontSize: 9, color: Colors.white)),
         ),
       );
     }
-    ScrollController _scrollController = ScrollController();
+
     Widget _generateStatsWidget() {
       List<ProductStats> productsStats = widget.productItem!.productStats;
       return RawScrollbar(
         thumbColor: Color(Constants.redColor),
         thickness: 5,
         controller: _scrollController,
-        isAlwaysShown: true,
         radius: Radius.circular(20),
         child: Padding(
           padding: const EdgeInsets.only(bottom: 10),
           child: SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
             controller: _scrollController,
+            scrollDirection: Axis.horizontal,
             child: DataTable(
               dataRowHeight: 25,
               columnSpacing: 0,
               columns: [
                 _setStatsColumn("Variant", 50),
-                DataColumn(label: _setDivider(0xFFFFFFFF)),
+                DataColumn(label: _setDivider(0x00FFFFFF)),
                 _setStatsColumn("Packaging Size", 60),
-                DataColumn(label: _setDivider(0xFFFFFFFF)),
+                DataColumn(label: _setDivider(0x00FFFFFF)),
                 _setStatsColumn("Net Weight Per Carton", 60),
-                DataColumn(label: _setDivider(0xFFFFFFFF)),
+                DataColumn(label: _setDivider(0x00FFFFFF)),
                 _setStatsColumn("Gross Weight Per Carton", 70),
-                DataColumn(label: _setDivider(0xFFFFFFFF)),
+                DataColumn(label: _setDivider(0x00FFFFFF)),
                 _setStatsColumn("Carton Dimension Lth x Wth x H", 90),
               ],
               rows: List<DataRow>.generate(
@@ -119,6 +120,7 @@ class _ProductDetailWidgetState extends State<ProductDetailWidget> {
                     _setDataCell(productsStats[index].cartonDimension),
                   ],
                 ),
+                growable: false,
               ),
             ),
           ),
@@ -128,166 +130,165 @@ class _ProductDetailWidgetState extends State<ProductDetailWidget> {
 
     return Container(
       color: Colors.white,
-      child:
-          Padding(
-              padding: const EdgeInsets.fromLTRB(20, 10, 20, 20),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Description',
-                    style: TextStyle(
-                      fontSize: fontSizeHeading,
-                      color: Colors.black,
-                      fontWeight: FontWeight.w600,
-                    ),
+      child: Padding(
+          padding: const EdgeInsets.fromLTRB(20, 10, 20, 0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'Description',
+                style: TextStyle(
+                  fontSize: fontSizeHeading,
+                  color: Colors.black,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+              Text(
+                widget.productItem!.productDetail.productDescription,
+                style: TextStyle(
+                  fontSize: fontSizeContent,
+                  color: Colors.black,
+                  fontWeight: FontWeight.w400,
+                ),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Text(
+                'Ingredients',
+                style: TextStyle(
+                  fontSize: fontSizeHeading,
+                  color: Colors.black,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+              ...widget.productItem!.productDetail.ingredients
+                  .split('_')
+                  .toList()
+                  .map((item) {
+                return Text(
+                  item,
+                  style: TextStyle(
+                    fontSize: fontSizeContent,
+                    color: Colors.black,
+                    fontWeight: FontWeight.w400,
                   ),
-                  Text(
-                    widget.productItem!.productDetail.productDescription,
-                    style: TextStyle(
-                      fontSize: fontSizeContent,
-                      color: Colors.black,
-                      fontWeight: FontWeight.w400,
-                    ),
+                );
+              }),
+              SizedBox(
+                height: 20,
+              ),
+              Text(
+                'Ingrédients',
+                style: TextStyle(
+                  fontSize: fontSizeHeading,
+                  color: Colors.black,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+              ...widget.productItem!.productDetail.ingredientsFrench
+                  .split('_')
+                  .toList()
+                  .map((item) {
+                return Text(
+                  item,
+                  style: TextStyle(
+                    fontSize: fontSizeContent,
+                    color: Colors.black,
+                    fontWeight: FontWeight.w400,
                   ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  Text(
-                    'Ingredients',
-                    style: TextStyle(
-                      fontSize: fontSizeHeading,
-                      color: Colors.black,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                  ...widget.productItem!.productDetail.ingredients
-                      .split('_')
-                      .toList()
-                      .map((item) {
-                    return Text(
-                      item,
-                      style: TextStyle(
-                        fontSize: fontSizeContent,
-                        color: Colors.black,
-                        fontWeight: FontWeight.w400,
-                      ),
-                    );
-                  }),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  Text(
-                    'Ingrédients',
-                    style: TextStyle(
-                      fontSize: fontSizeHeading,
-                      color: Colors.black,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                  ...widget.productItem!.productDetail.ingredientsFrench
-                      .split('_')
-                      .toList()
-                      .map((item) {
-                    return Text(
-                      item,
-                      style: TextStyle(
-                        fontSize: fontSizeContent,
-                        color: Colors.black,
-                        fontWeight: FontWeight.w400,
-                      ),
-                    );
-                  }),
-                  // For list type view
-                  // ...productItem!.productDetail.ingredients
-                  //     .split(', ')
-                  //     .toList()
-                  //     .map((item) {
-                  //   return Text(
-                  //     '\u2022 ' + item,
-                  //     style: TextStyle(
-                  //       fontSize: fontSizeContent,
-                  //       color: Colors.black,
-                  //       fontWeight: FontWeight.w400,
-                  //     ),
-                  //   );
-                  // }),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  // Stats Layout
+                );
+              }),
+              // For list type view
+              // ...productItem!.productDetail.ingredients
+              //     .split(', ')
+              //     .toList()
+              //     .map((item) {
+              //   return Text(
+              //     '\u2022 ' + item,
+              //     style: TextStyle(
+              //       fontSize: fontSizeContent,
+              //       color: Colors.black,
+              //       fontWeight: FontWeight.w400,
+              //     ),
+              //   );
+              // }),
+              SizedBox(
+                height: 10,
+              ),
+              // Stats Layout
 
-                  size.width < Constants.ipadLimit
-                      ? Container(
-                          alignment: Alignment.centerLeft,
-                          child: _generateStatsWidget())
-                      : Container(
-                          alignment: Alignment.center,
-                          child: _generateStatsWidget()),
+              size.width < Constants.iphoneLimit
+                  ? Container(
+                      alignment: Alignment.centerLeft,
+                      child: _generateStatsWidget())
+                  : Container(
+                      alignment: Alignment.center,
+                      child: _generateStatsWidget()),
 
-                  SizedBox(
-                    height: 10,
-                  ),
-
-                  // Nutrition Layout Bottom
-                  if (widget.productItem!.productDetail
-                          .nutritionFactsImagePath !=
-                      '') ...{
-                    SizedBox(
-                      height: 20,
-                    ),
-                    Row(
-                      children: [
-                        Expanded(
-                          child: MouseRegion(
-                            cursor: SystemMouseCursors.click,
-                            child: GestureDetector(
-                              child: Image.asset(widget.productItem!
-                                  .productDetail.nutritionFactsImagePath),
-                              onTap: () => {
-                                widget.callback!(
-                                    true,
-                                    widget.productItem!.productDetail
-                                        .nutritionFactsImagePath),
-                                // setState(
-                                //   () {},
-                                // ),
-                              },
-                            ),
-                          ),
-                        ),
-                        Expanded(
-                          child: MouseRegion(
-                            cursor: SystemMouseCursors.click,
-                            child: GestureDetector(
-                              child: Image.asset(
-                                  widget.productItem!.productBackImagePath),
-                              onTap: () => {
-                                widget.callback!(
-                                    true,
-                                    widget
-                                        .productItem!.productBackImagePath),
-                              },
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  },
-                ],
-              )
-
-              // child: Text(
-              //   productItem!.productDetail,
-              //   style: TextStyle(
-              //     fontSize: fontSize,
-              //     color: Colors.black,
-              //     fontWeight: FontWeight.w400,
-              //   ),
-              // ),
+              SizedBox(
+                height: 10,
               ),
 
+              // Nutrition Layout Bottom
+              if (widget.productItem!.productDetail.nutritionFactsImagePath !=
+                  '') ...{
+                SizedBox(
+                  height: 20,
+                ),
+                Row(
+                  children: [
+                    Expanded(
+                      child: MouseRegion(
+                        cursor: SystemMouseCursors.click,
+                        child: GestureDetector(
+                          child: FadeInImage.assetNetwork(
+                            placeholder: 'assets/shahi_app_logo_watermark.png',
+                            image: widget.productItem!.productDetail
+                                .nutritionFactsImagePath,
+                          ),
+                          onTap: () => {
+                            widget.callback!(
+                                true,
+                                widget.productItem!.productDetail
+                                    .nutritionFactsImagePath),
+                            // setState(
+                            //   () {},
+                            // ),
+                          },
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: MouseRegion(
+                        cursor: SystemMouseCursors.click,
+                        child: GestureDetector(
+                          child: FadeInImage.assetNetwork(
+                            placeholder: 'assets/shahi_app_logo_watermark.png',
+                            image: widget.productItem!.productBackImagePath,
+                          ),
+                          onTap: () => {
+                            widget.callback!(
+                                true, widget.productItem!.productBackImagePath),
+                          },
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              },
+            ],
+          )
 
+          // child: Text(
+          //   productItem!.productDetail,
+          //   style: TextStyle(
+          //     fontSize: fontSize,
+          //     color: Colors.black,
+          //     fontWeight: FontWeight.w400,
+          //   ),
+          // ),
+          ),
     );
   }
 }

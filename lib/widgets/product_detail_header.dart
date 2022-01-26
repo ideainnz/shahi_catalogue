@@ -66,6 +66,7 @@ class ProductDetailHeaderWidget extends StatelessWidget {
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
               margin: EdgeInsets.only(left: 25, top: 20),
@@ -114,14 +115,16 @@ class ProductDetailHeaderWidget extends StatelessWidget {
             ),
             Container(
               margin: EdgeInsets.only(right: 25),
-              alignment: Alignment.topRight,
               decoration: BoxDecoration(
+                // shape: BoxShape.rectangle,
+                // color: Color(Constants.redColor,),
                 image: DecorationImage(
-                    image: AssetImage('assets/images/bg_category_title.png'),
-                    alignment: Alignment.topRight),
+                    image: AssetImage('assets/images/bg_category_title.png',),
+                    alignment: Alignment.topRight,
+                fit: BoxFit.fill),
               ),
               child: Padding(
-                padding: const EdgeInsets.fromLTRB(15, 3, 15, 0),
+                padding: const EdgeInsets.fromLTRB(15, 3, 15, 8),
                 child: Text(
                   productItem!.productTypeName,
                   textAlign: TextAlign.center,

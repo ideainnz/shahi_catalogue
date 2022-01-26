@@ -43,40 +43,58 @@ class _ProductCardState extends State<ProductCard> {
           ),
         ],
       ),
-      child: Padding(
-        padding: EdgeInsets.all(padding),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Expanded(
-              child: size.width < Constants.iphoneLimit
-                  ? Hero(
-                      tag: 'icon-${widget.productItem.productId}',
-                      child: Image.asset(
-                        widget.productItem.productImagePath,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Expanded(
+            child: size.width < Constants.iphoneLimit
+                ? Hero(
+                    tag: 'icon-${widget.productItem.productId}',
+                    child: Padding(
+                      padding: EdgeInsets.all(padding),
+                      child: FadeInImage.assetNetwork(
+                        placeholder: 'assets/shahi_app_logo_watermark.png',
+                        image: widget.productItem.productImagePath,
                       ),
-                    )
-                  : Image.asset(
-                      widget.productItem.productImagePath,
                     ),
-              // child: ProductImage(
-              //   widget.category,
-              //   widget.productItem,
-              //   widget.callback,
-              // ),
-            ),
-            SizedBox(height: 25),
-            Text(
-              widget.productItem.productName,
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                color: Colors.black87,
-                fontWeight: FontWeight.w500,
-                fontSize: fontSize,
+                  )
+                : Padding(
+                    padding: EdgeInsets.all(padding),
+                    child: FadeInImage.assetNetwork(
+                      placeholder: 'assets/shahi_app_logo_watermark.png',
+                      image: widget.productItem.productImagePath,
+                    ),
+                  ),
+            // child: ProductImage(
+            //   widget.category,
+            //   widget.productItem,
+            //   widget.callback,
+            // ),
+          ),
+          SizedBox(height: 25),
+          Container(
+            width: double.infinity,
+            decoration: BoxDecoration(
+                color: Color(Constants.redColor),
+                borderRadius: BorderRadius.only(
+                  bottomLeft: Radius.circular(15),
+                  bottomRight: Radius.circular(15),
+                )),
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                widget.productItem.productName,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  // color: Colors.black87,
+                  color: Colors.white,
+                  fontWeight: FontWeight.w500,
+                  fontSize: fontSize,
+                ),
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
