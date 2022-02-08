@@ -131,7 +131,7 @@ class ProductDetailHeaderWidget extends StatelessWidget {
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: fontSize + 4,
-                    fontWeight: FontWeight.w400,
+                    fontWeight: FontWeight.w500,
                   ),
                 ),
               ),
