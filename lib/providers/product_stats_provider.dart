@@ -43,59 +43,60 @@ class ProductStatsProvider with ChangeNotifier{
 
   // SHAHI NIMCO
   static final List<ProductStats> nimcoSaltedChipsStats = [
-    ProductStats(1, 'Salted Chips', '36Pkts/Ctn', '4.5', '5.8', '19*14*9'),
+    ProductStats(1, 'Salted Chips', '36Pkts/Ctn', '4.5', '5.6', '20*14.25*9.4in'),
+    ProductStats(2, 'Salted Chips\nRs-20', '24Pkts/Box', '6.05', '9.73', '8.25*7*5.3in'),
   ];
 
   static final List<ProductStats> nimcoSavoryMixStats = [
-    ProductStats(1, 'Savory Mix', '36Pkts/Ctn', '7.2', '8.54', '19*14*9'),
+    ProductStats(1, 'Savory Mix', '36Pkts/Ctn', '5.76', '6.86', '20*14.25*9.4in'),
   ];
 
   static final List<ProductStats> nimcoMunchyMixStats = [
-    ProductStats(1, 'Munchy Mix', '36Pkts/Ctn', '7.2', '8.54', '19*14*9'),
+    ProductStats(1, 'Munchy Mix', '36Pkts/Ctn', '7.2', '8.30', '20*14.25*9.4in'),
   ];
 
   static final List<ProductStats> nimcoDalMothStats = [
-    ProductStats(1, 'Large', '36Pkts/Ctn', '7.2', '5.84', '19*14*9'),
-    ProductStats(2, 'Medium', '--------', '--------', '--------', '--------'),
+    ProductStats(1, 'Dal Moth\nRs-100', '36Pkts/Ctn', '6.30', '7.36', '20*14.25*9.4in'),
+    ProductStats(2, 'Dal Moth\nRs-50', '24Pkts/Box', '1.80', '2.29', '8.25*7*5.3in'),
   ];
 
   static final List<ProductStats> nimcoDalMoongStats = [
-    ProductStats(1, 'Large', '36Pkts/Ctn', '7.2', '5.84', '19*14*9'),
-    ProductStats(2, 'Medium', '--------', '--------', '--------', '--------'),
-    ProductStats(3, 'Small', '--------', '--------', '--------', '--------'),
+    ProductStats(1, 'Dal Moong\nLarge', '36Pkts/Ctn', '5.40', '6.50', '20*14.25*9.4in'),
+    ProductStats(2, 'Dal Moong\nRs-50', '24Pkts/Ctn', '1.44', '1.93', '11.5*11.25*8.2in'),
+    ProductStats(3, 'Dal Moong\nRs-20', '24Pkts/Box', '5.40', '9.15', '8.25*7*5.3in'),
   ];
 
   static final List<ProductStats> nimcoDalChanaStats = [
-    ProductStats(1, 'Large', '36Pkts/Ctn', '--------', '--------', '--------'),
-    ProductStats(2, 'Medium', '--------', '--------', '--------', '--------'),
+    ProductStats(1, 'Dal Chana\nRs-100', '36Pkts/Ctn', '6.48', '7.58', '20*14.25*9.4in'),
+    ProductStats(2, 'Dal Chana\nRs-50', '24Pkts/Ctn', '1.80', '2.29', '11.5*11.25*8.2in'),
   ];
 
   static final List<ProductStats> nimcoChilliChipsStats = [
-    ProductStats(1, 'Large', '36Pkts/Ctn', '4.5', '5.8', '19*14*9'),
-    ProductStats(2, 'Medium', '--------', '--------', '--------', '--------'),
-    ProductStats(3, 'Small', '--------', '--------', '--------', '--------'),
+    ProductStats(1, 'Chilli Chips\nRs-100', '36Pkts/Ctn', '4.50', '5.57', '20*14.25*9.4in'),
+    ProductStats(2, 'Chilli Chips\nRs-50', '24Pkts/Ctn', '1.56', '2.05', '11.5*11.25*8.2in'),
+    ProductStats(3, 'Chilli Chips\nRs-20', '24Pkts/Box', '6.05', '9.80', '8.25*7*5.3in'),
   ];
 
   static final List<ProductStats> nimcoBlackPepperChipsStats = [
-    ProductStats(
-        1, 'Black Pepper\nChips', '36Pkts/Ctn', '4.5', '5.8', '19*14*9'),
+    ProductStats(1, 'Black Pepper\nChips', '36Pkts/Ctn', '4.50', '5.60', '20*14.25*9.4in'),
+    ProductStats(2, 'Black Pepper\nRs-20', '24Pkts/Box', '6.05', '9.73', '8.25*7*5.3in'),
   ];
 
   static final List<ProductStats> nimcoChewraStats = [
-    ProductStats(1, 'Chewra', '36Pkts/Ctn', '7.2', '8.54', '19*14*9'),
+    ProductStats(1, 'Chewra', '36Pkts/Ctn', '7.20', '8.32', '20*14.25*9.4in'),
   ];
 
   static final List<ProductStats> nimcoBoondiStats = [
-    ProductStats(1, 'Boondi', '36Pkts/Ctn', '9.7', '13.7', '19*14*9'),
+    ProductStats(1, 'Boondi', '36Pkts/Ctn', '7.20', '8.38', '20*14.25*9.4in'),
   ];
 
   static final List<ProductStats> nimcoPapdiStats = [
-    ProductStats(1, 'Papdi', '36Pkts/Ctn', '5.4', '6.74', '19*14*9'),
+    ProductStats(1, 'Papdi', '36Pkts/Ctn', '5.40', '6.50', '20*14.25*9.4in'),
   ];
 
   static final List<ProductStats> nimcoRoyalMixStats = [
-    ProductStats(1, 'Medium', '--------', '--------', '--------', '--------'),
-    ProductStats(2, 'Small', '--------', '--------', '--------', '--------'),
+    ProductStats(1, 'Royal Mix\nRs-50', '24Pkts/Ctn', '1.68', '2.17', '11.5*11.25*8.2in'),
+    ProductStats(2, 'Royal Mix\nRs-20', '24Pkts/Box', '6.48', '10.16', '8.25*7*5.3in'),
   ];
 
   // SNACKS

@@ -76,12 +76,14 @@ flutter:
     - assets/images/products/shahi_nimco/front/
     - assets/images/products/shahi_nimco/back/
     - assets/images/products/shahi_nimco/nutrition/
+    - assets/images/products/shahi_nimco/arabic/
     - assets/images/products/snacks/front/
     - assets/images/products/snacks/back/
     - assets/images/products/snacks/nutrition/
     - assets/images/products/mouth_freshener/front/
     - assets/images/products/mouth_freshener/side/
     - assets/images/products/mouth_freshener/nutrition/
+    - assets/images/products/mouth_freshener/arabic/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
