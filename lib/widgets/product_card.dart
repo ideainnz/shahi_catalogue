@@ -79,7 +79,7 @@ class _ProductCardState extends State<ProductCard> {
                   bottomRight: Radius.circular(15),
                 )),
             child: Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 4.0),
               child: Text(
                 widget.productItem.productName,
                 textAlign: TextAlign.center,

@@ -170,51 +170,57 @@ class ProductStatsProvider with ChangeNotifier{
 
   // MOUTH FRESHENER
   static final List<ProductStats> aasPaasChocolateStats = [
-    ProductStats(1, 'Aas Paas\nChocolate', '-- x -- x --', '----', '----', '-- x -- x --'),
+    ProductStats(1, 'AasPass\nRs-5', '24x24', '6.34', '7.97', '14.5*13.75*10.75in'),
+    ProductStats(2, 'AasPass\nRs-2', '48*12*12', '27.65', '34.32', '24.75*19.5*17.75in'),
   ];
 
   static final List<ProductStats> shahiMevaChocolateStats = [
-    ProductStats(1, 'Shahi Meva\nChocolate', '-- x -- x --', '----', '----', '-- x -- x --'),
+    ProductStats(1, 'Shahi Meva\nChocolate', '24*24', '4.03', '5.60', '14.5*13.75*10.75in'),
   ];
 
   static final List<ProductStats> shahiSupariClassicStats = [
-    ProductStats(1, 'Shahi Supari\nClassic', '-- x -- x --', '----', '----', '-- x -- x --'),
+    ProductStats(1, 'Shahi Supari\nClassic', '24x12x12', '8.64', '13.94', '24*18*16.5in'),
   ];
 
   static final List<ProductStats> shahiDeewanStats = [
-    ProductStats(1, 'Shahi Deewan', '-- x -- x --', '----', '----', '-- x -- x --'),
+    ProductStats(1, 'Shahi Deewan', '24*24', '2.30', '3.58', '12.5*9.75*12in'),
   ];
 
   static final List<ProductStats> shahiDeluxeLiteStats = [
-    ProductStats(1, 'Shahi Deluxe\nLite', '-- x -- x --', '----', '----', '-- x -- x --'),
+    ProductStats(1, 'Shahi Deluxe\nLite', '48x12x12', '17.28', '23.44', '24*18*16.5in'),
   ];
 
   static final List<ProductStats> shahiDeluxeStats = [
-    ProductStats(1, 'Shahi Deluxe', '-- x -- x --', '----', '----', '-- x -- x --'),
+    ProductStats(1, 'Shahi Deluxe', '50*12*12', '21.60', '28.34', '24.75*19.5*17.75in'),
   ];
 
   static final List<ProductStats> shahiElaichiStats = [
-    ProductStats(1, 'Shahi Elaichi', '-- x -- x --', '----', '----', '-- x -- x --'),
+    ProductStats(1, 'Shahi Elaichi\nRs-2', '48*12*12', '16.58', '23.09', '24*18*16.5in'),
+    ProductStats(1, 'Shahi Elaichi\nRs-5', '53*24', '4.83', '6.89', '15.25*14*10.9in'),
   ];
 
   static final List<ProductStats> shahiKalonjiStats = [
-    ProductStats(1, 'Shahi Kalonji', '-- x -- x --', '----', '----', '-- x -- x --'),
+    ProductStats(1, 'Shahi Kalonji', '24*12', '0.86', '1.50', '12.25*11.5*5in'),
+    ProductStats(2, 'Shahi Kalonji', '12*12', '0.43', '0.85', '10.75*8.5*5in'),
   ];
 
   static final List<ProductStats> aasPaasMeethaPanMasalaStats = [
-    ProductStats(1, 'Aas Paas Meetha\nPan Masala', '-- x -- x --', '----', '----', '-- x -- x --'),
+    ProductStats(1, 'AasPass', '24*24', '5.76', '7.40', '14.5*13.75*10.75in'),
   ];
 
   static final List<ProductStats> shahiMevaStats = [
-    ProductStats(1, 'Shahi Meva', '-- x -- x --', '----', '----', '-- x -- x --'),
+    ProductStats(1, 'Shahi Meva\nRs-2', '48*12*6', '12.10', '15.32', '20.5*12.5*17.75in'),
+    ProductStats(2, 'Shahi Meva\nRs-5', '24*24', '4.61', '6.19', '14.5*13.75*10.75in'),
+    ProductStats(3, 'Shahi Meva\nRs-10', '12x12', '2.45', '3.20', '12.5*11.75*7.45in'),
   ];
 
   static final List<ProductStats> shahiSupermintStats = [
-    ProductStats(1, 'Shahi Supermint', '-- x -- x --', '----', '----', '-- x -- x --'),
+    ProductStats(1, 'Shahi Supermint\nRs-2.5', '48x12x12', '21.42', '27.68', '24.5 x 19 x 17.5in'),
+    ProductStats(2, 'Shahi Supermint\nRs-5', '26*12*24', '4.99', '6.88', '18.5*12.5*11in'),
   ];
 
   static final List<ProductStats> aasPaasSweetSonf = [
-    ProductStats(1, 'Aas Paas\nSweet Sonf', '-- x -- x --', '----', '----', '-- x -- x --'),
+    ProductStats(1, 'Aas Paas\nSweet Sonf', '24*24', '8.64', '10.28', '14.5*13.75*10.75in'),
   ];
 
 }

@@ -67,7 +67,7 @@ class _ProductDetailWidgetState extends State<ProductDetailWidget> {
           alignment: Alignment.center,
           child: Text(item,
               softWrap: true,
-              textAlign: TextAlign.center,
+              textAlign: TextAlign.left,
               style: TextStyle(fontSize: 9, color: Colors.white)),
         ),
       );
@@ -194,30 +194,33 @@ class _ProductDetailWidgetState extends State<ProductDetailWidget> {
                   ),
                 ),
               },
-              SizedBox(
-                height: 20,
-              ),
-              Text(
-                'Ingrédients',
-                style: TextStyle(
-                  fontSize: fontSizeHeading,
-                  color: Colors.black,
-                  fontWeight: FontWeight.w600,
+              if (widget.productItem!.productDetail.ingredientsFrench !=
+                  '') ...{
+                SizedBox(
+                  height: 20,
                 ),
-              ),
-              ...widget.productItem!.productDetail.ingredientsFrench
-                  .split('_')
-                  .toList()
-                  .map((item) {
-                return Text(
-                  item,
+                Text(
+                  'Ingrédients',
                   style: TextStyle(
-                    fontSize: fontSizeContent,
+                    fontSize: fontSizeHeading,
                     color: Colors.black,
-                    fontWeight: FontWeight.w400,
+                    fontWeight: FontWeight.w600,
                   ),
-                );
-              }),
+                ),
+                ...widget.productItem!.productDetail.ingredientsFrench
+                    .split('_')
+                    .toList()
+                    .map((item) {
+                  return Text(
+                    item,
+                    style: TextStyle(
+                      fontSize: fontSizeContent,
+                      color: Colors.black,
+                      fontWeight: FontWeight.w400,
+                    ),
+                  );
+                }),
+              },
               // For list type view
               // ...productItem!.productDetail.ingredients
               //     .split(', ')
@@ -250,11 +253,11 @@ class _ProductDetailWidgetState extends State<ProductDetailWidget> {
               ),
 
               // Nutrition Layout Bottom
+              SizedBox(
+                height: 20,
+              ),
               if (widget.productItem!.productDetail.nutritionFactsImagePath !=
                   '') ...{
-                SizedBox(
-                  height: 20,
-                ),
                 Row(
                   children: [
                     Expanded(
@@ -287,6 +290,29 @@ class _ProductDetailWidgetState extends State<ProductDetailWidget> {
                           },
                         ),
                       ),
+                    ),
+                  ],
+                ),
+              },
+              if (widget.productItem!.productDetail.nutritionFactsImagePath ==
+                  '') ...{
+                Row(
+                  children: [
+                    Expanded(
+                      child: MouseRegion(
+                        cursor: SystemMouseCursors.click,
+                        child: GestureDetector(
+                          child: Image.asset(
+                              widget.productItem!.productBackImagePath),
+                          onTap: () => {
+                            widget.callback!(
+                                true, widget.productItem!.productBackImagePath),
+                          },
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: SizedBox.shrink(),
                     ),
                   ],
                 ),

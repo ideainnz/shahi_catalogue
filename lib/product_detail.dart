@@ -110,11 +110,23 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                         productDetail,
                         Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 15),
-                          child: Container(
-                            constraints: BoxConstraints(minWidth: _size.width),
-                            margin: EdgeInsets.symmetric(vertical: 10),
-                            color: Color(Constants.redColor),
-                            height: 10,
+                          child: Stack(
+                            children: [
+                              Container(
+                                constraints:
+                                    BoxConstraints(minWidth: _size.width),
+                                margin: EdgeInsets.symmetric(vertical: 10),
+                                color: Color(Constants.redColor),
+                                height: 10,
+                              ),
+                              Align(
+                                  alignment: Alignment.centerRight,
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(right: 30),
+                                    child: Image.asset('assets/shahi_logo_w_bg.png'
+                                    ,height: 25,),
+                                  )),
+                            ],
                           ),
                         ),
                       ],

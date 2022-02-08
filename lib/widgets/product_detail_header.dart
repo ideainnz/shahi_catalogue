@@ -73,7 +73,7 @@ class ProductDetailHeaderWidget extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  productItem!.productCategoryName != ''
+                  !productItem!.productCategoryName.contains('/')
                       ? Text(
                           productItem!.productCategoryName,
                           textAlign: TextAlign.center,
@@ -83,7 +83,7 @@ class ProductDetailHeaderWidget extends StatelessWidget {
                             fontWeight: FontWeight.w500,
                           ),
                         )
-                      : Image.asset('assets/shahi_logo_isolated.png',
+                      : Image.asset(productItem!.productCategoryName,
                   width: 60,),
                   Text(
                     productItem!.productName,
@@ -91,7 +91,7 @@ class ProductDetailHeaderWidget extends StatelessWidget {
                     style: TextStyle(
                       color: Color(productItem!.productNameColor),
                       fontSize: fontSize + 1,
-                      fontWeight: FontWeight.w400,
+                      fontWeight: FontWeight.w500,
                     ),
                   ),
                   Container(
