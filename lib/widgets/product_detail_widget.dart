@@ -175,20 +175,25 @@ class _ProductDetailWidgetState extends State<ProductDetailWidget> {
                   ),
                 );
               }),
-              SizedBox(
-                height: 20,
-              ),
-              Align(
-                alignment: Alignment.topRight,
-                child: Container(
-                  constraints: BoxConstraints(
-                    maxWidth: 200,
-                    minWidth: 150,
-                  ),
-                  child: Image.asset(widget.productItem!.productDetail.ingredientsArabic,
-                  fit: BoxFit.contain,),
+              if (widget.productItem!.productDetail.ingredientsArabic !=
+                  '') ...{
+                SizedBox(
+                  height: 20,
                 ),
-              ),
+                Align(
+                  alignment: Alignment.topRight,
+                  child: Container(
+                    constraints: BoxConstraints(
+                      maxWidth: 200,
+                      minWidth: 150,
+                    ),
+                    child: Image.asset(
+                      widget.productItem!.productDetail.ingredientsArabic,
+                      fit: BoxFit.contain,
+                    ),
+                  ),
+                ),
+              },
               SizedBox(
                 height: 20,
               ),
