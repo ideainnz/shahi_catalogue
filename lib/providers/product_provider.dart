@@ -23,7 +23,7 @@ class ProductProvider with ChangeNotifier {
     List<ProductItem> ballayBallayItems = [
       ProductItem(
           11,
-          'Dal Chana',
+          'Dal Chaska',
           'assets/images/products/ballay_ballay/front/front1.png',
           'assets/images/products/ballay_ballay/back/back1.png',
           'Available In Rs 5, 10 & 20',
@@ -316,19 +316,19 @@ class ProductProvider with ChangeNotifier {
           ProductDetailProvider.snacksDetail
               .firstWhere((element) => element.productId == 43),
           ProductStatsProvider.gollumGolStats),
-      ProductItem(
-          44,
-          'Dhabay ki Daal',
-          'assets/images/products/snacks/front/front4.png',
-          'assets/images/products/snacks/back/back4.png',
-          'Available In Rs 5',
-          'assets/shahi_logo_isolated.png',
-          'Snacks',
-          0xFFCEA942,
-          0xFF211F20,
-          ProductDetailProvider.snacksDetail
-              .firstWhere((element) => element.productId == 44),
-          ProductStatsProvider.dhabayKiDaalStats),
+      // ProductItem(
+      //     44,
+      //     'Dhabay ki Daal',
+      //     'assets/images/products/snacks/front/front4.png',
+      //     'assets/images/products/snacks/back/back4.png',
+      //     'Available In Rs 5',
+      //     'assets/shahi_logo_isolated.png',
+      //     'Snacks',
+      //     0xFFCEA942,
+      //     0xFF211F20,
+      //     ProductDetailProvider.snacksDetail
+      //         .firstWhere((element) => element.productId == 44),
+      //     ProductStatsProvider.dhabayKiDaalStats),
       ProductItem(
           45,
           'Champ',
@@ -347,7 +347,7 @@ class ProductProvider with ChangeNotifier {
           'Fry-O Spicy',
           'assets/images/products/snacks/front/front6.png',
           'assets/images/products/snacks/back/back6.png',
-          'Available In Rs 10',
+          'Available In Rs 10 & 20',
           'assets/shahi_logo_isolated.png',
           'Snacks',
           0xFFCEA942,
@@ -357,10 +357,10 @@ class ProductProvider with ChangeNotifier {
           ProductStatsProvider.fryOSpicyStats),
       ProductItem(
           47,
-          'Fry-O S&S',
+          'Fry-O Sweet n\' Sour',
           'assets/images/products/snacks/front/front7.png',
           'assets/images/products/snacks/back/back7.png',
-          'Available In Rs 5, 10 & 20',
+          'Available In Rs 10 & 20',
           'assets/shahi_logo_isolated.png',
           'Snacks',
           0xFFCEA942,
@@ -373,7 +373,7 @@ class ProductProvider with ChangeNotifier {
           'Fry-O Salted',
           'assets/images/products/snacks/front/front8.png',
           'assets/images/products/snacks/back/back8.png',
-          'Available In Rs 10',
+          'Available In Rs 10 & 20',
           'assets/shahi_logo_isolated.png',
           'Snacks',
           0xFFCEA942,

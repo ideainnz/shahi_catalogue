@@ -151,7 +151,7 @@ class ProductDetailProvider {
     ProductDetail(
         4,
         24,
-        'Golden Fried Potato stickscovered with a spicy red pepper seasoning.',
+        'Golden Fried Potato sticks covered with a spicy red pepper seasoning.',
         'Potatoes, Vegetable Oil (Palmolein), _Citric Acid (E-330), Salt, Red Chilli, Black _Pepper, Carom Seeds, Cumin, Mando Powder, _Nature Identical Flavor.',
         'Pommes de terre, huile végétale (palmoléine), _Acide citrique (E-330), sel, piment rouge, poivre _noir, graines de carambole, cumin, poudre de _mando, arôme identique à la nature.',
         'assets/images/products/shahi_nimco/arabic/arabic4.png',
@@ -199,7 +199,7 @@ class ProductDetailProvider {
     ProductDetail(
         10,
         30,
-        '---------------------------------------------',
+        'Royal mix is a delicious & spicy Blend of Sev, Peanuts, Lentils & Chick Peas.',
         'Lentils and Pulses, Vegetable Oil (Palmolein), Raisins, _Peanuts, Chickpea flour, Potato, Salt, Carom Seeds, _Cumin, Asafoetida, Black Pepper, Citric Acid (E330) and _Nature Identical Flavor.',
         'Lentilles et légumes secs, huile végétale (palmoléine), raisins secs, arachides, _farine de pois chiche, pomme de terre, sel, graines de carambole, cumin, _asafoetida, poivre noir, acide citrique (E330) et saveur identique de la nature.',
         'assets/images/products/shahi_nimco/arabic/arabic10.png',
@@ -267,7 +267,7 @@ class ProductDetailProvider {
     ProductDetail(
         6,
         46,
-        'A fried potato pellet snack made from the highest quality potatoes from Europe. Fry-O is sure to satisfy your craving for something savory. Fry-O is available in Sweet n’ Sour, Spicy & Salted flavors.',
+        'A fried potato pellet snack made from the highest quality potatoes from Europe. Fry-O is sure to satisfy your craving for something savory. Fry-O is also available in Sweet n’ Sour & Salted flavors.',
         'Potato Powder, Potato Starch, Rice Flour, Vegetable Oil, _Salt, Maltodextrin, Acidity Regulator (Citric Acid E330), _Red Chilli, Black Pepper, Ginger Powder, Cumin, _Coriander Powder, Nature Identical Flavour  & Vitamins _(A,C & D) ',
         'Poudre de pomme de terre, fécule de pomme de terre, _farine de riz, Huile Végétale, Sel, Maltodextrine, Régulateur _d\'acidité (Acide Citrique E330), Piment rouge, poivre noir, _poudre de gingembre, Cumin, poudre de coriandre, nature _identique Saveur & Vitamines (A,C & D)',
         'assets/images/products/snacks/arabic/arabic6.png',
@@ -275,7 +275,7 @@ class ProductDetailProvider {
     ProductDetail(
         7,
         47,
-        'A fried potato pellet snack made from the highest quality potatoes from Europe. Fry-O is sure to satisfy your craving for something savory. Fry-O is available in Sweet n’ Sour, Spicy & Salted flavors.',
+        'A fried potato pellet snack made from the highest quality potatoes from Europe. Fry-O is sure to satisfy your craving for something savory. Fry-O is also available in Spicy & Salted flavors.',
         'Potato Powder, Potato Starch, Rice Flour, Vegetable Oil, _Salt, Sugar, Whey Powder, Dextrose, Nature Identical _Flavour, Maltodextrin, Citric Acid (E-330) & Vitamins (A,C _& D).',
         'Poudre de pomme de terre, fécule de pomme de terre, _farine de riz, Huile végétale, sel, sucre, lactosérum en _poudre, Dextrose, arôme identique à la nature, _maltodextrine, Acide citrique (E-330) et vitamines (A, C _et D).',
         'assets/images/products/snacks/arabic/arabic7.png',
@@ -283,7 +283,7 @@ class ProductDetailProvider {
     ProductDetail(
         8,
         48,
-        'A fried potato pellet snack made from the highest quality potatoes from Europe. Fry-O is sure to satisfy your craving for something savory. Fry-O is available in Sweet n’ Sour, Spicy & Salted flavors.',
+        'A fried potato pellet snack made from the highest quality potatoes from Europe. Fry-O is sure to satisfy your craving for something savory. Fry-O is also available in Sweet n’ Sour & Spicy.',
         'Potato Powder, Potato Starch, Rice Flour, Vegetable Oil, _Salt, Maltodextrin, Acidity Regulator (Sodium Citrate _E331), Nature Identical Flavour & Vitamins (A,C & D) ',
         'Poudre de pomme de terre, fécule de pomme de terre, _farine de riz, Huile Végétale, Sel, Maltodextrine, _Régulateur d\'acidité (citrate de sodium E331), Saveur et _vitamines identiques à la nature (A, C et D)',
         'assets/images/products/snacks/arabic/arabic8.png',
@@ -390,7 +390,7 @@ class ProductDetailProvider {
     ProductDetail(
         4,
         64,
-        'Refreshing Minty chocolate Pan Masala. A blend of chocolate covered Fennel, Coconut, Sesame Seeds and Betel Nuts.',
+        'A sophisticated blend on Roasted Fennel Seeds, Coriander Seeds, Sesame Seeds, Coconut and Dried Dates. Dewaan is a depth of flavor and textures!',
         'Fennel Seeds, Coriander Seeds, Coconut, _Sugar, Sesame Seeds, Dry Dates, Food _Colors (E-133) (E-129) & artificial flavors',
         '',
         'assets/images/products/mouth_freshener/arabic/arabic4.png',
@@ -406,7 +406,7 @@ class ProductDetailProvider {
     ProductDetail(
       6,
       66,
-      'The perfect blend of Fennel Seeds, Dried Dates and Cardamom seeds. The Original “Herbal” Mouth Freshener provides the perfect balance of flavor and refreshment',
+      'The perfect blend of Fennel Seeds, Dried Dates and Cardamom seeds. The Original “Herbal” Mouth Freshener provides the perfect balance of flavor and refreshment.',
       'Fennel seeds, Dry Dates, Cardamom, _Menthol, N.N Sweetener, Natural & _Artificial Flavors.',
       '',
       'assets/images/products/mouth_freshener/arabic/arabic6.png',

@@ -15,9 +15,9 @@ class ProductStatsProvider with ChangeNotifier{
   ];
 
   static final List<ProductStats> bbDalChanaStats = [
-    ProductStats(1, 'Dal Chana\nRs-20', '12 pkts/box', '4.61', '4.84', '8.1 x 6.9 x 5.0'),
-    ProductStats(2, 'Dal Chana\nRs-10', '12 pkts/box', '5.76', '8.01', '6.3 x 6 x 4.5'),
-    ProductStats(3, 'Dal Chana\nRs-5', '12 pkts/pp bag', '1.44', '1.60', '9 x 5.3 + 3.3'),
+    ProductStats(1, 'Dal Chaska\nRs-20', '12 pkts/box', '4.61', '4.84', '8.1 x 6.9 x 5.0'),
+    ProductStats(2, 'Dal Chaska\nRs-10', '12 pkts/box', '5.76', '8.01', '6.3 x 6 x 4.5'),
+    ProductStats(3, 'Dal Chaska\nRs-5', '12 pkts/pp bag', '1.44', '1.60', '9 x 5.3 + 3.3'),
   ];
 
   static final List<ProductStats> bbDSavoryMixStats = [
@@ -121,8 +121,8 @@ class ProductStatsProvider with ChangeNotifier{
   ];
 
   static final List<ProductStats> fryOSpicyStats = [
-    ProductStats(1, 'Fry-O S&S\nRs-10', '12 pkts/pp bag', '0.72', '0.96', '23 x 34'),
-    ProductStats(2, 'Fry-O S&S\nRs-20', '24 pkts/carton', '0.50', '1.18', '14 x 13 x 9.5'),
+    ProductStats(1, 'Fry-O Spicy\nRs-10', '12 pkts/pp bag', '0.72', '0.96', '23 x 34'),
+    ProductStats(2, 'Fry-O Spicy\nRs-20', '24 pkts/carton', '0.50', '1.18', '14 x 13 x 9.5'),
   ];
 
   static final List<ProductStats> fryOSAndSStats = [
@@ -131,8 +131,8 @@ class ProductStatsProvider with ChangeNotifier{
   ];
 
   static final List<ProductStats> fryOSaltedStats = [
-    ProductStats(1, 'Fry-O S&S\nRs-10', '12 pkts/pp bag', '0.72', '0.96', '23 x 34'),
-    ProductStats(2, 'Fry-O S&S\nRs-20', '24 pkts/carton', '0.50', '1.18', '14 x 13 x 9.5'),
+    ProductStats(1, 'Fry-O Salted\nRs-10', '12 pkts/pp bag', '0.72', '0.96', '23 x 34'),
+    ProductStats(2, 'Fry-O Salted\nRs-20', '24 pkts/carton', '0.50', '1.18', '14 x 13 x 9.5'),
   ];
 
   static final List<ProductStats> pomoBitesStats = [
