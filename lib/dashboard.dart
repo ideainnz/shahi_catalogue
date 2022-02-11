@@ -182,14 +182,14 @@ class _DashboardScreenState extends State<DashboardScreen> {
                         child: GestureDetector(
                           child: _dashboardItem(item, size, fontSize, padding),
                           onTap: () => {
-                            if (item.dashboardItemId == 4)
+                            if (item.dashboardItemId == 3)
                               {
                                 if (isLargeScreen)
                                   _screenPopup(context, size, CSRScreen())
                                 else
                                   _switchToScreen(item.dashboardItemId)
                               }
-                            else if (item.dashboardItemId == 5)
+                            else if (item.dashboardItemId == 4)
                               {
                                 if (!isLargeScreen)
                                   _switchToScreen(item.dashboardItemId)

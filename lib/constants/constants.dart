@@ -65,7 +65,7 @@ class Constants {
       "It is through recognizing the importance of efficiency and creativity that we aim to achieve growth in a competitive environment.\n\n"
       "Hence, our mission is to be an organization that is socially responsible and is contributing towards the betterment, growth and development of Pakistan.\n";
   static const String VALUES_TEXT =
-      "\nOur Core Values are:\nQuality\nInnovation\nRespect\nIntegrity\nEfficiency\n";
+      "\nOur Core Values are:\n\u2022 Quality\n\u2022 Innovation\n\u2022 Respect\n\u2022 Integrity\n\u2022 Efficiency\n";
   static const String GLOBAL_FOOT_PRINT_TEXT =
       "\nOur Brands “MOUTH FRESHENERS” and “NIMCO” are perceived in the worldwide markets as driving brands by being popular everywhere. We are customizing different items for our international customers based in Australia, Canada, UK, EU, Far East, Middle East, South East Asia etc. Our product range includes: Mouth Fresheners, Nimco, Snacks and Frozen Item.";
 
