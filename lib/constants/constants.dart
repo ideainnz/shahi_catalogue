@@ -59,17 +59,13 @@ class Constants {
       "The company started with just one product “Shahi Supari” and made its place in the hearts of every household in Karachi. Later, the company launched its range of Mouth Fresheners, catering to different consumers. Snack Products and Frozen Products were other successful ventures that were introduced as separate divisions under the Brand of Shahi Ent (Pvt) Ltd.\n\n"
       "During the 2010s, mouth freshener companies faced a backlash on their products as there were concerns regarding the hygiene conditions under which most of the mouth fresheners were produced in Pakistan. However, Shahi being a high-quality control and hygiene conscious organization from the very start was easily able to acquire the ISO Certifications and never lost the customer trust in their brand.\n";
   static const String VISION_TEXT =
-      "\nAt Shahi, we aim to offer high quality yet low priced products to our consumers by remaining the most technologically advanced company in our field. We strive to be the market leaders in mouth freshener & snacks industry. We work towards establishing Pakistan’s image as a good quality producer of ethnic products locally and abroad.\n";
+      "\nWe Believe that Quality is everyone’s right. We consistently raise the bar on standards to make products that are delicious, safe, wholesome, and accessible to people.\n";
   static const String MISSION_TEXT =
       "\nTo maximize customer’s satisfaction, by continually endeavouring to deliver consistent quality products. Our aim is to reinforce our position as the most hygienically sound & technologically advanced company in our field.\n\n"
       "It is through recognizing the importance of efficiency and creativity that we aim to achieve growth in a competitive environment.\n\n"
       "Hence, our mission is to be an organization that is socially responsible and is contributing towards the betterment, growth and development of Pakistan.\n";
   static const String VALUES_TEXT =
-      "\nAt Shahi, we believe in the following core values\n\n"
-      "Passion: We act with intense positive energy and are not afraid to take risks. We challenge ourselves continuously, we’re good at what we do, and we take pride in who we are.\n\n"
-      "Customer Focus: We see the world through the eyes of our customers. We do everything possible that makes them happy.\n\n"
-      "People-Centric: We put our people first. We treat them with respect and actively contribute towards their development.\n\n"
-      "Teamwork: Our roles are defined, not our responsibilities. We believe in going the extra mile to accomplish our goals. We coach and support each other to ensure everyone wins.\n";
+      "\nOur Core Values are:\nQuality\nInnovation\nRespect\nIntegrity\nEfficiency\n";
   static const String GLOBAL_FOOT_PRINT_TEXT =
       "\nOur Brands “MOUTH FRESHENERS” and “NIMCO” are perceived in the worldwide markets as driving brands by being popular everywhere. We are customizing different items for our international customers based in Australia, Canada, UK, EU, Far East, Middle East, South East Asia etc. Our product range includes: Mouth Fresheners, Nimco, Snacks and Frozen Item.";
 

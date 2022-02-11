@@ -5,7 +5,7 @@ class ProductStatsProvider with ChangeNotifier{
   // BALLAY BALLAY
   static final List<ProductStats> bbNamakParayStats = [
     ProductStats(
-        1, 'Namak Paray', '12 pkts/pp bag', '1.44', '1.61', '9 x 5.3 + 3.3'),
+        1, 'Namak Paray\nRs-5', '12 pkts/pp bag', '1.44', '1.61', '9 x 5.3 + 3.3'),
   ];
 
   static final List<ProductStats> bbDalMothStats = [
@@ -43,16 +43,16 @@ class ProductStatsProvider with ChangeNotifier{
 
   // SHAHI NIMCO
   static final List<ProductStats> nimcoSaltedChipsStats = [
-    ProductStats(1, 'Salted Chips', '36 pkts/carton', '4.5', '5.6', '20 x 14.25 x 9.4in'),
+    ProductStats(1, 'Salted Chips\nRs-100', '36 pkts/carton', '4.5', '5.6', '20 x 14.25 x 9.4in'),
     ProductStats(2, 'Salted Chips\nRs-20', '24 pkts/box', '6.05', '9.73', '8.25 x 7 x 5.3in'),
   ];
 
   static final List<ProductStats> nimcoSavoryMixStats = [
-    ProductStats(1, 'Savory Mix', '36 pkts/carton', '5.76', '6.86', '20 x 14.25 x 9.4in'),
+    ProductStats(1, 'Savory Mix\nRs-100', '36 pkts/carton', '5.76', '6.86', '20 x 14.25 x 9.4in'),
   ];
 
   static final List<ProductStats> nimcoMunchyMixStats = [
-    ProductStats(1, 'Munchy Mix', '36 pkts/carton', '7.2', '8.30', '20 x 14.25 x 9.4in'),
+    ProductStats(1, 'Munchy Mix\nRs-100', '36 pkts/carton', '7.2', '8.30', '20 x 14.25 x 9.4in'),
   ];
 
   static final List<ProductStats> nimcoDalMothStats = [
@@ -61,7 +61,7 @@ class ProductStatsProvider with ChangeNotifier{
   ];
 
   static final List<ProductStats> nimcoDalMoongStats = [
-    ProductStats(1, 'Dal Moong\nLarge', '36 pkts/carton', '5.40', '6.50', '20 x 14.25 x 9.4in'),
+    ProductStats(1, 'Dal Moong\nRs-100', '36 pkts/carton', '5.40', '6.50', '20 x 14.25 x 9.4in'),
     ProductStats(2, 'Dal Moong\nRs-50', '24 pkts/carton', '1.44', '1.93', '11.5 x 11.25 x 8.2in'),
     ProductStats(3, 'Dal Moong\nRs-20', '24 pkts/box', '5.40', '9.15', '8.25 x 7 x 5.3in'),
   ];
@@ -78,20 +78,20 @@ class ProductStatsProvider with ChangeNotifier{
   ];
 
   static final List<ProductStats> nimcoBlackPepperChipsStats = [
-    ProductStats(1, 'Black Pepper\nChips', '36 pkts/carton', '4.50', '5.60', '20 x 14.25 x 9.4in'),
+    ProductStats(1, 'Black Pepper\nRs-100', '36 pkts/carton', '4.50', '5.60', '20 x 14.25 x 9.4in'),
     ProductStats(2, 'Black Pepper\nRs-20', '24 pkts/box', '6.05', '9.73', '8.25 x 7 x 5.3in'),
   ];
 
   static final List<ProductStats> nimcoChewraStats = [
-    ProductStats(1, 'Chewra', '36 pkts/carton', '7.20', '8.32', '20 x 14.25 x 9.4in'),
+    ProductStats(1, 'Chewra\nRs-100', '36 pkts/carton', '7.20', '8.32', '20 x 14.25 x 9.4in'),
   ];
 
   static final List<ProductStats> nimcoBoondiStats = [
-    ProductStats(1, 'Boondi', '36 pkts/carton', '7.20', '8.38', '20 x 14.25 x 9.4in'),
+    ProductStats(1, 'Boondi\nRs-100', '36 pkts/carton', '7.20', '8.38', '20 x 14.25 x 9.4in'),
   ];
 
   static final List<ProductStats> nimcoPapdiStats = [
-    ProductStats(1, 'Papdi', '36 pkts/carton', '5.40', '6.50', '20 x 14.25 x 9.4in'),
+    ProductStats(1, 'Papdi\nRs-100', '36 pkts/carton', '5.40', '6.50', '20 x 14.25 x 9.4in'),
   ];
 
   static final List<ProductStats> nimcoRoyalMixStats = [

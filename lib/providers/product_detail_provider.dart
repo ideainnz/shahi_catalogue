@@ -100,7 +100,7 @@ class ProductDetailProvider {
     ProductDetail(
         5,
         15,
-        'Namak Paray: crispy fried dough wafer flavored with cumin and carom seeds',
+        'Crispy fried dough wafer flavored with cumin and carom seeds',
         'Flour, Salt, Cumin, Thyme &_Refined Vegetable Oil.',
         'Farine, Sel, Cumin, Thym &_Huile végétale raffinée.',
         'assets/images/products/ballay_ballay/arabic/arabic5.png',
