@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:shahi_catalogue/constants.dart';
+import 'package:shahi_catalogue/constants/constants.dart';
 import 'package:shahi_catalogue/models/product_item.dart';
-import 'package:shahi_catalogue/product_detail_screen.dart';
+import 'package:shahi_catalogue/product_detail.dart';
 import 'package:shahi_catalogue/widgets/product_image.dart';
 import 'package:shahi_catalogue/widgets/zoom_product_item.dart';
 
@@ -33,50 +33,66 @@ class _ProductCardState extends State<ProductCard> {
 
     return Container(
       decoration: BoxDecoration(
-        color: Color(Constants.bgColor),
+        color: Colors.grey[100],
         borderRadius: BorderRadius.circular(15),
         boxShadow: [
           BoxShadow(
-            offset: const Offset(4, 4),
-            blurRadius: 5,
-            color: Colors.black.withOpacity(0.2),
+            spreadRadius: 3,
+            blurRadius: 7,
+            color: Colors.black.withOpacity(0.1),
           ),
         ],
       ),
-      child: Padding(
-        padding: EdgeInsets.all(padding),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Expanded(
-              child: size.width < Constants.iphoneLimit
-                  ? Hero(
-                      tag: 'icon-${widget.productItem.productId}',
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Expanded(
+            child: size.width < Constants.iphoneLimit
+                ? Hero(
+                    tag: 'icon-${widget.productItem.productId}',
+                    child: Padding(
+                      padding: EdgeInsets.all(padding),
                       child: Image.asset(
                         widget.productItem.productImagePath,
                       ),
-                    )
-                  : Image.asset(
+                    ),
+                  )
+                : Padding(
+                    padding: EdgeInsets.all(padding),
+                    child: Image.asset(
                       widget.productItem.productImagePath,
                     ),
-              // child: ProductImage(
-              //   widget.category,
-              //   widget.productItem,
-              //   widget.callback,
-              // ),
-            ),
-            SizedBox(height: 25),
-            Text(
-              widget.productItem.productName,
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                color: Colors.black87,
-                fontWeight: FontWeight.w500,
-                fontSize: fontSize,
+                  ),
+            // child: ProductImage(
+            //   widget.category,
+            //   widget.productItem,
+            //   widget.callback,
+            // ),
+          ),
+          SizedBox(height: 25),
+          Container(
+            width: double.infinity,
+            decoration: BoxDecoration(
+                color: Color(Constants.redColor),
+                borderRadius: BorderRadius.only(
+                  bottomLeft: Radius.circular(15),
+                  bottomRight: Radius.circular(15),
+                )),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 4.0),
+              child: Text(
+                widget.productItem.productName,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  // color: Colors.black87,
+                  color: Colors.white,
+                  fontWeight: FontWeight.w500,
+                  fontSize: fontSize,
+                ),
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
