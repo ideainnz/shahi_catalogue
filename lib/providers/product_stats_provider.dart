@@ -41,6 +41,43 @@ class ProductStatsProvider with ChangeNotifier{
         1, 'Munchy Mix\nRs-10', '12 pkts/box', '4.46', '6.72', '6.3 x 6 x 4.5'),
   ];
 
+  static final List<ProductStats> bbDalMoongStats2 = [
+    ProductStats(
+        1, 'Dal Moong\nRs-20', '12 pkts/box', '7.20', '9.60', '6.3 x 6 x 5.2'),
+  ];
+
+  static final List<ProductStats> bbChilliChipsStats = [
+    ProductStats(
+        1, 'Chilli Chips\nRs-10', 'N/A', 'N/A', 'N/A', 'N/A'),
+  ];
+
+  static final List<ProductStats> bbDalChaskaStats = [
+    ProductStats(
+        1, 'Dal Chaska\nRs-10', 'N/A', 'N/A', 'N/A', 'N/A'),
+    ProductStats(
+        2, 'Dal Chaska\nRs-20', 'N/A', 'N/A', 'N/A', 'N/A'),
+  ];
+
+  static final List<ProductStats> bbDalMothStats2 = [
+    ProductStats(1, 'Dal Moth\nRs-20', '12 pkts/box', '4.61', '4.84', '8.1 x 6.9 x 5.0'),
+    ProductStats(2, 'Dal Moth\nRs-10', '12 pkts/box', '5.81', '7.44', '6.3 x 6 x 4.5'),
+  ];
+
+  static final List<ProductStats> bbMunchyMixStats2 = [
+    ProductStats(1, 'Munchy Mix\nRs-20', 'N/A', 'N/A', 'N/A', 'N/A'),
+    ProductStats(2, 'Munchy Mix\nRs-10', '12 pkts/box', '4.46', '6.72', '6.3 x 6 x 4.5'),
+  ];
+
+  static final List<ProductStats> bbSaltedPeanutsStats2 = [
+    ProductStats(
+        1, 'Salted Peanuts\nRs-20', '12 pkts/box', '5.18', '7.71', '6.3 x 6 x 5.2'),
+  ];
+
+  static final List<ProductStats> bbDSavoryMixStats2 = [
+    ProductStats(1, 'Savory Mix\nRs-20', '12 pkts/box', '4.61', '4.84', '8.1 x 6.9 x 5.0'),
+    ProductStats(2, 'Savory Mix\nRs-10', '12 pkts/box', '5.18', '7.44', '6.3 x 6 x 4.5'),
+  ];
+
   // SHAHI NIMCO
   static final List<ProductStats> nimcoSaltedChipsStats = [
     ProductStats(1, 'Salted Chips\nRs-100', '36 pkts/carton', '4.5', '5.6', '20 x 14.25 x 9.4in'),
@@ -175,6 +212,70 @@ class ProductStatsProvider with ChangeNotifier{
     ProductStats(1, 'Popstar Pizza\nRs-10', '12 pkts/pp bag', '1.15', '1.43', '14 x 17'),
   ];
 
+  static final List<ProductStats> popstarChatpataChickenStats2 = [
+    ProductStats(1, 'Popstar Chicken\nRs-10', '12 pkts/pp bag', '1.30', '1.57', '14.5 x 18'),
+  ];
+
+  static final List<ProductStats> popstarChickenSamosaStats2 = [
+    ProductStats(1, 'Popstar Samosa\nRs-5', '12 pkts/pp bag', '0.97', '1.29', '13 x 20'),
+  ];
+
+  static final List<ProductStats> fryOSAndSStats2 = [
+    ProductStats(1, 'Fry-O S&S\nRs-10', '12 pkts/pp bag', '0.72', '0.96', '23 x 34'),
+    ProductStats(2, 'Fry-O S&S\nRs-20', '24 pkts/carton', '0.50', '1.18', '14 x 13 x 9.5'),
+  ];
+
+  static final List<ProductStats> fryOSaltedStats2 = [
+    ProductStats(1, 'Fry-O Salted\nRs-10', '12 pkts/pp bag', '0.72', '0.96', '23 x 34'),
+    ProductStats(2, 'Fry-O Salted\nRs-20', '24 pkts/carton', '0.50', '1.18', '14 x 13 x 9.5'),
+  ];
+
+  static final List<ProductStats> fryOSpicyStats2 = [
+    ProductStats(1, 'Fry-O Spicy\nRs-10', '12 pkts/pp bag', '0.72', '0.96', '23 x 34'),
+    ProductStats(2, 'Fry-O Spicy\nRs-20', '24 pkts/carton', '0.50', '1.18', '14 x 13 x 9.5'),
+  ];
+
+  static final List<ProductStats> kinkornSpicyStats2 = [
+    ProductStats(1, 'Kinkorn\nRs-10', '12 pkts/pp bag', '1.08', '1.39', '14 x 16'),
+  ];
+
+  static final List<ProductStats> kinkornCheeseStats2 = [
+    ProductStats(1, 'Kinkorn\nRs-10', '12 pkts/pp bag', '1.08', '1.39', '14 x 16'),
+  ];
+
+  static final List<ProductStats> mangoBuntysStats2 = [
+    ProductStats(1, 'Mango Buntys\nRs-10', '12 pkts/pp bag', '1.44', '1.72', '23.5 x 40'),
+  ];
+
+  static final List<ProductStats> pattiTimeStats2 = [
+    ProductStats(1, 'Patti Time\nRs-10', '12 pkts/pp bag', '1.44', '1.63', '17 x 35'),
+  ];
+
+  static final List<ProductStats> pomoBitesStats2 = [
+    ProductStats(1, 'Pomo Bites\nRs-10', '12 pkts/pp bag', '1.44', '1.72', '23.5 x 40'),
+  ];
+
+  static final List<ProductStats> popstarClassicCheeseStats2 = [
+    ProductStats(1, 'Popstar Cheese\nRs-20', 'N/A', 'N/A', 'N/A', 'N/A'),
+    ProductStats(2, 'Popstar Cheese\nRs-10', '12 pkts/pp bag', '1.15', '1.43', '14.5 x 18'),
+  ];
+
+  static final List<ProductStats> popstarChickenPizzaStats2 = [
+    ProductStats(1, 'Popstar Pizza\nRs-10', '12 pkts/pp bag', '1.15', '1.43', '14 x 17'),
+  ];
+
+  static final List<ProductStats> roccoStats = [
+    ProductStats(1, 'Rocco\nRs-10', 'N/A', 'N/A', 'N/A', 'N/A'),
+  ];
+
+  static final List<ProductStats> wheatOKarariyanStats2 = [
+    ProductStats(1, 'Wheat-O Karariyan\nRs-10', '12 pkts/pp bag', '1.58', '1.86', '14.5 x 18'),
+  ];
+
+  static final List<ProductStats> wheatOOriginalStats2 = [
+    ProductStats(1, 'Wheat-O Original\nRs-10', '12 pkts/pp bag', '1.58', '1.86', '14.5 x 18'),
+  ];
+
   // MOUTH FRESHENER
   static final List<ProductStats> aasPaasChocolateStats = [
     ProductStats(1, 'AasPass\nRs-5', '24 x 24', '6.34', '7.97', '14.5 x 13.75 x 10.75in'),
@@ -198,16 +299,16 @@ class ProductStatsProvider with ChangeNotifier{
   ];
 
   static final List<ProductStats> shahiDeluxeStats = [
-    ProductStats(1, 'Shahi Deluxe\nLite Rs-2.5', '50 x 12 x 12', '21.60', '28.34', '24.75 x 19.5 x 17.75in'),
+    ProductStats(1, 'Shahi Deluxe\nRs-2.5', '50 x 12 x 12', '21.60', '28.34', '24.75 x 19.5 x 17.75in'),
   ];
 
   static final List<ProductStats> shahiElaichiStats = [
     ProductStats(1, 'Shahi Elaichi\nRs-2', '48 x 12 x 12', '16.58', '23.09', '24 x 18 x 16.5in'),
-    ProductStats(1, 'Shahi Elaichi\nRs-5', '53 x 24', '4.83', '6.89', '15.25 x 14 x 10.9in'),
+    ProductStats(2, 'Shahi Elaichi\nRs-5', '53 x 24', '4.83', '6.89', '15.25 x 14 x 10.9in'),
   ];
 
   static final List<ProductStats> shahiKalonjiStats = [
-    ProductStats(1, 'Shahi Kalonji\nRs-5', '24 x 12', '0.86', '1.50', '12.25 x 11.5 x 5in'),
+    ProductStats(1, 'Shahi Kalonji\nRs-2', '24 x 12', '0.86', '1.50', '12.25 x 11.5 x 5in'),
     ProductStats(2, 'Shahi Kalonji\nRs-5', '12 x 12', '0.43', '0.85', '10.75 x 8.5 x 5in'),
   ];
 
@@ -228,6 +329,47 @@ class ProductStatsProvider with ChangeNotifier{
 
   static final List<ProductStats> aasPaasSweetSonf = [
     ProductStats(1, 'Aas Paas\nSweet Sonf Rs-5', '24 x 24', '8.64', '10.28', '14.5 x 13.75 x 10.75in'),
+  ];
+
+  static final List<ProductStats> aasPaasChocolateStats2 = [
+    ProductStats(1, 'AasPass\nRs-5', 'N/A', 'N/A', 'N/A', 'N/A'),
+  ];
+
+  static final List<ProductStats> aasPaasMeethaPanMasalaStats2 = [
+    ProductStats(1, 'AasPass\nRs-5', 'N/A', 'N/A', 'N/A', 'N/A'),
+  ];
+
+  static final List<ProductStats> aasPaasSweetSonf2 = [
+    ProductStats(1, 'Aas Paas\nSweet Sonf Rs-5', 'N/A', 'N/A', 'N/A', 'N/A'),
+  ];
+
+  static final List<ProductStats> shahiMevaChocolateStats2 = [
+    ProductStats(1, 'Shahi Meva\nChocolate Rs-5', 'N/A', 'N/A', 'N/A', 'N/A'),
+  ];
+
+  static final List<ProductStats> shahiDeewanStats2 = [
+    ProductStats(1, 'Shahi Deewan\nRs-5', 'N/A', 'N/A', 'N/A', 'N/A'),
+  ];
+
+  static final List<ProductStats> shahiDeluxeStats2 = [
+    ProductStats(1, 'Shahi Deluxe\nRs-5', 'N/A', 'N/A', 'N/A', 'N/A'),
+  ];
+
+  static final List<ProductStats> shahiElaichiStats2 = [
+    ProductStats(1, 'Shahi Elaichi\nRs-5', '53 x 24', '4.83', '6.89', '15.25 x 14 x 10.9in'),
+  ];
+
+  static final List<ProductStats> shahiKalonjiStats2 = [
+    ProductStats(2, 'Shahi Kalonji\nRs-5', '12 x 12', '0.43', '0.85', '10.75 x 8.5 x 5in'),
+  ];
+
+  static final List<ProductStats> shahiMevaStats2 = [
+    ProductStats(1, 'Shahi Meva\nRs-5', '24 x 24', '4.61', '6.19', '14.5 x 13.75 x 10.75in'),
+    ProductStats(2, 'Shahi Meva\nRs-10', '12 x 12', '2.45', '3.20', '12.5 x 11.75 x 7.45in'),
+  ];
+
+  static final List<ProductStats> shahiSupermintStats2 = [
+    ProductStats(1, 'Shahi Supermint\nRs-5', 'N/A', 'N/A', 'N/A', 'N/A'),
   ];
 
 }

@@ -33,7 +33,6 @@ class ProductDetailHeaderWidget extends StatelessWidget {
     //     ),
     //   ],
     // );
-
     return Stack(
       fit: StackFit.expand,
       children: [

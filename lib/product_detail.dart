@@ -47,7 +47,6 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
     );
 
     _size = MediaQuery.of(context).size;
-
     return Container(
       constraints: BoxConstraints(
         maxWidth: _size.width < Constants.iphoneLimit

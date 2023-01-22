@@ -35,7 +35,7 @@ class _ProductsScreenState extends State<ProductsScreen>
     ProductCategory productCategory = Provider.of<ProductProvider>(context)
         .getProductByCategory(categoryIndex);
 
-    ValueChanged<String>? callback;
+    ValueChanged<int>? callback;
     return Scaffold(
       body: WillPopScope(
         onWillPop: () async {
@@ -69,7 +69,8 @@ class _ProductsScreenState extends State<ProductsScreen>
                       Constants.kPadding + 70,
                     ),
                     itemCount: productCategory.productItems.length,
-                    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    gridDelegate:
+                        const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
                       mainAxisSpacing: 20,
                       crossAxisSpacing: 20,
@@ -84,6 +85,7 @@ class _ProductsScreenState extends State<ProductsScreen>
                           // callback: largeScreen ? _changeProductWidget : null,
                         ),
                         onTap: () => {
+                          print("INDEX:" + index.toString()),
                           isFullscreenItemVisible = false,
                           callback = largeScreen ? _changeProductWidget : null,
                           if (callback == null)
@@ -101,7 +103,7 @@ class _ProductsScreenState extends State<ProductsScreen>
                             {
                               // ProductDetailScreen.isFullscreenItemVisible = false,
                               callback!(productCategory
-                                  .productItems[index].productName),
+                                  .productItems[index].productId),
                             }
                         },
                         onLongPress: () => {
@@ -155,13 +157,13 @@ class _ProductsScreenState extends State<ProductsScreen>
     });
   }
 
-  _changeProductWidget(String productName) {
+  _changeProductWidget(int productId) {
     ProductProvider productProvider =
         Provider.of<ProductProvider>(context, listen: false);
     ProductItem productItem = productProvider
         .getProductByCategory(currentIndex)
         .productItems
-        .where((pi) => pi.productName == productName)
+        .where((pi) => pi.productId == productId)
         .first;
     setState(() {
       currentProductItem = productItem;
@@ -240,7 +242,7 @@ class _ProductsScreenState extends State<ProductsScreen>
 
     currentProductItem ??= productCategory.productItems.first;
     // currentProductItem = productCategory.productItems.first;
-    print("CURRENT PRODUCT ITEM: " + currentProductItem!.productName);
+    // print("CURRENT PRODUCT ITEM: " + currentProductItem!.productName);
 
     List<Tab> tabs = List.generate(
         productCategories.length,
@@ -252,7 +254,8 @@ class _ProductsScreenState extends State<ProductsScreen>
               text: productCategories[index],
             ),
         growable: false);
-
+    print("PATH_0: " +
+        currentProductItem!.productImagePath);
     Widget initHomeScreen(bool largeScreen) {
       return DefaultTabController(
         length: productCategories.length,
