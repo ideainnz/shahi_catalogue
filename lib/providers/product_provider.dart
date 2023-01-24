@@ -20,7 +20,7 @@ class ProductProvider with ChangeNotifier {
 
   void _buildInitialProduct() {
     List<ProductItem> ballayBallayItems = [
-      ProductItem(
+      /*ProductItem(
           11,
           'Dal Chaska',
           'assets/images/products/ballay_ballay/front/front1.png',
@@ -110,7 +110,7 @@ class ProductProvider with ChangeNotifier {
           0xFFE72626,
           ProductDetailProvider.ballayBallayDetail
               .firstWhere((element) => element.productId == 17),
-          ProductStatsProvider.bbDSavoryMixStats),
+          ProductStatsProvider.bbDSavoryMixStats),*/
       ProductItem(
           18,
           'Dl Moong',
@@ -367,7 +367,7 @@ class ProductProvider with ChangeNotifier {
     _productCategories.add(ProductCategory(2, _categories[1], shahiNimcoItems));
 
     List<ProductItem> snacksItems = [
-      ProductItem(
+      /*ProductItem(
           41,
           'Kinkorn Cheese',
           'assets/images/products/snacks/front/front1.png',
@@ -587,7 +587,7 @@ class ProductProvider with ChangeNotifier {
           0xFF211F20,
           ProductDetailProvider.snacksDetail
               .firstWhere((element) => element.productId == 57),
-          ProductStatsProvider.popstarChickenPizzaStats),
+          ProductStatsProvider.popstarChickenPizzaStats),*/
       ProductItem(
           58,
           'Popstar Chatpata Chicken',

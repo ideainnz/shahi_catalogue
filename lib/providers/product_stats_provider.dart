@@ -3,7 +3,7 @@ import 'package:shahi_catalogue/models/product_stats.dart';
 
 class ProductStatsProvider with ChangeNotifier{
   // BALLAY BALLAY
-  static final List<ProductStats> bbNamakParayStats = [
+  /*static final List<ProductStats> bbNamakParayStats = [
     ProductStats(
         1, 'Namak Paray\nRs-5', '12 pkts/pp bag', '1.44', '1.61', '9 x 5.3 + 3.3'),
   ];
@@ -39,7 +39,7 @@ class ProductStatsProvider with ChangeNotifier{
   static final List<ProductStats> bbMunchyMixStats = [
     ProductStats(
         1, 'Munchy Mix\nRs-10', '12 pkts/box', '4.46', '6.72', '6.3 x 6 x 4.5'),
-  ];
+  ];*/
 
   static final List<ProductStats> bbDalMoongStats2 = [
     ProductStats(
@@ -137,7 +137,7 @@ class ProductStatsProvider with ChangeNotifier{
   ];
 
   // SNACKS
-  static final List<ProductStats> kinkornCheeseStats = [
+  /*static final List<ProductStats> kinkornCheeseStats = [
     ProductStats(1, 'Kinkorn\nRs-10', '12 pkts/pp bag', '1.08', '1.39', '14 x 16'),
   ];
 
@@ -210,7 +210,7 @@ class ProductStatsProvider with ChangeNotifier{
 
   static final List<ProductStats> popstarChickenPizzaStats = [
     ProductStats(1, 'Popstar Pizza\nRs-10', '12 pkts/pp bag', '1.15', '1.43', '14 x 17'),
-  ];
+  ];*/
 
   static final List<ProductStats> popstarChatpataChickenStats2 = [
     ProductStats(1, 'Popstar Chicken\nRs-10', '12 pkts/pp bag', '1.30', '1.57', '14.5 x 18'),
