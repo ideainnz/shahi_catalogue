@@ -478,7 +478,7 @@ class ProductDetailProvider {
         'Corn Meal, Vegetable Oil (Palmolein), Salt, Whey Powder, _Maltodextrin, Garlic Powder, Onion Powder, Dextrose, _Permitted Food Color Sunset Yellow (E110) and Nature _Identical Flavor (Cheese).',
         '',
         'assets/images/products/snacks/arabic/arabic25.png',
-        'assets/images/products/shahi_nimco/nutrition/nutrition25.png'),
+        'assets/images/products/snacks/nutrition/nutrition25.png'),
     ProductDetail(
         26,
         606,
