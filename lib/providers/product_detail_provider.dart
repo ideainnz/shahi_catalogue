@@ -524,7 +524,7 @@ class ProductDetailProvider {
         611,
         'A 100% wheat-based snack with a slightly spicy flavor.',
         'Wheat Flour, Vegetable Oil (Palmolein), Red Chili, Mango Powder, Nature Identical Flavor, Salt, Sugar, Black Pepper, Acidity Regulator (Citric Acid E-330) & Garlic Powder.',
-        'Farine de blé, huile végétale (palmoléine), sel, sel noir, _poivre noir, poudre d\'ail, sucre, piment rouge, poudre _de mangue, acide citrique (E-330) et arôme identique _à la nature.',
+        '',
         'assets/images/products/snacks/arabic/arabic31.png',
         'assets/images/products/snacks/nutrition/nutrition31.png'),
     ProductDetail(
@@ -532,7 +532,7 @@ class ProductDetailProvider {
         612,
         'A 100% wheat-based snack with taste of real chicken. A delicious snack for an extra burst of energy and flavor.',
         'Wheat Flour, Vegetable Oil (Palmolein), Dextrose, Nature Identical Flavor, Maltodextrin, Black Pepper, Garlic Powder, Cumin, Salt, Acidity Regulator (Citric Acid E-330), Sugar, Red Chili & Leavening Agent (Sodium bicarbonate E-500).',
-        'Farine de blé, huile végétale (palmoléine), sel, sucre, _poivre noir, piment rouge, sel noir, bicarbonate de _sodium (E-500), dextrose, maltodextrine, acide citrique _(E-330) et arôme identique à la nature (poudre de _poulet)',
+        '',
         'assets/images/products/snacks/arabic/arabic32.png',
         'assets/images/products/snacks/nutrition/nutrition32.png'),
   ];
