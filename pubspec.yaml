@@ -86,6 +86,10 @@ flutter:
     - assets/images/products/mouth_freshener/side/
     - assets/images/products/mouth_freshener/nutrition/
     - assets/images/products/mouth_freshener/arabic/
+    - assets/images/products/mouth_freshener_jars/front/
+    - assets/images/products/mouth_freshener_jars/side/
+    - assets/images/products/mouth_freshener_jars/nutrition/
+    - assets/images/products/mouth_freshener_jars/arabic/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

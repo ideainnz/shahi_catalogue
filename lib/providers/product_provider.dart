@@ -12,6 +12,7 @@ class ProductProvider with ChangeNotifier {
     'Shahi Nimco',
     'Snacks',
     'Mouth Freshener',
+    'Jars'
   ];
 
   ProductProvider() {
@@ -113,7 +114,7 @@ class ProductProvider with ChangeNotifier {
           ProductStatsProvider.bbDSavoryMixStats),*/
       ProductItem(
           18,
-          'Dl Moong',
+          'Dal Moong',
           'assets/images/products/ballay_ballay/front/front8.png',
           'assets/images/products/ballay_ballay/back/back8.png',
           'Available In Rs 20',
@@ -145,7 +146,7 @@ class ProductProvider with ChangeNotifier {
           'Available In Rs 10 & 20',
           'Ballay Ballay',
           'Nimco',
-          0xFFE71919,
+          0xFFAFAF00,
           0xFFE72626,
           ProductDetailProvider.ballayBallayDetail
               .firstWhere((element) => element.productId == 20),
@@ -158,7 +159,7 @@ class ProductProvider with ChangeNotifier {
           'Available In Rs 10 & 20',
           'Ballay Ballay',
           'Nimco',
-          0xFFE71919,
+          0xFF39AF36,
           0xFFE72626,
           ProductDetailProvider.ballayBallayDetail
               .firstWhere((element) => element.productId == 121),
@@ -171,7 +172,7 @@ class ProductProvider with ChangeNotifier {
           'Available In Rs 10 & 20',
           'Ballay Ballay',
           'Nimco',
-          0xFFE71919,
+          0xFFFFA700,
           0xFFE72626,
           ProductDetailProvider.ballayBallayDetail
               .firstWhere((element) => element.productId == 122),
@@ -184,7 +185,7 @@ class ProductProvider with ChangeNotifier {
           'Available In Rs 20',
           'Ballay Ballay',
           'Nimco',
-          0xFFE71919,
+          0xFF19BAE0,
           0xFFE72626,
           ProductDetailProvider.ballayBallayDetail
               .firstWhere((element) => element.productId == 123),
@@ -787,7 +788,7 @@ class ProductProvider with ChangeNotifier {
     _productCategories.add(ProductCategory(3, _categories[2], snacksItems));
 
     List<ProductItem> mouthFreshenerItems = [
-      ProductItem(
+      /*ProductItem(
           61,
           'Aas Pas Chocolate',
           'assets/images/products/mouth_freshener/front/front1.png',
@@ -942,7 +943,7 @@ class ProductProvider with ChangeNotifier {
           0xFFE72626,
           ProductDetailProvider.mouthFreshenerDetail
               .firstWhere((element) => element.productId == 72),
-          ProductStatsProvider.aasPaasSweetSonf),
+          ProductStatsProvider.aasPaasSweetSonf),*/
       ProductItem(
           73,
           'Aas Pas Chocolate',
@@ -1076,6 +1077,141 @@ class ProductProvider with ChangeNotifier {
     ];
     _productCategories
         .add(ProductCategory(4, _categories[3], mouthFreshenerItems));
+
+    List<ProductItem> mouthFreshenerJarItems = [
+      ProductItem(
+          101,
+          'Aas Pas Chocolate',
+          'assets/images/products/mouth_freshener_jars/front/front1.png',
+          'assets/images/products/mouth_freshener_jars/side/side1.png',
+          'Available In Rs ',
+          'assets/shahi_logo_isolated.png',
+          'Mouth Freshener',
+          0xFF8A181A,
+          0xFF8A181A,
+          ProductDetailProvider.mouthFreshenerJarDetail
+              .firstWhere((element) => element.productId == 101),
+          ProductStatsProvider.aasPaasChocolateJarStats),
+      ProductItem(
+          102,
+          'Aas Pas Meetha',
+          'assets/images/products/mouth_freshener_jars/front/front2.png',
+          'assets/images/products/mouth_freshene_jarsr/side/side2.png',
+          'Available In Rs ',
+          'assets/aas_pas_logo.png',
+          'Mouth Freshener',
+          0xFF8A181A,
+          0xFFA62283,
+          ProductDetailProvider.mouthFreshenerJarDetail
+              .firstWhere((element) => element.productId == 102),
+          ProductStatsProvider.aasPaasMeethaPanMasalaJarStats),
+      ProductItem(
+          103,
+          'Aas Pas Sweet Sonf',
+          'assets/images/products/mouth_freshener_jars/front/front3.png',
+          'assets/images/products/mouth_freshener_jars/side/side3.png',
+          'Available In Rs ',
+          'assets/aas_pas_logo.png',
+          'Mouth Freshener',
+          0xFF8A181A,
+          0xFFE72626,
+          ProductDetailProvider.mouthFreshenerJarDetail
+              .firstWhere((element) => element.productId == 103),
+          ProductStatsProvider.aasPaasSweetSonfJarStats),
+      ProductItem(
+          104,
+          'Shahi Meva Chocolate',
+          'assets/images/products/mouth_freshener_jars/front/front4.png',
+          'assets/images/products/mouth_freshener_jars/side/side4.png',
+          'Available In Rs ',
+          'assets/shahi_logo_isolated.png',
+          'Mouth Freshener',
+          0xFF001766,
+          0xFFE72626,
+          ProductDetailProvider.mouthFreshenerJarDetail
+              .firstWhere((element) => element.productId == 104),
+          ProductStatsProvider.shahiMevaChocolateJarStats),
+      ProductItem(
+          105,
+          'Shahi Deewan',
+          'assets/images/products/mouth_freshener_jars/front/front5.png',
+          'assets/images/products/mouth_freshener_jars/side/side5.png',
+          'Available In Rs ',
+          'assets/shahi_logo_isolated.png',
+          'Mouth Freshener',
+          0xFF001766,
+          0xFFE72626,
+          ProductDetailProvider.mouthFreshenerJarDetail
+              .firstWhere((element) => element.productId == 105),
+          ProductStatsProvider.shahiDeewanJarStats),
+      ProductItem(
+          106,
+          'Shahi Deluxe',
+          'assets/images/products/mouth_freshener_jars/front/front6.png',
+          'assets/images/products/mouth_freshener_jars/side/side6.png',
+          'Available In Rs ',
+          'assets/shahi_logo_isolated.png',
+          'Mouth Freshener',
+          0xFF001766,
+          0xFFE72626,
+          ProductDetailProvider.mouthFreshenerJarDetail
+              .firstWhere((element) => element.productId == 106),
+          ProductStatsProvider.shahiDeluxeJarStats),
+      ProductItem(
+          107,
+          'Shahi Elaichi',
+          'assets/images/products/mouth_freshener_jars/front/front7.png',
+          'assets/images/products/mouth_freshene_jarsr/side/side7.png',
+          'Available In Rs ',
+          'assets/shahi_logo_isolated.png',
+          'Mouth Freshener',
+          0xFF001766,
+          0xFFE72626,
+          ProductDetailProvider.mouthFreshenerJarDetail
+              .firstWhere((element) => element.productId == 107),
+          ProductStatsProvider.shahiElaichiJarStats),
+      ProductItem(
+          108,
+          'Shahi Kalonji',
+          'assets/images/products/mouth_freshener_jars/front/front8.png',
+          'assets/images/products/mouth_freshener_jars/side/side8.png',
+          'Available In Rs ',
+          'assets/shahi_logo_isolated.png',
+          'Mouth Freshener',
+          0xFF001766,
+          0xFFE72626,
+          ProductDetailProvider.mouthFreshenerJarDetail
+              .firstWhere((element) => element.productId == 108),
+          ProductStatsProvider.shahiKalonjiJarStats),
+      ProductItem(
+          109,
+          'Shahi Meva',
+          'assets/images/products/mouth_freshener_jars/front/front9.png',
+          'assets/images/products/mouth_freshener_jars/side/side9.png',
+          'Available In Rs ',
+          'assets/shahi_logo_isolated.png',
+          'Mouth Freshener',
+          0xFF001766,
+          0xFFE72626,
+          ProductDetailProvider.mouthFreshenerJarDetail
+              .firstWhere((element) => element.productId == 109),
+          ProductStatsProvider.shahiMevaJarStats),
+      ProductItem(
+          110,
+          'Shahi Supermint',
+          'assets/images/products/mouth_freshener_jars/front/front10.png',
+          'assets/images/products/mouth_freshener_jars/side/side10.png',
+          'Available In Rs ',
+          'assets/shahi_logo_isolated.png',
+          'Mouth Freshener',
+          0xFF001766,
+          0xFFE72626,
+          ProductDetailProvider.mouthFreshenerJarDetail
+              .firstWhere((element) => element.productId == 110),
+          ProductStatsProvider.shahiSupermintJarStats),
+      ];
+    _productCategories
+        .add(ProductCategory(5, _categories[4], mouthFreshenerJarItems));
 
     // List<ProductItem> snacksItems = [
     //   ProductItem(

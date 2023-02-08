@@ -538,7 +538,7 @@ class ProductDetailProvider {
   ];
 
   static final List<ProductDetail> mouthFreshenerDetail = [
-    ProductDetail(
+    /*ProductDetail(
         1,
         61,
         'First discovered by the Olmec civilization, chocolate is second to none. A minty blend or fennel seeds and Dried Dates covered in luscious chocolate.',
@@ -561,7 +561,7 @@ class ProductDetailProvider {
         'Fennel Seeds, Betelnut, Menthol, _N.N Sweetener, Natural & Artificial _Flavours.',
         '',
         'assets/images/products/mouth_freshener/arabic/arabic3.png',
-        '' /*'assets/images/products/mouth_freshener/nutrition/nutrition3.png'*/),
+        '' */ /*'assets/images/products/mouth_freshener/nutrition/nutrition3.png'*/ /*),
     ProductDetail(
         4,
         64,
@@ -633,7 +633,7 @@ class ProductDetailProvider {
         'Fennel Seeds, Glucose, Wheat Flour, _Food Colors (Tatrazine Yellow E-102 _Brilliant Blue E-133, Erythrosine E-127 _Titanium Dioxide E-171 Sunset Yellow E-110).',
         '',
         'assets/images/products/mouth_freshener/arabic/arabic12.png',
-        'assets/images/products/mouth_freshener/nutrition/nutrition12.png'),
+        'assets/images/products/mouth_freshener/nutrition/nutrition12.png'),*/
     ProductDetail(
         13,
         73,
@@ -714,6 +714,89 @@ class ProductDetailProvider {
         '',
         'assets/images/products/mouth_freshener/arabic/arabic22.png',
         'assets/images/products/mouth_freshener/nutrition/nutrition22.png'),
+  ];
+
+  static final List<ProductDetail> mouthFreshenerJarDetail = [
+    ProductDetail(
+        1,
+        101,
+        'First discovered by the Olmec civilization, chocolate is second to none. A minty blend or fennel seeds and Dried Dates covered in luscious chocolate.',
+        'Fennel Seeds, Coconut, Sesame Seeds, Sugar, Dry Dates, Cocoa Powder, Flavours, Permitted Food Colour (E-155) & N.N Sweetener.',
+        '',
+        'assets/images/products/mouth_freshener_jars/arabic/arabic1.png',
+        'assets/images/products/mouth_freshener_jars/nutrition/nutrition1.png'),
+    ProductDetail(
+        2,
+        102,
+        'For those looking for a little sweetness in their Pan Masala, AasPas Meetha Pan Masala, provides the perfect amount of sweetness.',
+        'Sugar, Fennel Seeds, Coconut, Dry Dates, Coriander Seeds, Sesame Seeds, Menthol, Wheat Flour, Permitted Food Colours (E-171), (E-102), (E-110), (E-133), (E-127).',
+        '',
+        'assets/images/products/mouth_freshener_jars/arabic/arabic2.png',
+        'assets/images/products/mouth_freshener_jars/nutrition/nutrition2.png'),
+    ProductDetail(
+        3,
+        103,
+        'A childhood favorite, sugar coated fennel seeds.',
+        'Fennel Seeds, Sugar, Glucose, Wheat Flour & Permitted Food Colors (E-102), (E-133), (E-127), (E-171), (E-110)',
+        '',
+        'assets/images/products/mouth_freshener_jars/arabic/arabic3.png',
+        'assets/images/products/mouth_freshener_jars/nutrition/nutrition3.png'),
+    ProductDetail(
+        4,
+        104,
+        'A chocolaty version of our original Shahi Meva, this is sure to delight any chocolate lover.',
+        'Sugar, Coconut, Fennel Seeds, Dry- Dates, Almonds, Glucose, Cocoa Powder, Full Cream Milk Powder, Food Preservative (E-223) & Permitted Food Colors (E-133), (E-155), (E-102).',
+        '',
+        'assets/images/products/mouth_freshener_jars/arabic/arabic4.png',
+        'assets/images/products/mouth_freshener_jars/nutrition/nutrition4.png'),
+    ProductDetail(
+        5,
+        105,
+        'A sophisticated blend on Roasted Fennel Seeds, Coriander Seeds, Sesame Seeds, Coconut and Dried Dates. Dewaan is a depth of flavor and textures.',
+        'Fennel Seeds, Coriander Seeds, Coconut, Sugar, Sesame Seeds, Dry Dates, Permitted Food Colors (E-133), (E-129) & Artificial Flavours.',
+        '',
+        'assets/images/products/mouth_freshener_jars/arabic/arabic5.png',
+        'assets/images/products/mouth_freshener_jars/nutrition/nutrition5.png'),
+    ProductDetail(
+        6,
+        106,
+        'The perfect blend of Fennel Seeds, Dried Dates and Cardamom seeds. The Original “Herbal” Mouth Freshener provides the perfect balance of flavor and refreshment.',
+        'Fennel seeds, Dry Dates, Cardamom, Menthol, N.N Sweetener, Natural & Artificial Flavors.',
+        '',
+        'assets/images/products/mouth_freshener_jars/arabic/arabic6.png',
+        'assets/images/products/mouth_freshener_jars/nutrition/nutrition6.png'),
+    ProductDetail(
+        7,
+        107,
+        'Cardamom has been used since ancient times to tantalize and awaken the tastebuds. Shahi Elaichi focuses on enhancing the natural aroma and taste of whole Cardamom with Cardamom seeds.',
+        'Dry Dates, Fennel Seeds, Sugar Cardamom, Less than 1% N.NSweetener Saccharine, Menthol, Natural & Artificial Flavours, FDNC Blue (E-133) & FDNC Yellow (E-102).',
+        '',
+        'assets/images/products/mouth_freshener_jars/arabic/arabic7.png',
+        'assets/images/products/mouth_freshener_jars/nutrition/nutrition7.png'),
+    ProductDetail(
+        8,
+        108,
+        'A traditional Herbal Mouth Freshener with the added power and benefits of black seeds to give you an immune boost while satisfying your tastebuds.',
+        'Nigella Seeds, Fennel Seeds, Cardamom, Dry Dates, Wheat Flour, Misri, Sugar, FDNC Blue (E-133) & FDNC Yellow (E-102).',
+        '',
+        'assets/images/products/mouth_freshener_jars/arabic/arabic8.png',
+        'assets/images/products/mouth_freshener_jars/nutrition/nutrition8.png'),
+    ProductDetail(
+        9,
+        109,
+        'A sweet and nutty mixture of nature’s goodness. Shahi Meva is the perfect treat to satisfy your sweet tooth with a hint of vanilla, Almonds, Dried Dates and Coconut.',
+        'Sugar, Fennel Seeds, Coconut, Dry Dates, Almonds, Cocoa Powder, Wheat Flour, Artificial Flavours & Permitted Food Colours  (E-171), (E-102), (E-110), (E-133), (E-127).',
+        '',
+        'assets/images/products/mouth_freshener_jars/arabic/arabic9.png',
+        'assets/images/products/mouth_freshener_jars/nutrition/nutrition9.png'),
+    ProductDetail(
+        10,
+        110,
+        'A stronger, more minty version of the original Shahi Deluxe.',
+        'Dry Dates, Fennel Seeds, Betelnuts, Cardamom, N.N. Sweetner (Saccharine 0.4%), Artificial Flavours.',
+        '',
+        'assets/images/products/mouth_freshener_jars/arabic/arabic10.png',
+        'assets/images/products/mouth_freshener_jars/nutrition/nutrition10.png'),
   ];
 
 // static final List<ProductDetail> snacksDetails = [

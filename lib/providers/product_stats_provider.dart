@@ -277,7 +277,7 @@ class ProductStatsProvider with ChangeNotifier{
   ];
 
   // MOUTH FRESHENER
-  static final List<ProductStats> aasPaasChocolateStats = [
+  /*static final List<ProductStats> aasPaasChocolateStats = [
     ProductStats(1, 'AasPass\nRs-5', '24 x 24', '6.34', '7.97', '14.5 x 13.75 x 10.75in'),
     ProductStats(2, 'AasPass\nRs-2', '48 x 12 x 12', '27.65', '34.32', '24.75 x 19.5 x 17.75in'),
   ];
@@ -329,7 +329,7 @@ class ProductStatsProvider with ChangeNotifier{
 
   static final List<ProductStats> aasPaasSweetSonf = [
     ProductStats(1, 'Aas Paas\nSweet Sonf Rs-5', '24 x 24', '8.64', '10.28', '14.5 x 13.75 x 10.75in'),
-  ];
+  ];*/
 
   static final List<ProductStats> aasPaasChocolateStats2 = [
     ProductStats(1, 'AasPass\nRs-5', 'N/A', 'N/A', 'N/A', 'N/A'),
@@ -371,5 +371,47 @@ class ProductStatsProvider with ChangeNotifier{
   static final List<ProductStats> shahiSupermintStats2 = [
     ProductStats(1, 'Shahi Supermint\nRs-5', 'N/A', 'N/A', 'N/A', 'N/A'),
   ];
+
+  // MOUTH FRESHENER JARS
+  static final List<ProductStats> aasPaasChocolateJarStats = [
+    ProductStats(1, 'AasPass\nRs-', 'N/A', 'N/A', 'N/A', 'N/A'),
+  ];
+
+  static final List<ProductStats> aasPaasMeethaPanMasalaJarStats = [
+    ProductStats(1, 'AasPass\nRs-', 'N/A', 'N/A', 'N/A', 'N/A'),
+  ];
+
+  static final List<ProductStats> aasPaasSweetSonfJarStats = [
+    ProductStats(1, 'Aas Paas\nSweet Sonf Rs-', 'N/A', 'N/A', 'N/A', 'N/A'),
+  ];
+
+  static final List<ProductStats> shahiMevaChocolateJarStats = [
+    ProductStats(1, 'Shahi Meva\nChocolate Rs-', 'N/A', 'N/A', 'N/A', 'N/A'),
+  ];
+
+  static final List<ProductStats> shahiDeewanJarStats = [
+    ProductStats(1, 'Shahi Deewan\nRs-', 'N/A', 'N/A', 'N/A', 'N/A'),
+  ];
+
+  static final List<ProductStats> shahiDeluxeJarStats = [
+    ProductStats(1, 'Shahi Deluxe\nRs-', 'N/A', 'N/A', 'N/A', 'N/A'),
+  ];
+
+  static final List<ProductStats> shahiElaichiJarStats = [
+    ProductStats(1, 'Shahi Elaichi\nRs-', 'N/A', 'N/A', 'N/A', 'N/A'),
+  ];
+
+  static final List<ProductStats> shahiKalonjiJarStats = [
+    ProductStats(2, 'Shahi Kalonji\nRs-', 'N/A', 'N/A', 'N/A', 'N/A'),
+  ];
+
+  static final List<ProductStats> shahiMevaJarStats = [
+    ProductStats(1, 'Shahi Meva\nRs-', 'N/A', 'N/A', 'N/A', 'N/A'),
+  ];
+
+  static final List<ProductStats> shahiSupermintJarStats = [
+    ProductStats(1, 'Shahi Supermint\nRs-', 'N/A', 'N/A', 'N/A', 'N/A'),
+  ];
+
 
 }
