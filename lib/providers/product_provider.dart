@@ -364,6 +364,32 @@ class ProductProvider with ChangeNotifier {
           ProductDetailProvider.shahiNimcoDetail
               .firstWhere((element) => element.productId == 32),
           ProductStatsProvider.nimcoSavoryMixStats),
+      ProductItem(
+          33,
+          'Dahi Phulki',
+          'assets/images/products/shahi_nimco/front/front13.png',
+          'assets/images/products/shahi_nimco/back/back13.png',
+          'Available In Rs ',
+          'assets/shahi_logo_isolated.png',
+          'Nimco',
+          0xFFCEA942,
+          0xFF211F20,
+          ProductDetailProvider.shahiNimcoDetail
+              .firstWhere((element) => element.productId == 33),
+          ProductStatsProvider.nimcoDahiPhulkiStats),
+      ProductItem(
+          34,
+          'Khatta Meetha Mix',
+          'assets/images/products/shahi_nimco/front/front14.png',
+          'assets/images/products/shahi_nimco/back/back14.png',
+          'Available In Rs ',
+          'assets/shahi_logo_isolated.png',
+          'Nimco',
+          0xFFCEA942,
+          0xFF211F20,
+          ProductDetailProvider.shahiNimcoDetail
+              .firstWhere((element) => element.productId == 34),
+          ProductStatsProvider.nimcoKatthaMeethaMixStats),
     ];
     _productCategories.add(ProductCategory(2, _categories[1], shahiNimcoItems));
 
@@ -784,6 +810,19 @@ class ProductProvider with ChangeNotifier {
           ProductDetailProvider.snacksDetail
               .firstWhere((element) => element.productId == 612),
           ProductStatsProvider.wheatOOriginalStats2),
+      ProductItem(
+          613,
+          'Fry-O Sweet n\' Sour',
+          'assets/images/products/snacks/front/front33.png',
+          'assets/images/products/snacks/back/back33.png',
+          'Available In Rs ',
+          'assets/shahi_logo_isolated.png',
+          'Snacks',
+          0xFFCEA942,
+          0xFF211F20,
+          ProductDetailProvider.snacksDetail
+              .firstWhere((element) => element.productId == 613),
+          ProductStatsProvider.fryOSAndSExportStats),
     ];
     _productCategories.add(ProductCategory(3, _categories[2], snacksItems));
 
@@ -1209,7 +1248,7 @@ class ProductProvider with ChangeNotifier {
           ProductDetailProvider.mouthFreshenerJarDetail
               .firstWhere((element) => element.productId == 110),
           ProductStatsProvider.shahiSupermintJarStats),
-      ];
+    ];
     _productCategories
         .add(ProductCategory(5, _categories[4], mouthFreshenerJarItems));
 

@@ -276,6 +276,22 @@ class ProductDetailProvider {
         'Farine de pois chiches, farine de riz, farine de pois, lentilles _et légumineuses, arachide, pois chiches, huile végétale _(palmoléine), acide citrique (E-330), coriandre, cumin, _piment rouge, sucre, graines de carambole, sel, _maltodextrine, arôme identique à la nature.',
         'assets/images/products/shahi_nimco/arabic/arabic12.png',
         'assets/images/products/shahi_nimco/nutrition/nutrition12.png'),
+    ProductDetail(
+        13,
+        33,
+        '',
+        'Gram Flour, Green Gram Flour, Wheat Flour, Vegetable Oil (Palmolein), Cumin, Carom Seeds, Salt, Leavening Agent (Sodium bicarbonate E-500)',
+        '',
+        'assets/images/products/shahi_nimco/arabic/arabic13.png',
+        'assets/images/products/shahi_nimco/nutrition/nutrition13.png'),
+    ProductDetail(
+        14,
+        34,
+        '',
+        'Cashew nuts, raisins, peanuts, chickpeas flour, pea flour, rice flour, rice flakes, lentils, vegetable oil (palmolein), sugar, black pepper, salt, malic acid E-296, onion powder, ginger powder, red chili, cumin, whey powder, corn starch, nature identical flavor.',
+        '',
+        'assets/images/products/shahi_nimco/arabic/arabic14.png',
+        'assets/images/products/shahi_nimco/nutrition/nutrition14.png'),
   ];
 
   static final List<ProductDetail> snacksDetail = [
@@ -535,6 +551,14 @@ class ProductDetailProvider {
         '',
         'assets/images/products/snacks/arabic/arabic32.png',
         'assets/images/products/snacks/nutrition/nutrition32.png'),
+    ProductDetail(
+        33,
+        613,
+        'A fried potato pellet snack made from the highest quality potatoes from Europe. Fry-O is sure to satisfy your craving for something savory. Fry-O is also available in Sweet n’ Sour & Spicy.',
+        'Potato Powder, Potato Starch, Rice Flour, Vegetable Oil (palmolein), Salt, Sugar, Whey Powder, Dextrose, Nature Identical Flavor, Maltodextrin (Rice) & Citric Acid (E-330).',
+        '',
+        'assets/images/products/snacks/arabic/arabic33.png',
+        'assets/images/products/snacks/nutrition/nutrition33.png'),
   ];
 
   static final List<ProductDetail> mouthFreshenerDetail = [
