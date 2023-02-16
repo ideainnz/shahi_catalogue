@@ -191,7 +191,7 @@ class ProductDetailProvider {
     ProductDetail(
         2,
         22,
-        'Traditional fried dough ballsperfect as a snack or for adding to yogurt.',
+        'Traditional fried dough balls perfect as a snack or for adding to yogurt.',
         'Gram Flour, Vegetable Oil (Palmolein) & Salt.',
         'Farine de gramme, huile végétale (palmoléine) et sel.',
         'assets/images/products/shahi_nimco/arabic/arabic2.png',
@@ -199,7 +199,7 @@ class ProductDetailProvider {
     ProductDetail(
         3,
         23,
-        'A classic combination of sweet and savory to satisfy all your cravings. ',
+        'A classic combination of sweet and savory to satisfy all your cravings.',
         'Rice Flakes, Gram Flour, Peanuts, Raisins, _Fennel Seed, Turmeric, Vegetable Oil (Palmolein), _Salt, Sugar, Red Chilli, Citric Acid (E-330).',
         'Flocons de riz, farine de pois chiches, cacahuètes, _raisins secs, Graines de fenouil, curcuma, huile végétale _(palmoléine), sel, sucre, piment rouge, acide citrique (E-330).',
         'assets/images/products/shahi_nimco/arabic/arabic3.png',
@@ -215,7 +215,7 @@ class ProductDetailProvider {
     ProductDetail(
         5,
         25,
-        'Crisp fried Yellow Chickpea Lentils covered with a spicy and savory flavor blend',
+        'Crisp fried Yellow Chickpea Lentils covered with a spicy and savory flavor blend.',
         'Potatoes, Vegetable Oil (Palmolein), Salt, Black _Pepper, Cumin, Coriander, Maltodextrin, Citric Acid _(E-330), Sugar and Nature Identical Flavor.',
         'Pommes de terre, huile végétale (palmoléine), sel, poivre _noir, cumin, coriandre, maltodextrine, acide citrique _(E-330), sucre et arôme identique à la nature.',
         'assets/images/products/shahi_nimco/arabic/arabic5.png',
@@ -247,7 +247,7 @@ class ProductDetailProvider {
     ProductDetail(
         9,
         29,
-        'Crispy Fried dough perfect as a topping or a snack.',
+        'Crispy Fried dough perfect as a topping or a snack!',
         'Wheat Flour, Vegetable Oil, (Palmolein) _Carom Seeds, Cumin & Salt.',
         'Farine de blé, huile végétale, (palmoléine) _Graines de carambole, cumin et sel.',
         'assets/images/products/shahi_nimco/arabic/arabic9.png',
@@ -267,7 +267,7 @@ class ProductDetailProvider {
         'Potatoes, Vegetable Oil (Palmolein), Salt, _Sugar, Maltodextrin.',
         'Pommes de terre, huile végétale (palmoléine), _sel, sucre, maltodextrine.',
         'assets/images/products/shahi_nimco/arabic/arabic11.png',
-        'assets/images/products/shahi_nimco/nutrition/nutrition12.png'),
+        'assets/images/products/shahi_nimco/nutrition/nutrition11.png'),
     ProductDetail(
         12,
         32,
@@ -685,7 +685,7 @@ class ProductDetailProvider {
     ProductDetail(
         16,
         76,
-        'A chocolaty version of our original Shahi Meva, this is sure to delight any chocolate lover.',
+        'A chocolaty version of our original Shahi Meva, this is sure to delight any chocolate lover!',
         'Sugar, Coconut, Fennel Seeds, Dry- Dates, Almonds, Glucose, Cocoa Powder, Full Cream Milk Powder, Food Preservative (E-223) & Permitted Food Colors (E-133), (E-155), (E-102).',
         '',
         'assets/images/products/mouth_freshener/arabic/arabic16.png',
@@ -717,7 +717,7 @@ class ProductDetailProvider {
     ProductDetail(
         20,
         80,
-        'A traditional Herbal Mouth Freshener with the added power and benefits of black seeds to give you an immune boost while satisfying your tastebuds.',
+        'A traditional Herbal Mouth Freshener with the added power and benefits of black seeds to give you an immune boost while satisfying your taste buds!',
         'Nigella Seeds, Fennel Seeds, Cardamom, Dry Dates, Wheat Flour, Misri, Sugar, FDNC Blue (E-133) & FDNC Yellow (E-102).',
         '',
         'assets/images/products/mouth_freshener/arabic/arabic20.png',
@@ -768,7 +768,7 @@ class ProductDetailProvider {
     ProductDetail(
         4,
         104,
-        'A chocolaty version of our original Shahi Meva, this is sure to delight any chocolate lover.',
+        'A chocolaty version of our original Shahi Meva, this is sure to delight any chocolate lover!',
         'Sugar, Coconut, Fennel Seeds, Dry- Dates, Almonds, Glucose, Cocoa Powder, Full Cream Milk Powder, Food Preservative (E-223) & Permitted Food Colors (E-133), (E-155), (E-102).',
         '',
         'assets/images/products/mouth_freshener_jars/arabic/arabic4.png',
@@ -800,7 +800,7 @@ class ProductDetailProvider {
     ProductDetail(
         8,
         108,
-        'A traditional Herbal Mouth Freshener with the added power and benefits of black seeds to give you an immune boost while satisfying your tastebuds.',
+        'A traditional Herbal Mouth Freshener with the added power and benefits of black seeds to give you an immune boost while satisfying your taste buds.',
         'Nigella Seeds, Fennel Seeds, Cardamom, Dry Dates, Wheat Flour, Misri, Sugar, FDNC Blue (E-133) & FDNC Yellow (E-102).',
         '',
         'assets/images/products/mouth_freshener_jars/arabic/arabic8.png',
