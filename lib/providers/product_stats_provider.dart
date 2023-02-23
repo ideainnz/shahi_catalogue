@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:shahi_catalogue/models/product_stats.dart';
 
 class ProductStatsProvider with ChangeNotifier {
-  
   // BALLAY BALLAY
   /*static final List<ProductStats> bbNamakParayStats = [
     ProductStats(
