@@ -331,7 +331,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
               height: 45,
               child: Row(
                 children: [
-                  SizedBox(width: 10),
+                  SizedBox(width: 20),
                   GestureDetector(
                     child: Image.asset(
                       "assets/images/social_icons/facebook_white_icon.png",
