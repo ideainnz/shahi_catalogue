@@ -3,12 +3,12 @@ import 'package:shahi_catalogue/models/product_stats.dart';
 
 class ProductStatsProvider with ChangeNotifier {
   // BALLAY BALLAY
-  /*static final List<ProductStats> bbNamakParayStats = [
+  static final List<ProductStats> bbNamakParayStats = [
     ProductStats(
         1, 'Namak Paray\nRs-5', '12 pkts/pp bag', '1.44', '1.61', '9 x 5.3 + 3.3'),
   ];
 
-  static final List<ProductStats> bbDalMothStats = [
+  /*static final List<ProductStats> bbDalMothStats = [
     ProductStats(1, 'Dal Moth\nRs-20', '12 pkts/box', '4.61', '4.84', '8.1 x 6.9 x 5.0'),
     ProductStats(2, 'Dal Moth\nRs-10', '12 pkts/box', '5.81', '7.44', '6.3 x 6 x 4.5'),
     ProductStats(3, 'Dal Moth\nRs-5', '12 pkts/pp bag', '1.44', '1.60', '9 x 5.3 + 3.3'),
@@ -79,10 +79,17 @@ class ProductStatsProvider with ChangeNotifier {
         '2.88', '5.23', '24.9 x 13 x 14'),
   ];
 
-  static final List<ProductStats> bbDSavoryMixStats2 = [
+  static final List<ProductStats> bbSavoryMixStats2 = [
     ProductStats(1, 'Savory Mix\nRs-20', '12 pkts/box\n12 Box/Carton', '3.17',
         '5.10', '16.75 x 14.6 x 15.6'),
     ProductStats(2, 'Savory Mix\nRs-10', '24 pkts/box\n24 Box/Carton', '6.91',
+        '8.73', '26.4 x 18.5 x 14.25'),
+  ];
+
+  static final List<ProductStats> bbDalPapdiStats2 = [
+    ProductStats(1, 'Dal Papdi\nRs-20', '12 pkts/box\n12 Box/Carton', '3.17',
+        '5.10', '16.75 x 14.6 x 15.6'),
+    ProductStats(2, 'Dal Papdi\nRs-10', '24 pkts/box\n24 Box/Carton', '6.91',
         '8.73', '26.4 x 18.5 x 14.25'),
   ];
 

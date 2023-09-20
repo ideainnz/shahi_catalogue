@@ -72,7 +72,7 @@ class ProductProvider with ChangeNotifier {
           0xFFE72626,
           ProductDetailProvider.ballayBallayDetail
               .firstWhere((element) => element.productId == 14),
-          ProductStatsProvider.bbMunchyMixStats),
+          ProductStatsProvider.bbMunchyMixStats),*/
       ProductItem(
           15,
           'Namak Paray',
@@ -86,7 +86,7 @@ class ProductProvider with ChangeNotifier {
           ProductDetailProvider.ballayBallayDetail
               .firstWhere((element) => element.productId == 15),
           ProductStatsProvider.bbNamakParayStats),
-      ProductItem(
+      /*ProductItem(
           16,
           'Salted Peanuts',
           'assets/images/products/ballay_ballay/front/front6.png',
@@ -202,7 +202,20 @@ class ProductProvider with ChangeNotifier {
           0xFFE72626,
           ProductDetailProvider.ballayBallayDetail
               .firstWhere((element) => element.productId == 124),
-          ProductStatsProvider.bbDSavoryMixStats2),
+          ProductStatsProvider.bbSavoryMixStats2),
+      ProductItem(
+          125,
+          'Dal Papdi',
+          'assets/images/products/ballay_ballay/front/front15.png',
+          'assets/images/products/ballay_ballay/back/back15.png',
+          'Available In Rs 10 & 20',
+          'Ballay Ballay',
+          'Nimco',
+          0xFFB71C1C,
+          0xFFE9E21D,
+          ProductDetailProvider.ballayBallayDetail
+              .firstWhere((element) => element.productId == 125),
+          ProductStatsProvider.bbDalPapdiStats2),
     ];
     _productCategories
         .add(ProductCategory(1, _categories[0], ballayBallayItems));

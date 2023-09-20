@@ -164,89 +164,218 @@ class _DashboardScreenState extends State<DashboardScreen> {
           ),
         ),
       ),
-      body: Column(
+      body: Stack(
         children: [
-          Expanded(
-            child: Padding(
-              padding: EdgeInsets.fromLTRB(10, 30, 10, 0),
-              child: GridView.count(
-                childAspectRatio: aspectRatio,
-                controller: ScrollController(),
-                crossAxisCount: 2,
-                mainAxisSpacing: 10,
-                crossAxisSpacing: 10,
-                children: _optionsList
-                    .map(
-                      (item) => MouseRegion(
-                        cursor: SystemMouseCursors.click,
-                        child: GestureDetector(
-                          child: _dashboardItem(item, size, fontSize, padding),
-                          onTap: () => {
-                            if (item.dashboardItemId == 3)
-                              {
-                                if (isLargeScreen)
-                                  _screenPopup(context, size, CSRScreen())
+          Column(
+            children: [
+              Expanded(
+                child: Padding(
+                  padding: EdgeInsets.fromLTRB(10, 30, 10, 0),
+                  child: GridView.count(
+                    childAspectRatio: aspectRatio,
+                    controller: ScrollController(),
+                    crossAxisCount: 2,
+                    mainAxisSpacing: 10,
+                    crossAxisSpacing: 10,
+                    children: _optionsList
+                        .map(
+                          (item) => MouseRegion(
+                            cursor: SystemMouseCursors.click,
+                            child: GestureDetector(
+                              child:
+                                  _dashboardItem(item, size, fontSize, padding),
+                              onTap: () => {
+                                if (item.dashboardItemId == 3)
+                                  {
+                                    if (isLargeScreen)
+                                      _screenPopup(context, size, CSRScreen())
+                                    else
+                                      _switchToScreen(item.dashboardItemId)
+                                  }
+                                else if (item.dashboardItemId == 4)
+                                  {
+                                    if (!isLargeScreen)
+                                      _switchToScreen(item.dashboardItemId)
+                                    // if (isLargeScreen)
+                                    //   _screenPopup(context, size, AboutUsScreen())
+                                    // else
+                                    //   _switchToScreen(item.dashboardItemId)
+                                  }
                                 else
-                                  _switchToScreen(item.dashboardItemId)
-                              }
-                            else if (item.dashboardItemId == 4)
-                              {
-                                if (!isLargeScreen)
-                                  _switchToScreen(item.dashboardItemId)
-                                // if (isLargeScreen)
-                                //   _screenPopup(context, size, AboutUsScreen())
-                                // else
-                                //   _switchToScreen(item.dashboardItemId)
-                              }
-                            else
-                              {
-                                _switchToScreen(item.dashboardItemId),
+                                  {
+                                    _switchToScreen(item.dashboardItemId),
+                                  },
                               },
-                          },
-                        ),
-                      ),
-                    )
-                    .toList(),
+                            ),
+                          ),
+                        )
+                        .toList(),
+                  ),
+                ),
               ),
-            ),
-          ),
-          Container(
-            padding: EdgeInsets.symmetric(vertical: 10),
-            height: 45,
-            color: Color(Constants.appColor),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
+
+              /*Row(
+              crossAxisAlignment: CrossAxisAlignment.end,
               children: [
                 Expanded(
-                  child: GestureDetector(
+                  flex: 2,
+                  child: Container(
+                    padding: EdgeInsets.symmetric(vertical: 10),
+                    height: 45,
+                    color: Color(Constants.appColor),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        Expanded(
+                          child: GestureDetector(
+                            child: Image.asset(
+                              "assets/images/social_icons/facebook_white_icon.png",
+                              height: 50,
+                            ),
+                            onTap: () =>
+                                _launchInBrowser(Constants.SHAHI_FACEBOOK),
+                          ),
+                        ),
+                        Expanded(
+                          child: GestureDetector(
+                            child: Image.asset(
+                              "assets/images/social_icons/youtube_white_icon.png",
+                              height: 50,
+                            ),
+                            onTap: () =>
+                                _launchInBrowser(Constants.SHAHI_YOUTUBE),
+                          ),
+                        ),
+                        Expanded(
+                          child: GestureDetector(
+                            child: Image.asset(
+                              "assets/images/social_icons/instagram_white_icon.png",
+                              height: 50,
+                            ),
+                            onTap: () =>
+                                _launchInBrowser(Constants.SHAHI_INSTAGRAM),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: Stack(
+                    children: [
+                      Align(
+                        alignment: Alignment.bottomRight,
+                        child: Container(
+                          padding: EdgeInsets.symmetric(vertical: 10),
+                          height: 45,
+                          color: Color(Constants.appColor),
+                        ),
+                      ),
+                      Align(
+                        alignment: Alignment.bottomRight,
+                        child: Container(
+                          margin: EdgeInsets.only(bottom: 10, right: 10),
+                          child: Image.asset(
+                            "assets/images/shahi_50.png",
+                            width: 150,
+                            height: 150,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                )
+              ],
+            )*/
+
+              Align(
+                alignment: Alignment.bottomCenter,
+                child: Container(
+                  padding: EdgeInsets.symmetric(vertical: 10),
+                  height: 45,
+                  color: Color(Constants.appColor),
+                ),
+              ),
+
+              /*Stack(
+              alignment: Alignment.bottomCenter,
+              children: [
+                Align(
+                  alignment: Alignment.bottomRight,
+                  child: Container(
+                    padding: EdgeInsets.symmetric(vertical: 10),
+                    height: 45,
+                    color: Color(Constants.appColor),
+                  ),
+                ),
+                Align(
+                  alignment: Alignment.bottomRight,
+                  child: Container(
+                    margin: EdgeInsets.only(bottom: 10, right: 10),
+                    child: Image.asset(
+                      "assets/images/shahi_50.png",
+                      width: 150,
+                      height: 150,
+                    ),
+                  ),
+                ),
+              ],
+            ),*/
+            ],
+          ),
+          Align(
+            alignment: Alignment.bottomLeft,
+            child: Container(
+              padding: EdgeInsets.symmetric(vertical: 10),
+              height: 45,
+              child: Row(
+                children: [
+                  SizedBox(
+                    width: 50,
+                  ),
+                  GestureDetector(
                     child: Image.asset(
                       "assets/images/social_icons/facebook_white_icon.png",
                       height: 50,
                     ),
                     onTap: () => _launchInBrowser(Constants.SHAHI_FACEBOOK),
                   ),
-                ),
-                Expanded(
-                  child: GestureDetector(
+                  SizedBox(
+                    width: 80,
+                  ),
+                  GestureDetector(
                     child: Image.asset(
                       "assets/images/social_icons/youtube_white_icon.png",
                       height: 50,
                     ),
                     onTap: () => _launchInBrowser(Constants.SHAHI_YOUTUBE),
                   ),
-                ),
-                Expanded(
-                  child: GestureDetector(
+                  SizedBox(
+                    width: 80,
+                  ),
+                  GestureDetector(
                     child: Image.asset(
                       "assets/images/social_icons/instagram_white_icon.png",
                       height: 50,
                     ),
                     onTap: () => _launchInBrowser(Constants.SHAHI_INSTAGRAM),
                   ),
-                )
-              ],
+                ],
+              ),
             ),
-          )
+          ),
+          Align(
+            alignment: Alignment.bottomRight,
+            child: Container(
+              margin: EdgeInsets.only(bottom: 15, right: 15),
+              child: Image.asset(
+                "assets/images/shahi_50.png",
+                width: 150,
+                height: 150,
+              ),
+            ),
+          ),
         ],
       ),
     );
@@ -295,8 +424,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
                     double maxHeight = constraints.maxHeight > 500
                         ? constraints.maxHeight
                         : 500;
-                    var aspectRatio =
-                        (constraints.maxWidth / 2) / ((maxHeight / 3) - 45 - 10);
+                    var aspectRatio = (constraints.maxWidth / 2) /
+                        ((maxHeight / 3) - 45 - 10);
                     return _initDashboardGrid(size, aspectRatio);
                   } else {
                     isLargeScreen = true;

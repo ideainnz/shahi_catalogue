@@ -240,7 +240,8 @@ class _ProductDetailWidgetState extends State<ProductDetailWidget> {
               ),
               // Stats Layout
 
-              size.width < Constants.iphoneLimit
+              // Stats Layout
+              /*size.width < Constants.iphoneLimit
                   ? Container(
                       alignment: Alignment.centerLeft,
                       child: _generateStatsWidget())
@@ -250,7 +251,7 @@ class _ProductDetailWidgetState extends State<ProductDetailWidget> {
 
               SizedBox(
                 height: 10,
-              ),
+              ),*/
 
               // Nutrition Layout Bottom
               SizedBox(
@@ -283,7 +284,8 @@ class _ProductDetailWidgetState extends State<ProductDetailWidget> {
                         cursor: SystemMouseCursors.click,
                         child: GestureDetector(
                           child: Image.asset(
-                              widget.productItem!.productBackImagePath),
+                              widget.productItem!.productBackImagePath,
+                          height: 300),
                           onTap: () => {
                             widget.callback!(
                                 true, widget.productItem!.productBackImagePath),
