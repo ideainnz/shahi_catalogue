@@ -331,9 +331,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
               height: 45,
               child: Row(
                 children: [
-                  SizedBox(
-                    width: 50,
-                  ),
+                  SizedBox(width: 10),
                   GestureDetector(
                     child: Image.asset(
                       "assets/images/social_icons/facebook_white_icon.png",
@@ -341,9 +339,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                     ),
                     onTap: () => _launchInBrowser(Constants.SHAHI_FACEBOOK),
                   ),
-                  SizedBox(
-                    width: 80,
-                  ),
+                  SizedBox(width: 40),
                   GestureDetector(
                     child: Image.asset(
                       "assets/images/social_icons/youtube_white_icon.png",
@@ -351,9 +347,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                     ),
                     onTap: () => _launchInBrowser(Constants.SHAHI_YOUTUBE),
                   ),
-                  SizedBox(
-                    width: 80,
-                  ),
+                  SizedBox(width: 40),
                   GestureDetector(
                     child: Image.asset(
                       "assets/images/social_icons/instagram_white_icon.png",
@@ -371,8 +365,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
               margin: EdgeInsets.only(bottom: 15, right: 15),
               child: Image.asset(
                 "assets/images/shahi_50.png",
-                width: 150,
-                height: 150,
+                width: 100,
+                height: 100,
               ),
             ),
           ),
