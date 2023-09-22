@@ -483,8 +483,8 @@ class ProductDetailProvider {
         23,
         603,
         'Crispy Fried Corn sticks. Available in Spicy & Cheese Flavors.',
-        'Corn Meal, Vegetable Oil (Palmolein), Salt, Citric Acid _(E330), Carom Seed, Coriander, Red Chilli, Sugar, _Maltodextrin, Permitted Food Color (E124) and Nature _Identical Flavor.',
-        '',
+        'Corn Meal, Vegetable Oil (Palmolein), Salt, Citric Acid (E330), Carom Seed, Coriander, Red Chilli, Sugar, Maltodextrin, Permitted Food Color (E124) and Nature Identical Flavor.',
+        'Semoule de maïs, huile végétale (palmolein), sel, acide citrique (E330), graines de carambole, coriandre, piment rouge, sucre, maltodextrine, colorant alimentaire autorisé (E124) et saveur naturelle identique.',
         'assets/images/products/snacks/arabic/arabic23.png',
         'assets/images/products/snacks/nutrition/nutrition23.png'),
     ProductDetail(
@@ -492,7 +492,7 @@ class ProductDetailProvider {
         604,
         'Crispy Fried Corn sticks. Available in Spicy & Cheese Flavors.',
         'Corn Meal, Vegetable Oil (Palmolein), Salt, Whey Powder, Maltodextrin, Garlic Powder, Onion Powder, Dextrose, Permitted Food Color Sunset Yellow (E110) and Nature Identical Flavor (Cheese).',
-        '',
+        'Semoule de maïs, huile végétale (palmolein), sel, poudre de lactosérum, maltodextrine, poudre d’ail, poudre d’oignon, dextrose, colorant alimentaire autorisé jaune orangé (E110) et saveur identique nature (fromage).',
         'assets/images/products/snacks/arabic/arabic24.png',
         'assets/images/products/snacks/nutrition/nutrition24.png'),
     ProductDetail(

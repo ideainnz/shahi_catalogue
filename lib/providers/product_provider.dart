@@ -78,7 +78,7 @@ class ProductProvider with ChangeNotifier {
           'Namak Paray',
           'assets/images/products/ballay_ballay/front/front5.png',
           'assets/images/products/ballay_ballay/back/back5.png',
-          'Available In Rs 5',
+          'Available In Rs 10 & 20',
           'Ballay Ballay',
           'Nimco',
           0xFF39AF36,
@@ -117,7 +117,7 @@ class ProductProvider with ChangeNotifier {
           'Dal Moong',
           'assets/images/products/ballay_ballay/front/front8.png',
           'assets/images/products/ballay_ballay/back/back8.png',
-          'Available In Rs 10 & 20',
+          'Available In Rs 10, 20 & 30',
           'Ballay Ballay',
           'Nimco',
           0xFF1B1B8F,
@@ -125,7 +125,7 @@ class ProductProvider with ChangeNotifier {
           ProductDetailProvider.ballayBallayDetail
               .firstWhere((element) => element.productId == 18),
           ProductStatsProvider.bbDalMoongStats2),
-      ProductItem(
+      /*ProductItem(
           19,
           'Chilli Chips',
           'assets/images/products/ballay_ballay/front/front9.png',
@@ -137,7 +137,7 @@ class ProductProvider with ChangeNotifier {
           0xFFE72626,
           ProductDetailProvider.ballayBallayDetail
               .firstWhere((element) => element.productId == 19),
-          ProductStatsProvider.bbChilliChipsStats),
+          ProductStatsProvider.bbChilliChipsStats),*/
       ProductItem(
           20,
           'Dal Chaska',
@@ -169,7 +169,7 @@ class ProductProvider with ChangeNotifier {
           'Munchy Mix',
           'assets/images/products/ballay_ballay/front/front12.png',
           'assets/images/products/ballay_ballay/back/back12.png',
-          'Available In Rs 10 & 20',
+          'Available In Rs 20',
           'Ballay Ballay',
           'Nimco',
           0xFFFFA700,
@@ -208,11 +208,11 @@ class ProductProvider with ChangeNotifier {
           'Dal Papdi',
           'assets/images/products/ballay_ballay/front/front15.png',
           'assets/images/products/ballay_ballay/back/back15.png',
-          'Available In Rs 10 & 20',
+          'Available In Rs 20',
           'Ballay Ballay',
           'Nimco',
           0xFFB71C1C,
-          0xFFE9E21D,
+          0xFFE72626,
           ProductDetailProvider.ballayBallayDetail
               .firstWhere((element) => element.productId == 125),
           ProductStatsProvider.bbDalPapdiStats2),
@@ -226,7 +226,7 @@ class ProductProvider with ChangeNotifier {
           'Black Pepper Chips',
           'assets/images/products/shahi_nimco/front/front1.png',
           'assets/images/products/shahi_nimco/back/back1.png',
-          'Available In Rs 30',
+          'Available In Rs 30, 100 & 200',
           'assets/shahi_logo_isolated.png',
           'Nimco',
           0xFFCEA942,
@@ -239,7 +239,7 @@ class ProductProvider with ChangeNotifier {
           'Boondi',
           'assets/images/products/shahi_nimco/front/front2.png',
           'assets/images/products/shahi_nimco/back/back2.png',
-          'Available',
+          'Available Rs 100',
           'assets/shahi_logo_isolated.png',
           'Nimco',
           0xFFCEA942,
@@ -265,7 +265,7 @@ class ProductProvider with ChangeNotifier {
           'Chilli Chips',
           'assets/images/products/shahi_nimco/front/front4.png',
           'assets/images/products/shahi_nimco/back/back4.png',
-          'Available In Rs 30 & 50',
+          'Available In Rs 30, 50, 100 & 200',
           'assets/shahi_logo_isolated.png',
           'Nimco',
           0xFFCEA942,
@@ -278,7 +278,7 @@ class ProductProvider with ChangeNotifier {
           'Spicy Dal Chana',
           'assets/images/products/shahi_nimco/front/front5.png',
           'assets/images/products/shahi_nimco/back/back5.png',
-          'Available',
+          'Available Rs 100',
           'assets/shahi_logo_isolated.png',
           'Nimco',
           0xFFCEA942,
@@ -291,7 +291,7 @@ class ProductProvider with ChangeNotifier {
           'Dal Moong',
           'assets/images/products/shahi_nimco/front/front6.png',
           'assets/images/products/shahi_nimco/back/back6.png',
-          'Available In Rs 30 & 50',
+          'Available In Rs 30, 50, 100 & 200',
           'assets/shahi_logo_isolated.png',
           'Nimco',
           0xFFCEA942,
@@ -304,7 +304,7 @@ class ProductProvider with ChangeNotifier {
           'Dal Moth',
           'assets/images/products/shahi_nimco/front/front7.png',
           'assets/images/products/shahi_nimco/back/back7.png',
-          'Available In Rs 50',
+          'Available In Rs 50 & 100',
           'assets/shahi_logo_isolated.png',
           'Nimco',
           0xFFCEA942,
@@ -317,7 +317,7 @@ class ProductProvider with ChangeNotifier {
           'Munchy Mix',
           'assets/images/products/shahi_nimco/front/front8.png',
           'assets/images/products/shahi_nimco/back/back8.png',
-          'Available',
+          'Available Rs 100',
           'assets/shahi_logo_isolated.png',
           'Nimco',
           0xFFCEA942,
@@ -330,7 +330,7 @@ class ProductProvider with ChangeNotifier {
           'Papdi',
           'assets/images/products/shahi_nimco/front/front9.png',
           'assets/images/products/shahi_nimco/back/back9.png',
-          'Available',
+          'Available Rs 30, 50, 100 & 200',
           'assets/shahi_logo_isolated.png',
           'Nimco',
           0xFFCEA942,
@@ -356,7 +356,7 @@ class ProductProvider with ChangeNotifier {
           'Salted Chips',
           'assets/images/products/shahi_nimco/front/front11.png',
           'assets/images/products/shahi_nimco/back/back11.png',
-          'Available In Rs 30',
+          'Available In Rs 30 & 100',
           'assets/shahi_logo_isolated.png',
           'Nimco',
           0xFFCEA942,
@@ -369,7 +369,7 @@ class ProductProvider with ChangeNotifier {
           'Savory Mix',
           'assets/images/products/shahi_nimco/front/front12.png',
           'assets/images/products/shahi_nimco/back/back12.png',
-          'Available',
+          'Available Rs 100',
           'assets/shahi_logo_isolated.png',
           'Nimco',
           0xFFCEA942,
@@ -395,7 +395,7 @@ class ProductProvider with ChangeNotifier {
           'Khatta Meetha Mix',
           'assets/images/products/shahi_nimco/front/front14.png',
           'assets/images/products/shahi_nimco/back/back14.png',
-          'Available',
+          'Available Rs 200',
           'assets/shahi_logo_isolated.png',
           'Nimco',
           0xFFCEA942,
@@ -641,7 +641,7 @@ class ProductProvider with ChangeNotifier {
           ProductDetailProvider.snacksDetail
               .firstWhere((element) => element.productId == 58),
           ProductStatsProvider.popstarChatpataChickenStats2),
-      ProductItem(
+      /*ProductItem(
           59,
           'Popstar Chicken Samosa',
           'assets/images/products/snacks/front/front19.png',
@@ -653,7 +653,7 @@ class ProductProvider with ChangeNotifier {
           0xFF211F20,
           ProductDetailProvider.snacksDetail
               .firstWhere((element) => element.productId == 59),
-          ProductStatsProvider.popstarChickenSamosaStats2),
+          ProductStatsProvider.popstarChickenSamosaStats2),*/
       ProductItem(
           60,
           'Fry-O Potato Snacks',
@@ -667,7 +667,7 @@ class ProductProvider with ChangeNotifier {
           ProductDetailProvider.snacksDetail
               .firstWhere((element) => element.productId == 60),
           ProductStatsProvider.fryOSAndSStats2),
-      ProductItem(
+      /*ProductItem(
           601,
           'Fry-O Salted',
           'assets/images/products/snacks/front/front21.png',
@@ -679,7 +679,7 @@ class ProductProvider with ChangeNotifier {
           0xFF211F20,
           ProductDetailProvider.snacksDetail
               .firstWhere((element) => element.productId == 601),
-          ProductStatsProvider.fryOSaltedStats2),
+          ProductStatsProvider.fryOSaltedStats2),*/
       ProductItem(
           602,
           'Fry-O Spicy',
@@ -719,7 +719,7 @@ class ProductProvider with ChangeNotifier {
           ProductDetailProvider.snacksDetail
               .firstWhere((element) => element.productId == 604),
           ProductStatsProvider.kinkornCheeseStats2),
-      ProductItem(
+     /* ProductItem(
           605,
           'Mango Buntys',
           'assets/images/products/snacks/front/front25.png',
@@ -731,7 +731,7 @@ class ProductProvider with ChangeNotifier {
           0xFF211F20,
           ProductDetailProvider.snacksDetail
               .firstWhere((element) => element.productId == 605),
-          ProductStatsProvider.mangoBuntysStats2),
+          ProductStatsProvider.mangoBuntysStats2),*/
       ProductItem(
           606,
           'Patti Time',
@@ -1009,7 +1009,7 @@ class ProductProvider with ChangeNotifier {
           ProductDetailProvider.mouthFreshenerDetail
               .firstWhere((element) => element.productId == 73),
           ProductStatsProvider.aasPaasChocolateStats2),
-      ProductItem(
+      /*ProductItem(
           74,
           'Aas Pas Meetha',
           'assets/images/products/mouth_freshener/front/front14.png',
@@ -1034,7 +1034,7 @@ class ProductProvider with ChangeNotifier {
           0xFFE72626,
           ProductDetailProvider.mouthFreshenerDetail
               .firstWhere((element) => element.productId == 74),
-          ProductStatsProvider.aasPaasSweetSonf2),
+          ProductStatsProvider.aasPaasSweetSonf2),*/
       ProductItem(
           76,
           'Shahi Meva Chocolate',
@@ -1113,7 +1113,7 @@ class ProductProvider with ChangeNotifier {
           ProductDetailProvider.mouthFreshenerDetail
               .firstWhere((element) => element.productId == 81),
           ProductStatsProvider.shahiMevaStats2),
-      ProductItem(
+      /*ProductItem(
           82,
           'Shahi Supermint',
           'assets/images/products/mouth_freshener/front/front22.png',
@@ -1125,7 +1125,7 @@ class ProductProvider with ChangeNotifier {
           0xFFE72626,
           ProductDetailProvider.mouthFreshenerDetail
               .firstWhere((element) => element.productId == 82),
-          ProductStatsProvider.shahiSupermintStats2),
+          ProductStatsProvider.shahiSupermintStats2),*/
     ];
     _productCategories
         .add(ProductCategory(4, _categories[3], mouthFreshenerItems));
