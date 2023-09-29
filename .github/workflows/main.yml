@@ -2,7 +2,7 @@ name: Shahi Catalogue Flutter Web
 on:
   push:
     branches:
-      - main
+      - new_layout
 jobs:
   build:
     name: Build Web

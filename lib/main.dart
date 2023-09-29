@@ -1,8 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:shahi_catalogue/constants.dart';
-import 'package:shahi_catalogue/home.dart';
-import 'package:shahi_catalogue/product_provider.dart';
+import 'package:shahi_catalogue/about_us.dart';
+import 'package:shahi_catalogue/constants/constants.dart';
+import 'package:shahi_catalogue/contact_us.dart';
+import 'package:shahi_catalogue/csr.dart';
+import 'package:shahi_catalogue/dashboard.dart';
+import 'package:shahi_catalogue/export_products.dart';
+import 'package:shahi_catalogue/media.dart';
+import 'package:shahi_catalogue/products.dart';
+import 'package:shahi_catalogue/providers/export_product_provider.dart';
+import 'package:shahi_catalogue/providers/product_provider.dart';
+import 'package:shahi_catalogue/providers/product_stats_provider.dart';
 
 void main() {
   runApp(MyApp());
@@ -14,9 +22,15 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider.value(
-          value: ProductProvider(),
-        )
+        ChangeNotifierProvider<ProductProvider>(
+          create: (_) => ProductProvider(),
+        ),
+        ChangeNotifierProvider<ExportProductProvider>(
+          create: (_) => ExportProductProvider(),
+        ),
+        ChangeNotifierProvider<ProductStatsProvider>(
+          create: (_) => ProductStatsProvider(),
+        ),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
@@ -33,36 +47,46 @@ class MyApp extends StatelessWidget {
           // is not restarted.
           // primarySwatch: Colors.red,
           primaryColor: Color(Constants.appColor),
-          accentColor: Color(Constants.appAccentColor),
           brightness: Brightness.light,
         ),
-        home: MyHomePage(title: 'Shahi Products e-Catalogue'),
+        initialRoute: '/',
+        routes: {
+          '/': (context) => DashboardScreen(),
+          '/products': (context) => ProductsScreen(),
+          '/export_products': (context) => ExportProductsScreen(),
+          '/media': (context) => MediaScreen(),
+          '/csr': (context) => CSRScreen(),
+          '/about': (context) => AboutUsScreen(true),
+          '/contact': (context) => ContactUsScreen(),
+        },
+        // home: MyHomePage(title: 'Shahi Products e-Catalogue'),
       ),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key? key, required this.title}) : super(key: key);
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
-  final String title;
-
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
-    return const HomeWidget();
-  }
-}
+// class MyHomePage extends StatefulWidget {
+//   MyHomePage({Key? key, required this.title}) : super(key: key);
+//
+//   // This widget is the home page of your application. It is stateful, meaning
+//   // that it has a State object (defined below) that contains fields that affect
+//   // how it looks.
+//
+//   // This class is the configuration for the state. It holds the values (in this
+//   // case the title) provided by the parent (in this case the App widget) and
+//   // used by the build method of the State. Fields in a Widget subclass are
+//   // always marked "final".
+//
+//   final String title;
+//
+//   @override
+//   _MyHomePageState createState() => _MyHomePageState();
+// }
+//
+// class _MyHomePageState extends State<MyHomePage> {
+//   @override
+//   Widget build(BuildContext context) {
+//     // return const ProductsScreen();
+//     return DashboardScreen();
+//   }
+// }

@@ -25,6 +25,9 @@ dependencies:
     sdk: flutter
 
   provider: ^5.0.0
+  url_launcher: ^6.0.13
+#  youtube_player_flutter: ^8.0.0
+  youtube_player_iframe: ^2.2.2
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -51,12 +54,42 @@ flutter:
   assets:
     - assets/
     - assets/images/
+    - assets/images/nutrition_facts/
+    - assets/images/export_products/mouth_freshener/
+    - assets/images/export_products/nimco/
+    - assets/images/export_products/nutrition_facts/
+    - assets/images/dashboard_icons/
+    - assets/images/csr/
+    - assets/images/csr/csr_icons/
+    - assets/images/csr/more/
+    - assets/images/csr/press_release/
     - assets/images/about_icons/
     - assets/images/tab_icons/
+    - assets/images/social_icons/
     - assets/images/mouth_freshener/
     - assets/images/nimco/
     - assets/images/snacks/
     - assets/images/frozen_foods/
+    - assets/images/products/ballay_ballay/front/
+    - assets/images/products/ballay_ballay/back/
+    - assets/images/products/ballay_ballay/nutrition/
+    - assets/images/products/ballay_ballay/arabic/
+    - assets/images/products/shahi_nimco/front/
+    - assets/images/products/shahi_nimco/back/
+    - assets/images/products/shahi_nimco/nutrition/
+    - assets/images/products/shahi_nimco/arabic/
+    - assets/images/products/snacks/front/
+    - assets/images/products/snacks/back/
+    - assets/images/products/snacks/nutrition/
+    - assets/images/products/snacks/arabic/
+    - assets/images/products/mouth_freshener/front/
+    - assets/images/products/mouth_freshener/side/
+    - assets/images/products/mouth_freshener/nutrition/
+    - assets/images/products/mouth_freshener/arabic/
+    - assets/images/products/mouth_freshener_jars/front/
+    - assets/images/products/mouth_freshener_jars/side/
+    - assets/images/products/mouth_freshener_jars/nutrition/
+    - assets/images/products/mouth_freshener_jars/arabic/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
